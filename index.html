@@ -857,7 +857,7 @@
       lucide.createIcons();
     }
 
-    // 7. Live Serverless AI Execution Engine (Vercel Backend Integrated)
+    // 7. Live Serverless AI Execution Engine
     async function executeEngineAction() {
       const input = document.getElementById('terminal-input').value.trim();
       const output = document.getElementById('terminal-output');
@@ -893,8 +893,8 @@
 
         const data = await response.json();
 
-        if (data.result) {
-          output.innerText = data.result;
+        if (response.ok && (data.result || data.output)) {
+          output.innerText = data.result || data.output;
         } else {
           output.innerText = "⚠️ Error: " + (data.error || "Failed to fetch AI response");
         }
