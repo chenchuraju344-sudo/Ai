@@ -1,141 +1,532 @@
 <!DOCTYPE html>
-<html lang="te">
+<html lang="en" class="scroll-smooth">
 <head>
+  <!-- Essential Meta Tags & SEO Optimization -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Master Studio - 10-in-1 Hub</title>
+  <title>OmniAI Studio - Enterprise 10-in-1 AI Productivity & Developer Suite</title>
+  <meta name="description" content="OmniAI Studio is an all-in-one AI platform featuring master prompt enhancers, smart code repair, viral content reproposers, character consistency generators, and curated AI directories.">
+  <meta name="keywords" content="AI tools, prompt enhancer, code debugger, text to code, content repurposer, viral hooks generator, Midjourney prompts, AI deals">
+  <meta name="author" content="OmniAI Studio">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yourdomain.com/">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/">
+  <meta property="og:title" content="OmniAI Studio - 10-in-1 AI Power Suite">
+  <meta property="og:description" content="Boost content creation and engineering workflows with next-generation AI prompt engineering, code synthesis, and multimedia toolkits.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&h=630&q=80">
+
+  <!-- Twitter Card -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="OmniAI Studio - Enterprise AI Hub">
+  <meta property="twitter:description" content="Unify your creative and coding stack with 10 industry-grade AI automation utilities.">
+
+  <!-- Google Structured Data (Schema.org JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "OmniAI Studio",
+    "operatingSystem": "All",
+    "applicationCategory": "ProductivityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Comprehensive suite providing prompt engineering, reverse prompt extraction, code debugging, and AI directory aggregator."
+  }
+  </script>
+
+  <!-- Tailwind CSS & Inter Font -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .tab-btn.active { background-color: #2563eb; color: white; border-color: #3b82f6; }
-  </style>
-</head>
-<body class="bg-gray-950 text-gray-100 min-h-screen flex flex-col items-center p-3 sm:p-6">
-
-  <!-- Header -->
-  <header class="w-full max-w-4xl text-center py-4 border-b border-gray-800 mb-4">
-    <h1 class="text-2xl sm:text-3xl font-extrabold text-blue-500">AI MASTER STUDIO</h1>
-    <p class="text-xs sm:text-sm text-gray-400 mt-1">10 Powerful AI & Coding Tools in One Place</p>
-  </header>
-
-  <!-- Navigation Grid (10 Features) -->
-  <div class="w-full max-w-4xl grid grid-cols-2 sm:grid-cols-5 gap-2 mb-6 text-xs font-semibold">
-    <button onclick="showTab(1)" id="btn-1" class="tab-btn active p-2 rounded bg-gray-900 border border-gray-800 text-center">1. Prompt Enhancer</button>
-    <button onclick="showTab(2)" id="btn-2" class="tab-btn p-2 rounded bg-gray-900 border border-gray-800 text-center">2. Tools Finder</button>
-    <button onclick="showTab(3)" id="btn-3" class="tab-btn p-2 rounded bg-gray-900 border border-gray-800 text-center">3. Repurposer</button>
-    <button onclick="showTab(4)" id="btn-4" class="tab-btn p-2 rounded bg-gray-900 border border-gray-800 text-center">4. Reverse Prompt</button>
-    <button onclick="showTab(5)" id="btn-5" class="tab-btn p-2 rounded bg-gray-900 border border-gray-800 text-center">5. Free Alternates</button>
-    <button onclick="showTab(6)" id="btn-6" class="tab-btn p-2 rounded bg-gray-900 border border-gray-800 text-center">6. Character Seed</button>
-    <button onclick="showTab(7)" id="btn-7" class="tab-btn p-2 rounded bg-gray-900 border border-gray-800 text-center">7. Viral Hooks</button>
-    <button onclick="showTab(8)" id="btn-8" class="tab-btn p-2 rounded bg-gray-900 border border-gray-800 text-center">8. Free Deals</button>
-    <button onclick="showTab(9)" id="btn-9" class="tab-btn p-2 rounded bg-gray-900 border border-gray-800 text-center">9. Code Fixer</button>
-    <button onclick="showTab(10)" id="btn-10" class="tab-btn p-2 rounded bg-gray-900 border border-gray-800 text-center">10. Text to Code</button>
-  </div>
-
-  <!-- Content Container -->
-  <main class="w-full max-w-4xl bg-gray-900 border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl">
-    
-    <!-- Shared AI Processing Core -->
-    <div id="dynamic-input-area">
-      <h2 id="feature-title" class="text-lg font-bold text-blue-400 mb-1">1. AI Prompt Enhancer</h2>
-      <p id="feature-desc" class="text-xs text-gray-400 mb-4">సాధారణ వాక్యాన్ని హై-క్వాలిటీ మాస్టర్ ప్రాంప్ట్‌గా మారుస్తుంది.</p>
-      
-      <textarea id="user-input" rows="4" placeholder="ఇక్కడ ఎంటర్ చేయండి..." class="w-full p-3 bg-gray-950 border border-gray-700 rounded-lg text-sm text-white focus:outline-none focus:border-blue-500"></textarea>
-      
-      <button onclick="processAction()" id="action-btn" class="w-full mt-3 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 rounded-lg text-sm transition">Generate</button>
-    </div>
-
-    <!-- Output Box -->
-    <div class="mt-5">
-      <div class="flex justify-between items-center mb-1">
-        <label class="text-xs text-gray-400">Result Output:</label>
-        <button onclick="copyOutput()" class="text-xs text-blue-400 hover:underline">Copy Result</button>
-      </div>
-      <div id="output-box" class="w-full p-4 bg-gray-950 border border-gray-800 rounded-lg text-sm text-green-400 min-h-[100px] whitespace-pre-wrap select-all font-mono">ఇక్కడ ఫలితం కనిపిస్తుంది...</div>
-    </div>
-
-    <!-- Static Directory Area (Only for Tabs 2 & 8) -->
-    <div id="static-list" class="hidden mt-4 space-y-2"></div>
-  </main>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 
   <script>
-    let currentTab = 1;
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            }
+          }
+        }
+      }
+    }
+  </script>
 
-    const featureConfigs = {
-      1: { title: "1. AI Prompt Enhancer", desc: "సాధారణ వాక్యాన్ని మిడ్‌జర్నీ, రన్‌వే లేదా చాట్‌జిపిటి మాస్టర్ ప్రాంప్ట్‌గా మారుస్తుంది.", placeholder: "ఉదా: Cyberpunk city with flying cars...", btn: "Enhance Prompt" },
-      2: { title: "2. AI Tools Aggregator", desc: "అత్యుత్తమ ఉచిత మరియు ప్రీమియం AI టూల్స్ లిస్ట్.", placeholder: "టూల్స్ సెర్చ్ చేయండి (ఉదా: Video, Voice)...", btn: "Search Tools" },
-      3: { title: "3. Content Repurposer", desc: "ఆర్టికల్ లేదా స్క్రిప్ట్‌ను షార్ట్స్ ఫార్మాట్ & వైరల్ ట్యాగ్స్‌గా మారుస్తుంది.", placeholder: "మీ స్క్రిప్ట్ లేదా కంటెంట్ ఇక్కడ పేస్ట్ చేయండి...", btn: "Repurpose Content" },
-      4: { title: "4. Reverse Prompt Generator", desc: "ఇమేజ్ థీమ్ లేదా సీన్ వర్ణన ఇస్తే సరైన ప్రాంప్ట్ ఇస్తుంది.", placeholder: "ఇమేజ్ ఎలా ఉందో క్లుప్తంగా రాయండి...", btn: "Get Prompt" },
-      5: { title: "5. Free AI Alternatives", desc: "ఖరీదైన పెయిడ్ టూల్స్‌కు బెస్ట్ ఉచిత ప్రత్యామ్నాయాలు.", placeholder: "టూల్ పేరు రాయండి (ఉదా: Midjourney, Jasper)...", btn: "Find Alternatives" },
-      6: { title: "6. Character Continuity", desc: "అన్ని సీన్లలో ఒకే క్యారెక్టర్ స్థిరంగా ఉండేలా ప్రాంప్ట్ సెటప్.", placeholder: "క్యారెక్టర్ వివరాలు (ఉదా: Indian King, 40 years old, armor)...", btn: "Build Character" },
-      7: { title: "7. Viral Video Hooks & CTR Titles", desc: "మొదటి 3 సెకన్ల ఆకట్టుకునే వీడియో హుక్స్ మరియు టైటిల్స్.", placeholder: "వీడియో టాపిక్ ఇక్కడ రాయండి...", btn: "Generate Hooks" },
-      8: { title: "8. Daily Free Credits & Deals", desc: "ఈరోజు ఉచితంగా వాడుకోగల AI టూల్స్ మరియు ఆఫర్లు.", placeholder: "డీల్స్ కోసం క్లిక్ చేయండి...", btn: "Check Deals" },
-      9: { title: "9. Code Explainer & Bug Fixer", desc: "కోడింగ్ ఎర్రర్లను సరిచేసి సులభంగా వివరిస్తుంది.", placeholder: "మీ కోడ్ లేదా ఎర్రర్ మెసేజ్ ఇక్కడ పేస్ట్ చేయండి...", btn: "Fix & Explain Code" },
-      10: { title: "10. Text to Clean Code Converter", desc: "సాధారణ భాషలో చెబితే రెడీమేడ్ HTML/CSS కోడ్ ఇస్తుంది.", placeholder: "ఉదా: Dark mode login form with neon blue button...", btn: "Generate Code" }
-    };
+  <style>
+    .glassmorphism {
+      background: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #60a5fa 0%, #a855f7 50%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-gray-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col selection:bg-indigo-500 selection:text-white">
 
-    function showTab(tabId) {
-      currentTab = tabId;
-      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-      document.getElementById('btn-' + tabId).classList.add('active');
+  <!-- Top Announcement Bar -->
+  <aside class="bg-gradient-to-r from-indigo-900 via-purple-900 to-indigo-900 text-indigo-200 text-xs py-1.5 px-4 text-center border-b border-indigo-800/50">
+    <span>🚀 <strong>OmniAI Studio v2.4 Live:</strong> All 10 Next-Gen Productivity Engines Active. Instant Free Access.</span>
+  </aside>
 
-      const config = featureConfigs[tabId];
-      document.getElementById('feature-title').innerText = config.title;
-      document.getElementById('feature-desc').innerText = config.desc;
-      document.getElementById('user-input').placeholder = config.placeholder;
-      document.getElementById('action-btn').innerText = config.btn;
-      document.getElementById('output-box').innerText = "ఇక్కడ ఫలితం కనిపిస్తుంది...";
-      document.getElementById('user-input').value = "";
+  <!-- Global Header / Navigation -->
+  <header class="sticky top-0 z-50 glassmorphism border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('page-home')">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-purple-500 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+          <i data-lucide="sparkles" class="w-5 h-5 text-white"></i>
+        </div>
+        <span class="text-xl font-bold tracking-tight text-white">OmniAI<span class="text-indigo-400">Studio</span></span>
+      </div>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex items-center space-x-1 text-sm font-medium text-slate-300">
+        <button onclick="navigateTo('page-home')" class="nav-link px-3 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition">Home</button>
+        <button onclick="navigateTo('page-workspace')" class="nav-link px-3 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition">Suite Studio</button>
+        <button onclick="navigateTo('page-directory')" class="nav-link px-3 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition">AI Directory</button>
+        <button onclick="navigateTo('page-pricing')" class="nav-link px-3 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition">Pricing</button>
+        <button onclick="navigateTo('page-contact')" class="nav-link px-3 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition">Contact</button>
+      </nav>
+
+      <!-- Action Button -->
+      <div class="flex items-center space-x-3">
+        <button onclick="navigateTo('page-workspace')" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-lg transition shadow-md shadow-indigo-600/30 flex items-center gap-1.5">
+          <span>Launch App</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN MULTI-PAGE ROUTER -->
+  <main class="flex-grow">
+
+    <!-- ================= PAGE 1: HOME ================= -->
+    <section id="page-home" class="page-view max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <div class="text-center max-w-3xl mx-auto space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-xs font-medium">
+          <i data-lucide="zap" class="w-3.5 h-3.5"></i> High Performance Multi-Tool Framework
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight text-white">
+          The Single Operating System for <span class="gradient-text">Modern Creators & Engineers</span>
+        </h1>
+        <p class="text-slate-400 text-base sm:text-lg">
+          Unify prompt engineering, code synthesis, reverse image prompting, and viral repurposing into one ultra-fast dashboard.
+        </p>
+        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button onclick="navigateTo('page-workspace')" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition shadow-lg shadow-indigo-600/40">
+            Open 10-in-1 Workspace
+          </button>
+          <button onclick="navigateTo('page-directory')" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gray-900 hover:bg-gray-800 text-slate-300 font-semibold text-sm border border-gray-800 transition">
+            Explore 100+ Free AI Tools
+          </button>
+        </div>
+      </div>
+
+      <!-- Feature Grid Cards -->
+      <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <article class="p-6 rounded-2xl bg-gray-900/50 border border-gray-800 hover:border-indigo-500/40 transition">
+          <div class="w-12 h-12 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-4">
+            <i data-lucide="terminal" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Developer & Code Synthesis</h3>
+          <p class="text-slate-400 text-sm">Instant syntax debugging, natural language to HTML/CSS compilation, and logical workflow optimization.</p>
+        </article>
+
+        <article class="p-6 rounded-2xl bg-gray-900/50 border border-gray-800 hover:border-purple-500/40 transition">
+          <div class="w-12 h-12 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-4">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Cinematic Prompt Engineering</h3>
+          <p class="text-slate-400 text-sm">Turn 3-word thoughts into 8K photorealistic Midjourney prompts with exact lighting, camera aspect ratios, and seed persistence.</p>
+        </article>
+
+        <article class="p-6 rounded-2xl bg-gray-900/50 border border-gray-800 hover:border-pink-500/40 transition">
+          <div class="w-12 h-12 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 mb-4">
+            <i data-lucide="trending-up" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Growth & Viral Repurposing</h3>
+          <p class="text-slate-400 text-sm">Convert lengthy scripts into viral 3-second hook structures, optimized hashtags, and YouTube click-through titles.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= PAGE 2: WORKSPACE (10 TOOLS) ================= -->
+    <section id="page-workspace" class="page-view hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Sidebar Navigation for 10 Tools -->
+        <div class="lg:col-span-4 space-y-2 bg-gray-900/60 p-4 rounded-2xl border border-gray-800 h-fit">
+          <h2 class="text-xs uppercase font-bold tracking-wider text-slate-500 px-3 mb-2">Modular Engine Selector</h2>
+          
+          <button onclick="selectEngine(1)" id="eng-1" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-medium flex items-center justify-between bg-indigo-600 text-white transition">
+            <span class="flex items-center gap-2.5"><i data-lucide="sparkles" class="w-4 h-4"></i> Prompt Enhancer</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+
+          <button onclick="selectEngine(2)" id="eng-2" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-medium flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
+            <span class="flex items-center gap-2.5"><i data-lucide="compass" class="w-4 h-4"></i> AI Tool Finder</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+
+          <button onclick="selectEngine(3)" id="eng-3" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-medium flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
+            <span class="flex items-center gap-2.5"><i data-lucide="repeat" class="w-4 h-4"></i> Content Repurposer</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+
+          <button onclick="selectEngine(4)" id="eng-4" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-medium flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
+            <span class="flex items-center gap-2.5"><i data-lucide="eye" class="w-4 h-4"></i> Reverse Prompt Decoder</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+
+          <button onclick="selectEngine(5)" id="eng-5" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-medium flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
+            <span class="flex items-center gap-2.5"><i data-lucide="dollar-sign" class="w-4 h-4"></i> Free Alternatives Finder</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+
+          <button onclick="selectEngine(6)" id="eng-6" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-medium flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
+            <span class="flex items-center gap-2.5"><i data-lucide="user-check" class="w-4 h-4"></i> Character Continuity Builder</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+
+          <button onclick="selectEngine(7)" id="eng-7" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-medium flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
+            <span class="flex items-center gap-2.5"><i data-lucide="flame" class="w-4 h-4"></i> Viral Hooks & Titles</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+
+          <button onclick="selectEngine(8)" id="eng-8" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-medium flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
+            <span class="flex items-center gap-2.5"><i data-lucide="gift" class="w-4 h-4"></i> Daily Deals & Credits</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+
+          <button onclick="selectEngine(9)" id="eng-9" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-medium flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
+            <span class="flex items-center gap-2.5"><i data-lucide="bug" class="w-4 h-4"></i> Code Explainer & Fixer</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+
+          <button onclick="selectEngine(10)" id="eng-10" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-medium flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
+            <span class="flex items-center gap-2.5"><i data-lucide="code-2" class="w-4 h-4"></i> Text to Clean Code</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <!-- Dynamic Studio Terminal -->
+        <div class="lg:col-span-8 bg-gray-900/60 p-6 rounded-2xl border border-gray-800 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-gray-800 pb-4 mb-4">
+              <div>
+                <h3 id="engine-title" class="text-xl font-bold text-white">Prompt Enhancer</h3>
+                <p id="engine-subtitle" class="text-xs text-slate-400 mt-0.5">Transforms elementary concepts into production-grade multi-engine prompts.</p>
+              </div>
+              <span class="px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 text-xs font-mono border border-indigo-500/20">Studio v2.4</span>
+            </div>
+
+            <!-- Terminal Inputs -->
+            <label class="text-xs font-semibold text-slate-300 block mb-2">Input Context / Parameters:</label>
+            <textarea id="terminal-input" rows="5" placeholder="Enter your raw concept or syntax here..." class="w-full bg-gray-950 border border-gray-800 rounded-xl p-4 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-indigo-500 font-mono transition"></textarea>
+
+            <div class="mt-4 flex gap-3">
+              <button onclick="executeEngineAction()" class="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-xl text-sm transition shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2">
+                <i data-lucide="play" class="w-4 h-4"></i>
+                <span id="execute-btn-label">Generate Production Output</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Terminal Output -->
+          <div class="mt-8">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-xs font-semibold text-slate-400 flex items-center gap-1.5">
+                <i data-lucide="terminal" class="w-3.5 h-3.5"></i> Generated Output Stream:
+              </span>
+              <button onclick="copyTerminalOutput()" class="text-xs text-indigo-400 hover:text-indigo-300 transition flex items-center gap-1 font-medium">
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy to Clipboard
+              </button>
+            </div>
+            <pre id="terminal-output" class="w-full bg-gray-950 border border-gray-800 rounded-xl p-4 text-xs font-mono text-emerald-400 whitespace-pre-wrap select-all min-h-[140px] overflow-x-auto">System ready. Select a utility and provide input.</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PAGE 3: AI DIRECTORY ================= -->
+    <section id="page-directory" class="page-view hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <h2 class="text-3xl font-bold text-white">Curated AI Ecosystem</h2>
+        <p class="text-slate-400 text-sm mt-2">Discover vetted, high-yield tools across video synthesis, audio engineering, and LLM development.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Directory Card 1 -->
+        <div class="bg-gray-900/60 p-6 rounded-2xl border border-gray-800 hover:border-gray-700 transition flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-3">
+              <h4 class="font-bold text-lg text-white">Kling AI</h4>
+              <span class="text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded">Free Tier</span>
+            </div>
+            <p class="text-slate-400 text-xs leading-relaxed">State-of-the-art cinematic physics simulation with high character consistency.</p>
+          </div>
+          <a href="https://klingai.com" target="_blank" class="mt-6 w-full text-center py-2 bg-gray-800 hover:bg-gray-700 text-slate-200 text-xs font-semibold rounded-lg transition">Access Tool</a>
+        </div>
+
+        <!-- Directory Card 2 -->
+        <div class="bg-gray-900/60 p-6 rounded-2xl border border-gray-800 hover:border-gray-700 transition flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-3">
+              <h4 class="font-bold text-lg text-white">Leonardo.ai</h4>
+              <span class="text-[10px] bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-2 py-0.5 rounded">150 Free/Day</span>
+            </div>
+            <p class="text-slate-400 text-xs leading-relaxed">Top-rated visual generation platform with custom asset fine-tuning models.</p>
+          </div>
+          <a href="https://leonardo.ai" target="_blank" class="mt-6 w-full text-center py-2 bg-gray-800 hover:bg-gray-700 text-slate-200 text-xs font-semibold rounded-lg transition">Access Tool</a>
+        </div>
+
+        <!-- Directory Card 3 -->
+        <div class="bg-gray-900/60 p-6 rounded-2xl border border-gray-800 hover:border-gray-700 transition flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-3">
+              <h4 class="font-bold text-lg text-white">ElevenLabs</h4>
+              <span class="text-[10px] bg-purple-500/10 text-purple-400 border border-purple-500/20 px-2 py-0.5 rounded">Freemium</span>
+            </div>
+            <p class="text-slate-400 text-xs leading-relaxed">Realistic voice cloning and low-latency multi-lingual speech synthesis.</p>
+          </div>
+          <a href="https://elevenlabs.io" target="_blank" class="mt-6 w-full text-center py-2 bg-gray-800 hover:bg-gray-700 text-slate-200 text-xs font-semibold rounded-lg transition">Access Tool</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PAGE 4: PRICING ================= -->
+    <section id="page-pricing" class="page-view hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <h2 class="text-3xl font-bold text-white">Simple, Transparent Tiering</h2>
+        <p class="text-slate-400 text-sm mt-2">Deploy for individual creativity or team automation workflows.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <!-- Free Community Tier -->
+        <div class="bg-gray-900/60 p-8 rounded-2xl border border-gray-800 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest">Community Pass</span>
+            <div class="mt-4 flex items-baseline gap-1">
+              <span class="text-4xl font-extrabold text-white">$0</span>
+              <span class="text-slate-400 text-sm">/ month</span>
+            </div>
+            <ul class="mt-6 space-y-3 text-xs text-slate-300">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Full Access to all 10 Core Engines</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Client-side Zero-Latency Execution</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Curated AI Directory Access</li>
+            </ul>
+          </div>
+          <button onclick="navigateTo('page-workspace')" class="mt-8 w-full py-3 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-xl text-xs transition">Launch Free</button>
+        </div>
+
+        <!-- Pro Enterprise Tier -->
+        <div class="bg-gradient-to-b from-indigo-950/40 to-gray-900/80 p-8 rounded-2xl border border-indigo-500/40 flex flex-col justify-between relative shadow-xl shadow-indigo-900/20">
+          <span class="absolute top-4 right-4 bg-indigo-600 text-white text-[10px] uppercase font-bold px-2 py-0.5 rounded-full">Recommended</span>
+          <div>
+            <span class="text-xs font-bold text-indigo-300 uppercase tracking-widest">Enterprise Pro</span>
+            <div class="mt-4 flex items-baseline gap-1">
+              <span class="text-4xl font-extrabold text-white">$19</span>
+              <span class="text-slate-400 text-sm">/ month</span>
+            </div>
+            <ul class="mt-6 space-y-3 text-xs text-slate-200">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i> Unlimited Advanced LLM Orchestration</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i> Dedicated High-Bandwidth Cloud API keys</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i> Priority 24/7 Architectural Support</li>
+            </ul>
+          </div>
+          <button onclick="navigateTo('page-contact')" class="mt-8 w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs transition shadow-md shadow-indigo-600/30">Get Enterprise Key</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PAGE 5: CONTACT ================= -->
+    <section id="page-contact" class="page-view hidden max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="bg-gray-900/60 p-8 rounded-2xl border border-gray-800">
+        <h2 class="text-2xl font-bold text-white mb-2">Get in Touch</h2>
+        <p class="text-slate-400 text-xs mb-6">Have custom integrations or white-label requirements? Send a message.</p>
+
+        <form onsubmit="handleContactSubmit(event)" class="space-y-4 text-xs">
+          <div>
+            <label class="block text-slate-300 mb-1">Corporate Email Address</label>
+            <input type="email" required placeholder="name@company.com" class="w-full bg-gray-950 border border-gray-800 rounded-lg p-3 text-white focus:outline-none focus:border-indigo-500">
+          </div>
+          <div>
+            <label class="block text-slate-300 mb-1">Project Scope / Inquiries</label>
+            <textarea rows="4" required placeholder="Describe your deployment requirements..." class="w-full bg-gray-950 border border-gray-800 rounded-lg p-3 text-white focus:outline-none focus:border-indigo-500"></textarea>
+          </div>
+          <button type="submit" class="w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-lg transition">Transmit Message</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="border-t border-gray-900 bg-gray-950 text-slate-500 text-xs py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div class="flex items-center space-x-2">
+        <div class="w-6 h-6 rounded bg-indigo-600 flex items-center justify-center text-white">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+        </div>
+        <span class="font-bold text-slate-300">OmniAI Studio Inc.</span>
+        <span>© 2026. All rights reserved.</span>
+      </div>
+      <div class="flex space-x-6">
+        <button onclick="navigateTo('page-home')" class="hover:text-slate-300 transition">Privacy Standard</button>
+        <button onclick="navigateTo('page-home')" class="hover:text-slate-300 transition">Security Policy</button>
+        <button onclick="navigateTo('page-contact')" class="hover:text-slate-300 transition">Developer Inquiries</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Logic & Routing -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // 1. Page Routing Logic (Multi-Page Navigation)
+    function navigateTo(pageId) {
+      document.querySelectorAll('.page-view').forEach(page => page.classList.add('hidden'));
+      const activePage = document.getElementById(pageId);
+      if(activePage) {
+        activePage.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      lucide.createIcons();
     }
 
-    function processAction() {
-      const input = document.getElementById('user-input').value.trim();
-      const output = document.getElementById('output-box');
+    // 2. 10 Engine Master Configurations
+    let currentEngineId = 1;
+    const engines = {
+      1: {
+        title: "Master Prompt Enhancer",
+        sub: "Converts simple human descriptions into multi-engine structured prompt directives.",
+        btn: "Synthesize Master Prompt",
+        execute: (val) => `/imagine prompt: Cinematic 8k ultra-detailed presentation of ${val}, volumetric atmospheric lighting, shallow depth of field, shot on 35mm Hasselblad lens, photorealistic color grading, octane render --ar 16:9 --style raw --v 6.0`
+      },
+      2: {
+        title: "AI Tools Aggregator & Workflows",
+        sub: "Dynamic intelligence queries against leading video, voice, and multimodal pipelines.",
+        btn: "Scan Ecosystem",
+        execute: (val) => `[MATCHED PRODUCTION PIPELINES FOR: "${val}"]\n1. Primary Model: Kling AI / Runway Gen-3 (Motion Synthesis)\n2. Voice Dubbing: ElevenLabs API (Neural Voice Clone)\n3. Canvas Visuals: Midjourney v6 + Upscayl\n4. Recommended Workflow: Script -> Elevenlabs -> Runway -> Premiere Final Cut.`
+      },
+      3: {
+        title: "Viral Content Repurposer",
+        sub: "Breaks long-form essays into high-converting retention shorts and viral hooks.",
+        btn: "Extract Viral Vectors",
+        execute: (val) => `⚡ 3-SECOND HIGH RETENTION HOOK:\n"Stop scrolling if you care about ${val.slice(0, 25)}..."\n\n📌 15-SECOND CORE VALUE:\n${val}\n\n🎯 CONVERSION CTA:\n"Drop a comment below and grab the full resource link in bio!"\n\n🏷️ OPTIMIZED TAGS: #AI #Trending #Innovation #Productivity`
+      },
+      4: {
+        title: "Reverse Prompt Extraction",
+        sub: "Deconstructs aesthetic elements and predicts generation parameters from scene descriptions.",
+        btn: "Deconstruct Prompt",
+        execute: (val) => `[DECONSTRUCTED REVERSE PROMPT VECTOR]:\n"Hyper-realistic architectural capture of ${val}, brutalist aesthetic, neon ambient highlights, hyper-detailed volumetric textures, studio photography lighting, wide-angle lens, 8k resolution."`
+      },
+      5: {
+        title: "Free AI Alternatives Engine",
+        sub: "Recommends zero-cost, open-source, or high-tier free alternatives to costly SaaS tools.",
+        btn: "Find Cost-Free Tools",
+        execute: (val) => `[FREE & OPEN-SOURCE ALTERNATIVES FOR "${val}"]:\n• Visuals: Stable Diffusion WebUI / SeaArt (Free credits)\n• Language Engine: Google AI Studio (Gemini 1.5 Pro - Free Tier)\n• Voice Synthesizer: Coqui TTS / Clipchamp Built-in Voice`
+      },
+      6: {
+        title: "Character Continuity Suite",
+        sub: "Generates seed-pinned identity prompts to maintain character consistency across video scenes.",
+        btn: "Generate Consistent Seed",
+        execute: (val) => `[CHARACTER CONSISTENCY DIRECTIVE]:\nPrompt: "A recognizable character, identical facial structure, wearing identical attire: ${val}, fixed camera angle, cinematic studio render --seed 8847192 --cw 100 --v 6.0"`
+      },
+      7: {
+        title: "Viral Hooks & High-CTR Titles",
+        sub: "Generates psychologically validated click-through headline hooks.",
+        btn: "Generate CTR Anchors",
+        execute: (val) => `🔥 HIGH-CTR HOOK MATRIX:\n1. "Why 99% of people are doing ${val} completely wrong."\n2. "The secret framework behind ${val} they never teach you."\n3. "I tested ${val} for 30 days — here is what happened."`
+      },
+      8: {
+        title: "Daily Free Credits & Grant Tracker",
+        sub: "Aggregates active daily resets, grants, and free credits across AI platforms.",
+        btn: "Fetch Live Grants",
+        execute: (val) => `🎁 DAILY ACTIVE DEALS & FREE CREDITS (Live Monitor):\n• Leonardo.ai: 150 Daily Token Reset (Active)\n• Kling AI: 66 Daily Video Credits (Active)\n• Google AI Studio: Free Developer Tier with High Rate-Limits (Active)`
+      },
+      9: {
+        title: "Code Explainer & Fault Rectifier",
+        sub: "Pinpoints syntactical faults, memory leaks, and optimizes code efficiency.",
+        btn: "Analyze & Fix Code",
+        execute: (val) => `// ================= REFACTORED OUTPUT =================\n${val}\n\n/* 🔍 OPTIMIZATION NOTES:\n1. Removed redundant memory allocations.\n2. Ensured asynchronous error-handling boundaries.\n3. Verified type-safety and syntax compatibility. */`
+      },
+      10: {
+        title: "Natural Text to Clean Code Synthesizer",
+        sub: "Converts natural human language into production-grade HTML, Tailwind, and JS modules.",
+        btn: "Compile Clean Code",
+        execute: (val) => `<!-- PRODUCTION COMPONENT: ${val} -->\n<div class="p-6 bg-slate-900 border border-slate-800 rounded-xl shadow-xl">\n  <h3 class="text-lg font-bold text-white mb-2">${val}</h3>\n  <p class="text-xs text-slate-400 mb-4">Dynamically generated scalable UI component.</p>\n  <button class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg text-xs font-semibold">Execute Action</button>\n</div>`
+      }
+    };
 
-      if (!input && currentTab !== 8) {
-        output.innerText = "దయచేసి వివరాలను ఎంటర్ చేయండి.";
+    function selectEngine(id) {
+      currentEngineId = id;
+      document.querySelectorAll('.engine-tab').forEach(b => {
+        b.className = "engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-medium flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition";
+      });
+
+      const activeBtn = document.getElementById('eng-' + id);
+      if(activeBtn) {
+        activeBtn.className = "engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-medium flex items-center justify-between bg-indigo-600 text-white transition";
+      }
+
+      const conf = engines[id];
+      document.getElementById('engine-title').innerText = conf.title;
+      document.getElementById('engine-subtitle').innerText = conf.sub;
+      document.getElementById('execute-btn-label').innerText = conf.btn;
+      document.getElementById('terminal-output').innerText = "Engine ready. Input parameters above.";
+      lucide.createIcons();
+    }
+
+    function executeEngineAction() {
+      const input = document.getElementById('terminal-input').value.trim();
+      const output = document.getElementById('terminal-output');
+
+      if (!input && currentEngineId !== 8) {
+        output.innerText = "⚠️ Attention: Input field cannot be empty for this engine.";
         return;
       }
 
-      // Logic rules for offline instant processing
-      switch(currentTab) {
-        case 1:
-          output.innerText = `/imagine prompt: Ultra-realistic 8k cinematic shot of ${input}, photorealistic lighting, 35mm lens, volumetric depth, octane render --ar 16:9 --v 6.0`;
-          break;
-        case 2:
-          output.innerText = `Top Tools Found:\n1. Kling AI (Cinematic Video)\n2. ElevenLabs (Voice Cloning)\n3. Leonardo AI (Image Generation)\n4. Cursor AI (Fast Coding)`;
-          break;
-        case 3:
-          output.innerText = `🎯 3s HOOK:\n"మీకు ఈ విషయం తెలుసా? ${input.slice(0, 30)}..."\n\n⚡ 15s SCRIPT:\n${input}\n\n🏷️ TAGS:\n#shorts #viral #ai #tech`;
-          break;
-        case 4:
-          output.innerText = `Estimated Base Prompt:\n"A high detailed scene depicting ${input}, cinematic lighting, photorealistic textures, studio quality."`;
-          break;
-        case 5:
-          output.innerText = `Best Free Alternatives for "${input}":\n• Image: Leonardo.ai / SeaArt\n• Text: Google Gemini Free / Claude Sonnet\n• Voice: Clipchamp Text-to-Speech`;
-          break;
-        case 6:
-          output.innerText = `Character Consistency Setup:\nPrompt: "A consistent character named [Name], ${input}, wearing identical clothes, uniform facial structure, 8k resolution --seed 458921"`;
-          break;
-        case 7:
-          output.innerText = `🔥 Top 3 Hooks:\n1. "99% of people get this wrong about ${input}..."\n2. "If you do this, STOP immediately!"\n3. "The secret truth nobody tells you about ${input}."`;
-          break;
-        case 8:
-          output.innerText = `🎁 Active AI Deals Today:\n1. Leonardo.ai - 150 Daily Reset Credits\n2. Kling AI - Daily Free Generation Credits\n3. Google AI Studio - Free Gemini 1.5 Access`;
-          break;
-        case 9:
-          output.innerText = `// Optimized & Fixed Code Structure:\n${input}\n\n/* Explanation: Verified syntax structure. Cleaned potential runtime bugs and optimized readability. */`;
-          break;
-        case 10:
-          output.innerText = `<!-- Generated Code for: ${input} -->\n<div class="p-4 bg-gray-900 text-white rounded-lg shadow">\n  <h2 class="text-xl font-bold mb-2">${input}</h2>\n  <button class="bg-blue-600 px-4 py-2 rounded">Submit</button>\n</div>`;
-          break;
-      }
+      output.innerText = "Synthesizing output vectors...";
+      setTimeout(() => {
+        output.innerText = engines[currentEngineId].execute(input || "General Inquiry");
+      }, 250);
     }
 
-    function copyOutput() {
-      const text = document.getElementById('output-box').innerText;
+    function copyTerminalOutput() {
+      const text = document.getElementById('terminal-output').innerText;
       navigator.clipboard.writeText(text);
-      alert("కాపీ చేయబడింది!");
+      alert("Output copied to clipboard!");
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      alert("Thank you. Your message has been recorded.");
+      e.target.reset();
     }
   </script>
 </body>
-</html>
+      </html>
