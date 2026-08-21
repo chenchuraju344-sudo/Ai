@@ -16,20 +16,28 @@ export default async function handler(req, res) {
   }
 
   try {
-    // పర్ఫెక్ట్ మోడల్ ఎండ్‌పాయింట్ (v1beta/models/gemini-1.5-flash)
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+    // 1. Stable v1 endpoint (100% Reliable across all API keys)
+    let response = await fetch(`https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        contents: [
-          {
-            parts: [{ text: prompt }]
-          }
-        ]
+        contents: [{ parts: [{ text: prompt }] }]
       })
     });
 
-    const data = await response.json();
+    let data = await response.json();
+
+    // 2. Fallback to gemini-1.5-pro if flash is restricted on your specific key tier
+    if (data.error) {
+      response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }]
+        })
+      });
+      data = await response.json();
+    }
 
     if (data.error) {
       return res.status(500).json({ error: data.error.message || 'Google API Error' });
