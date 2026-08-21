@@ -159,7 +159,7 @@
       </div>
     </section>
 
-    <!-- ================= PAGE 2: COMPREHENSIVE AI DIRECTORY (LIVE SEARCH & METRICS) ================= -->
+    <!-- ================= PAGE 2: COMPREHENSIVE AI DIRECTORY ================= -->
     <section id="page-directory" class="page-view hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       
       <!-- Top Directory Controls Header -->
@@ -167,7 +167,7 @@
         <h2 class="text-3xl font-extrabold text-white tracking-tight">AI Ecosystem Directory</h2>
         <p class="text-slate-400 text-xs sm:text-sm mt-1">Live database of verified models. Use the search bar or category filters to inspect detailed technical ratings.</p>
 
-        <!-- Live Google-style Search Bar -->
+        <!-- Live Search Bar -->
         <div class="mt-6 relative">
           <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-500">
             <i data-lucide="search" class="w-5 h-5"></i>
@@ -823,69 +823,19 @@
       document.getElementById('tool-modal').classList.add('hidden');
     }
 
-    // 6. 10 Engine Master Execution Logic
+    // 6. 10 Engine Master Configuration
     let currentEngineId = 1;
     const engines = {
-      1: {
-        title: "Master Prompt Enhancer",
-        sub: "Converts simple human descriptions into multi-engine structured prompt directives.",
-        btn: "Synthesize Master Prompt",
-        execute: (val) => `/imagine prompt: Cinematic 8k ultra-detailed presentation of ${val}, volumetric atmospheric lighting, shallow depth of field, shot on 35mm Hasselblad lens, photorealistic color grading, octane render --ar 16:9 --style raw --v 6.0`
-      },
-      2: {
-        title: "Dynamic Pipeline Matcher",
-        sub: "Generates optimal combinations of video, voice, and visual engines.",
-        btn: "Match Pipeline",
-        execute: (val) => `[OPTIMIZED MULTI-TOOL PIPELINE FOR: "${val}"]\n1. Visual Canvas: Midjourney v6 + Upscayl\n2. Voice Dubbing: ElevenLabs Neural Synthesizer\n3. Motion Engine: Kling AI / Runway Gen-3 Alpha\n4. Audio Score: Suno AI v3.5 Background Instrumental.`
-      },
-      3: {
-        title: "Viral Content Repurposer",
-        sub: "Breaks long-form essays into high-converting retention shorts and viral hooks.",
-        btn: "Extract Viral Vectors",
-        execute: (val) => `⚡ 3-SECOND HIGH RETENTION HOOK:\n"Stop scrolling if you care about ${val.slice(0, 25)}..."\n\n📌 15-SECOND CORE VALUE:\n${val}\n\n🎯 CONVERSION CTA:\n"Drop a comment below and grab the full resource link in bio!"\n\n🏷️ OPTIMIZED TAGS: #AI #Trending #Innovation #Productivity`
-      },
-      4: {
-        title: "Reverse Prompt Extraction",
-        sub: "Deconstructs aesthetic elements and predicts generation parameters from scene descriptions.",
-        btn: "Deconstruct Prompt",
-        execute: (val) => `[DECONSTRUCTED REVERSE PROMPT VECTOR]:\n"Hyper-realistic architectural capture of ${val}, brutalist aesthetic, neon ambient highlights, hyper-detailed volumetric textures, studio photography lighting, wide-angle lens, 8k resolution."`
-      },
-      5: {
-        title: "Free AI Alternatives Engine",
-        sub: "Recommends zero-cost, open-source, or high-tier free alternatives to costly SaaS tools.",
-        btn: "Find Cost-Free Tools",
-        execute: (val) => `[FREE & OPEN-SOURCE ALTERNATIVES FOR "${val}"]:\n• Visuals: Stable Diffusion WebUI / SeaArt (Free credits)\n• Language Engine: Google AI Studio (Gemini 1.5 Pro - Free Tier)\n• Voice Synthesizer: Clipchamp Built-in Neural Voice`
-      },
-      6: {
-        title: "Character Continuity Suite",
-        sub: "Generates seed-pinned identity prompts to maintain character consistency across video scenes.",
-        btn: "Generate Consistent Seed",
-        execute: (val) => `[CHARACTER CONSISTENCY DIRECTIVE]:\nPrompt: "A recognizable character, identical facial structure, wearing identical attire: ${val}, fixed camera angle, cinematic studio render --seed 8847192 --cw 100 --v 6.0"`
-      },
-      7: {
-        title: "Viral Hooks & High-CTR Titles",
-        sub: "Generates psychologically validated click-through headline hooks.",
-        btn: "Generate CTR Anchors",
-        execute: (val) => `🔥 HIGH-CTR HOOK MATRIX:\n1. "Why 99% of people are doing ${val} completely wrong."\n2. "The secret framework behind ${val} they never teach you."\n3. "I tested ${val} for 30 days — here is what happened."`
-      },
-      8: {
-        title: "Daily Free Credits Tracker",
-        sub: "Aggregates active daily resets, grants, and free credits across AI platforms.",
-        btn: "Fetch Live Grants",
-        execute: (val) => `🎁 DAILY ACTIVE DEALS & FREE CREDITS (Live Monitor):\n• Leonardo.ai: 150 Daily Token Reset (Active)\n• Kling AI: 66 Daily Video Credits (Active)\n• Suno AI: 50 Daily Free Music Credits (Active)\n• Google AI Studio: Free Developer Tier (Active)`
-      },
-      9: {
-        title: "Code Explainer & Fault Rectifier",
-        sub: "Pinpoints syntactical faults, memory leaks, and optimizes code efficiency.",
-        btn: "Analyze & Fix Code",
-        execute: (val) => `// ================= REFACTORED OUTPUT =================\n${val}\n\n/* 🔍 OPTIMIZATION NOTES:\n1. Removed redundant memory allocations.\n2. Ensured asynchronous error-handling boundaries.\n3. Verified type-safety and syntax compatibility. */`
-      },
-      10: {
-        title: "Text to Clean Code Synthesizer",
-        sub: "Converts natural human language into production-grade HTML, Tailwind, and JS modules.",
-        btn: "Compile Clean Code",
-        execute: (val) => `<!-- PRODUCTION COMPONENT: ${val} -->\n<div class="p-6 bg-slate-900 border border-slate-800 rounded-xl shadow-xl">\n  <h3 class="text-lg font-bold text-white mb-2">${val}</h3>\n  <p class="text-xs text-slate-400 mb-4">Dynamically generated scalable UI component.</p>\n  <button class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg text-xs font-semibold">Execute Action</button>\n</div>`
-      }
+      1: { title: "Master Prompt Enhancer", sub: "Converts simple human descriptions into multi-engine structured prompt directives.", btn: "Synthesize Master Prompt" },
+      2: { title: "Dynamic Pipeline Matcher", sub: "Generates optimal combinations of video, voice, and visual engines.", btn: "Match Pipeline" },
+      3: { title: "Viral Content Repurposer", sub: "Breaks long-form essays into high-converting retention shorts and viral hooks.", btn: "Extract Viral Vectors" },
+      4: { title: "Reverse Prompt Extraction", sub: "Deconstructs aesthetic elements and predicts generation parameters from scene descriptions.", btn: "Deconstruct Prompt" },
+      5: { title: "Free AI Alternatives Engine", sub: "Recommends zero-cost, open-source, or high-tier free alternatives to costly SaaS tools.", btn: "Find Cost-Free Tools" },
+      6: { title: "Character Continuity Suite", sub: "Generates seed-pinned identity prompts to maintain character consistency across video scenes.", btn: "Generate Consistent Seed" },
+      7: { title: "Viral Hooks & High-CTR Titles", sub: "Generates psychologically validated click-through headline hooks.", btn: "Generate CTR Anchors" },
+      8: { title: "Daily Free Credits Tracker", sub: "Aggregates active daily resets, grants, and free credits across AI platforms.", btn: "Fetch Live Grants" },
+      9: { title: "Code Explainer & Fault Rectifier", sub: "Pinpoints syntactical faults, memory leaks, and optimizes code efficiency.", btn: "Analyze & Fix Code" },
+      10: { title: "Text to Clean Code Synthesizer", sub: "Converts natural human language into production-grade HTML, Tailwind, and JS modules.", btn: "Compile Clean Code" }
     };
 
     function selectEngine(id) {
@@ -907,7 +857,8 @@
       lucide.createIcons();
     }
 
-    function executeEngineAction() {
+    // 7. Live Serverless AI Execution Engine (Vercel Backend Integrated)
+    async function executeEngineAction() {
       const input = document.getElementById('terminal-input').value.trim();
       const output = document.getElementById('terminal-output');
 
@@ -916,10 +867,40 @@
         return;
       }
 
-      output.innerText = "Synthesizing output stream...";
-      setTimeout(() => {
-        output.innerText = engines[currentEngineId].execute(input || "General Context");
-      }, 250);
+      const systemPrompts = {
+        1: `You are an elite prompt engineer. Convert this idea into an 8k cinematic photorealistic Midjourney & ChatGPT master prompt with technical lens, lighting, and parameters: "${input}"`,
+        2: `You are an AI architect. Give a step-by-step production workflow combining top modern AI tools to achieve this project: "${input}"`,
+        3: `You are a viral content strategist. Convert this into a 3-second hook, 15-second script, call-to-action, and viral tags: "${input}"`,
+        4: `Reverse engineer this scene description into an exact Midjourney/Stable Diffusion prompt: "${input}"`,
+        5: `List the top 3 100% free or open-source alternatives for this paid AI tool with benefits: "${input}"`,
+        6: `Generate a character continuity prompt configuration with persistent facial seeds for: "${input}"`,
+        7: `Generate 5 psychologically addictive, high-CTR YouTube/Reels hooks for: "${input}"`,
+        8: `List today's top free AI deals, open-source releases, and daily credit resets.`,
+        9: `Act as a senior engineer. Fix errors, optimize performance, and explain this code simply:\n${input}`,
+        10: `Generate clean, responsive HTML with Tailwind CSS for this request. Return code only:\n${input}`
+      };
+
+      const finalPrompt = systemPrompts[currentEngineId] || input;
+
+      output.innerText = "⚡ Communicating with AI Server & generating live response...";
+
+      try {
+        const response = await fetch('/api/generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prompt: finalPrompt })
+        });
+
+        const data = await response.json();
+
+        if (data.result) {
+          output.innerText = data.result;
+        } else {
+          output.innerText = "⚠️ Error: " + (data.error || "Failed to fetch AI response");
+        }
+      } catch (error) {
+        output.innerText = "⚠️ Network Connection Failed: " + error.message;
+      }
     }
 
     function copyTerminalOutput() {
