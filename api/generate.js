@@ -16,8 +16,8 @@ export default async function handler(req, res) {
   }
 
   try {
-    // లేటెస్ట్ జెమిని మోడల్ ఎండ్‌పాయింట్
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`, {
+    // పర్ఫెక్ట్ మోడల్ ఎండ్‌పాయింట్ (v1beta/models/gemini-1.5-flash)
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -31,7 +31,6 @@ export default async function handler(req, res) {
 
     const data = await response.json();
 
-    // గూగుల్ నుంచి ఏవైనా ఎర్రర్స్ వస్తే ఇక్కడ స్పష్టంగా కనిపిస్తాయి
     if (data.error) {
       return res.status(500).json({ error: data.error.message || 'Google API Error' });
     }
