@@ -27,7 +27,7 @@ export default async function handler(req, res) {
   }
 
   // ✅ నీ screenshot లో ఉన్న fast model
-  const MODEL = "gemini-2.5-flash-lite";
+  const MODEL = "gemini-3.1-flash-lite";
 
   try {
     // ✅ ఇప్పుడున్నది తీసేసి ఇది పెట్టు - Speed optimized
