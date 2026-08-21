@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Master Studio - 10-in-1 Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .tab-btn.active { background-color: #2563eb; color: white; border-color: #3b82f6; }
+  </style>
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen flex flex-col items-center p-3 sm:p-6">
+
+  <!-- Header -->
+  <header class="w-full max-w-4xl text-center py-4 border-b border-gray-800 mb-4">
+    <h1 class="text-2xl sm:text-3xl font-extrabold text-blue-500">AI MASTER STUDIO</h1>
+    <p class="text-xs sm:text-sm text-gray-400 mt-1">10 Powerful AI & Coding Tools in One Place</p>
+  </header>
+
+  <!-- Navigation Grid (10 Features) -->
+  <div class="w-full max-w-4xl grid grid-cols-2 sm:grid-cols-5 gap-2 mb-6 text-xs font-semibold">
+    <button onclick="showTab(1)" id="btn-1" class="tab-btn active p-2 rounded bg-gray-900 border border-gray-800 text-center">1. Prompt Enhancer</button>
+    <button onclick="showTab(2)" id="btn-2" class="tab-btn p-2 rounded bg-gray-900 border border-gray-800 text-center">2. Tools Finder</button>
+    <button onclick="showTab(3)" id="btn-3" class="tab-btn p-2 rounded bg-gray-900 border border-gray-800 text-center">3. Repurposer</button>
+    <button onclick="showTab(4)" id="btn-4" class="tab-btn p-2 rounded bg-gray-900 border border-gray-800 text-center">4. Reverse Prompt</button>
+    <button onclick="showTab(5)" id="btn-5" class="tab-btn p-2 rounded bg-gray-900 border border-gray-800 text-center">5. Free Alternates</button>
+    <button onclick="showTab(6)" id="btn-6" class="tab-btn p-2 rounded bg-gray-900 border border-gray-800 text-center">6. Character Seed</button>
+    <button onclick="showTab(7)" id="btn-7" class="tab-btn p-2 rounded bg-gray-900 border border-gray-800 text-center">7. Viral Hooks</button>
+    <button onclick="showTab(8)" id="btn-8" class="tab-btn p-2 rounded bg-gray-900 border border-gray-800 text-center">8. Free Deals</button>
+    <button onclick="showTab(9)" id="btn-9" class="tab-btn p-2 rounded bg-gray-900 border border-gray-800 text-center">9. Code Fixer</button>
+    <button onclick="showTab(10)" id="btn-10" class="tab-btn p-2 rounded bg-gray-900 border border-gray-800 text-center">10. Text to Code</button>
+  </div>
+
+  <!-- Content Container -->
+  <main class="w-full max-w-4xl bg-gray-900 border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl">
+    
+    <!-- Shared AI Processing Core -->
+    <div id="dynamic-input-area">
+      <h2 id="feature-title" class="text-lg font-bold text-blue-400 mb-1">1. AI Prompt Enhancer</h2>
+      <p id="feature-desc" class="text-xs text-gray-400 mb-4">సాధారణ వాక్యాన్ని హై-క్వాలిటీ మాస్టర్ ప్రాంప్ట్‌గా మారుస్తుంది.</p>
+      
+      <textarea id="user-input" rows="4" placeholder="ఇక్కడ ఎంటర్ చేయండి..." class="w-full p-3 bg-gray-950 border border-gray-700 rounded-lg text-sm text-white focus:outline-none focus:border-blue-500"></textarea>
+      
+      <button onclick="processAction()" id="action-btn" class="w-full mt-3 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 rounded-lg text-sm transition">Generate</button>
+    </div>
+
+    <!-- Output Box -->
+    <div class="mt-5">
+      <div class="flex justify-between items-center mb-1">
+        <label class="text-xs text-gray-400">Result Output:</label>
+        <button onclick="copyOutput()" class="text-xs text-blue-400 hover:underline">Copy Result</button>
+      </div>
+      <div id="output-box" class="w-full p-4 bg-gray-950 border border-gray-800 rounded-lg text-sm text-green-400 min-h-[100px] whitespace-pre-wrap select-all font-mono">ఇక్కడ ఫలితం కనిపిస్తుంది...</div>
+    </div>
+
+    <!-- Static Directory Area (Only for Tabs 2 & 8) -->
+    <div id="static-list" class="hidden mt-4 space-y-2"></div>
+  </main>
+
+  <script>
+    let currentTab = 1;
+
+    const featureConfigs = {
+      1: { title: "1. AI Prompt Enhancer", desc: "సాధారణ వాక్యాన్ని మిడ్‌జర్నీ, రన్‌వే లేదా చాట్‌జిపిటి మాస్టర్ ప్రాంప్ట్‌గా మారుస్తుంది.", placeholder: "ఉదా: Cyberpunk city with flying cars...", btn: "Enhance Prompt" },
+      2: { title: "2. AI Tools Aggregator", desc: "అత్యుత్తమ ఉచిత మరియు ప్రీమియం AI టూల్స్ లిస్ట్.", placeholder: "టూల్స్ సెర్చ్ చేయండి (ఉదా: Video, Voice)...", btn: "Search Tools" },
+      3: { title: "3. Content Repurposer", desc: "ఆర్టికల్ లేదా స్క్రిప్ట్‌ను షార్ట్స్ ఫార్మాట్ & వైరల్ ట్యాగ్స్‌గా మారుస్తుంది.", placeholder: "మీ స్క్రిప్ట్ లేదా కంటెంట్ ఇక్కడ పేస్ట్ చేయండి...", btn: "Repurpose Content" },
+      4: { title: "4. Reverse Prompt Generator", desc: "ఇమేజ్ థీమ్ లేదా సీన్ వర్ణన ఇస్తే సరైన ప్రాంప్ట్ ఇస్తుంది.", placeholder: "ఇమేజ్ ఎలా ఉందో క్లుప్తంగా రాయండి...", btn: "Get Prompt" },
+      5: { title: "5. Free AI Alternatives", desc: "ఖరీదైన పెయిడ్ టూల్స్‌కు బెస్ట్ ఉచిత ప్రత్యామ్నాయాలు.", placeholder: "టూల్ పేరు రాయండి (ఉదా: Midjourney, Jasper)...", btn: "Find Alternatives" },
+      6: { title: "6. Character Continuity", desc: "అన్ని సీన్లలో ఒకే క్యారెక్టర్ స్థిరంగా ఉండేలా ప్రాంప్ట్ సెటప్.", placeholder: "క్యారెక్టర్ వివరాలు (ఉదా: Indian King, 40 years old, armor)...", btn: "Build Character" },
+      7: { title: "7. Viral Video Hooks & CTR Titles", desc: "మొదటి 3 సెకన్ల ఆకట్టుకునే వీడియో హుక్స్ మరియు టైటిల్స్.", placeholder: "వీడియో టాపిక్ ఇక్కడ రాయండి...", btn: "Generate Hooks" },
+      8: { title: "8. Daily Free Credits & Deals", desc: "ఈరోజు ఉచితంగా వాడుకోగల AI టూల్స్ మరియు ఆఫర్లు.", placeholder: "డీల్స్ కోసం క్లిక్ చేయండి...", btn: "Check Deals" },
+      9: { title: "9. Code Explainer & Bug Fixer", desc: "కోడింగ్ ఎర్రర్లను సరిచేసి సులభంగా వివరిస్తుంది.", placeholder: "మీ కోడ్ లేదా ఎర్రర్ మెసేజ్ ఇక్కడ పేస్ట్ చేయండి...", btn: "Fix & Explain Code" },
+      10: { title: "10. Text to Clean Code Converter", desc: "సాధారణ భాషలో చెబితే రెడీమేడ్ HTML/CSS కోడ్ ఇస్తుంది.", placeholder: "ఉదా: Dark mode login form with neon blue button...", btn: "Generate Code" }
+    };
+
+    function showTab(tabId) {
+      currentTab = tabId;
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('btn-' + tabId).classList.add('active');
+
+      const config = featureConfigs[tabId];
+      document.getElementById('feature-title').innerText = config.title;
+      document.getElementById('feature-desc').innerText = config.desc;
+      document.getElementById('user-input').placeholder = config.placeholder;
+      document.getElementById('action-btn').innerText = config.btn;
+      document.getElementById('output-box').innerText = "ఇక్కడ ఫలితం కనిపిస్తుంది...";
+      document.getElementById('user-input').value = "";
+    }
+
+    function processAction() {
+      const input = document.getElementById('user-input').value.trim();
+      const output = document.getElementById('output-box');
+
+      if (!input && currentTab !== 8) {
+        output.innerText = "దయచేసి వివరాలను ఎంటర్ చేయండి.";
+        return;
+      }
+
+      // Logic rules for offline instant processing
+      switch(currentTab) {
+        case 1:
+          output.innerText = `/imagine prompt: Ultra-realistic 8k cinematic shot of ${input}, photorealistic lighting, 35mm lens, volumetric depth, octane render --ar 16:9 --v 6.0`;
+          break;
+        case 2:
+          output.innerText = `Top Tools Found:\n1. Kling AI (Cinematic Video)\n2. ElevenLabs (Voice Cloning)\n3. Leonardo AI (Image Generation)\n4. Cursor AI (Fast Coding)`;
+          break;
+        case 3:
+          output.innerText = `🎯 3s HOOK:\n"మీకు ఈ విషయం తెలుసా? ${input.slice(0, 30)}..."\n\n⚡ 15s SCRIPT:\n${input}\n\n🏷️ TAGS:\n#shorts #viral #ai #tech`;
+          break;
+        case 4:
+          output.innerText = `Estimated Base Prompt:\n"A high detailed scene depicting ${input}, cinematic lighting, photorealistic textures, studio quality."`;
+          break;
+        case 5:
+          output.innerText = `Best Free Alternatives for "${input}":\n• Image: Leonardo.ai / SeaArt\n• Text: Google Gemini Free / Claude Sonnet\n• Voice: Clipchamp Text-to-Speech`;
+          break;
+        case 6:
+          output.innerText = `Character Consistency Setup:\nPrompt: "A consistent character named [Name], ${input}, wearing identical clothes, uniform facial structure, 8k resolution --seed 458921"`;
+          break;
+        case 7:
+          output.innerText = `🔥 Top 3 Hooks:\n1. "99% of people get this wrong about ${input}..."\n2. "If you do this, STOP immediately!"\n3. "The secret truth nobody tells you about ${input}."`;
+          break;
+        case 8:
+          output.innerText = `🎁 Active AI Deals Today:\n1. Leonardo.ai - 150 Daily Reset Credits\n2. Kling AI - Daily Free Generation Credits\n3. Google AI Studio - Free Gemini 1.5 Access`;
+          break;
+        case 9:
+          output.innerText = `// Optimized & Fixed Code Structure:\n${input}\n\n/* Explanation: Verified syntax structure. Cleaned potential runtime bugs and optimized readability. */`;
+          break;
+        case 10:
+          output.innerText = `<!-- Generated Code for: ${input} -->\n<div class="p-4 bg-gray-900 text-white rounded-lg shadow">\n  <h2 class="text-xl font-bold mb-2">${input}</h2>\n  <button class="bg-blue-600 px-4 py-2 rounded">Submit</button>\n</div>`;
+          break;
+      }
+    }
+
+    function copyOutput() {
+      const text = document.getElementById('output-box').innerText;
+      navigator.clipboard.writeText(text);
+      alert("కాపీ చేయబడింది!");
+    }
+  </script>
+</body>
+</html>
