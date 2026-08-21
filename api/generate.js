@@ -1,46 +1,49 @@
-// /api/generate.js - OmniAI Studio - Final Fast Version (2.5-flash-lite)
-
 export default async function handler(req, res) {
-  // CORS
+  res.setHeader('Access-Control-Allow-Credentials', true);
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  );
 
   if (req.method === 'OPTIONS') {
-    return res.status(200).end();
+    res.status(200).end();
+    return;
   }
 
-  if (req.method!== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed, use POST' });
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
-  const { prompt, input } = req.body || {};
-  const userPrompt = prompt || input;
+  const { prompt } = req.body || {};
 
-  if (!userPrompt) {
+  if (!prompt) {
     return res.status(400).json({ error: 'Prompt is required' });
   }
 
-  const API_KEY = process.env.GEMINI_API_KEY;
-  if (!API_KEY) {
-    return res.status(500).json({ error: 'GEMINI_API_KEY not set in Vercel Env' });
+  const apiKey = process.env.GEMINI_API_KEY;
+
+  if (!apiKey) {
+    return res.status(500).json({ error: 'GEMINI_API_KEY not found on Vercel Environment Variables' });
   }
 
-  // ✅ నీ screenshot లో ఉన్న fast model
-  const MODEL = "gemini-2.5-flash";
-
   try {
-    // ✅ ఇప్పుడున్నది తీసేసి ఇది పెట్టు - Speed optimized
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1/models/${MODEL}:generateContent?key=${API_KEY}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          contents: [{ parts: [{ text: `You are OmniAI Studio Prompt Enhancer. Transform this simple idea into a production-grade, ultra-detailed AI prompt for image/video generation: "${userPrompt}". Make it 8k, cinematic, volumetric lighting, highly detailed.` }] }],
+          contents: [
+            {
+              role: 'user',
+              parts: [{ text: prompt }]
+            }
+          ],
           generationConfig: {
             temperature: 0.7,
-            maxOutputTokens: 512, // 2048 కాదు, 512 పెట్టు - speed కోసం
+            maxOutputTokens: 2048
           }
         })
       }
@@ -49,24 +52,29 @@ export default async function handler(req, res) {
     const data = await response.json();
 
     if (data.error) {
-      console.error("Gemini API Error:", data.error);
-      return res.status(500).json({ error: data.error.message, model: MODEL });
+      return res.status(500).json({ error: data.error.message || 'Google API Error' });
     }
 
-    if (!data.candidates ||!data.candidates[0]?.content?.parts?.[0]?.text) {
-      return res.status(500).json({ error: 'No output from Gemini', raw: data });
+    // జెమిని 2.5 మోడల్ నుంచి టెక్స్ట్ పార్ట్ ఎక్స్‌ట్రాక్ట్ చేయడం
+    const parts = data.candidates?.[0]?.content?.parts || [];
+    let outputText = '';
+    
+    for (const part of parts) {
+      if (part.text) {
+        outputText += part.text;
+      }
     }
 
-    const outputText = data.candidates[0].content.parts[0].text;
+    if (!outputText) {
+      return res.status(500).json({ error: 'AI returned empty output or content was filtered.' });
+    }
 
     return res.status(200).json({
-      output: outputText,
-      model_used: MODEL,
-      status: "success"
+      result: outputText,
+      output: outputText
     });
 
-  } catch (err) {
-    console.error("Server Error:", err);
-    return res.status(500).json({ error: err.message });
+  } catch (error) {
+    return res.status(500).json({ error: `Server Error: ${error.message}` });
   }
 }
