@@ -230,7 +230,7 @@
             <i data-lucide="chevron-right" class="w-4 h-4"></i>
           </button>
           <button onclick="selectEngine(6)" id="eng-6" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
-            <span class="flex items-center gap-2.5"><i data-lucide="user-check" class="w-4 h-4"></i> 6. Character Consistency</span>
+            <span class="flex items-center gap-2.5"><i data-lucide="user-check" class="w-4 h-4"></i> 6. Character Continuity</span>
             <i data-lucide="chevron-right" class="w-4 h-4"></i>
           </button>
           <button onclick="selectEngine(7)" id="eng-7" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
@@ -857,7 +857,7 @@
       lucide.createIcons();
     }
 
-    // 7. Live Serverless AI Execution Engine
+    // 7. Live Serverless AI Execution Engine (Direct Clean Outputs)
     async function executeEngineAction() {
       const input = document.getElementById('terminal-input').value.trim();
       const output = document.getElementById('terminal-output');
@@ -868,16 +868,40 @@
       }
 
       const systemPrompts = {
-        1: `You are an elite prompt engineer. Convert this idea into an 8k cinematic photorealistic Midjourney & ChatGPT master prompt with technical lens, lighting, and parameters: "${input}"`,
-        2: `You are an AI architect. Give a step-by-step production workflow combining top modern AI tools to achieve this project: "${input}"`,
-        3: `You are a viral content strategist. Convert this into a 3-second hook, 15-second script, call-to-action, and viral tags: "${input}"`,
-        4: `Reverse engineer this scene description into an exact Midjourney/Stable Diffusion prompt: "${input}"`,
-        5: `List the top 3 100% free or open-source alternatives for this paid AI tool with benefits: "${input}"`,
-        6: `Generate a character continuity prompt configuration with persistent facial seeds for: "${input}"`,
-        7: `Generate 5 psychologically addictive, high-CTR YouTube/Reels hooks for: "${input}"`,
-        8: `List today's top free AI deals, open-source releases, and daily credit resets.`,
-        9: `Act as a senior engineer. Fix errors, optimize performance, and explain this code simply:\n${input}`,
-        10: `Generate clean, responsive HTML with Tailwind CSS for this request. Return code only:\n${input}`
+        1: `Task: Create an 8k cinematic Midjourney master prompt for: "${input}". 
+Rules: Do NOT include any conversational filler, explanations, or introductory text. Output ONLY the ready-to-copy Midjourney prompt with parameters (--ar 16:9 --style raw --v 6.0).`,
+        
+        2: `Task: Give the exact modern AI tools workflow for: "${input}".
+Rules: Return ONLY bullet points of step-by-step tools to use. No introduction or conversational filler.`,
+        
+        3: `Task: Convert this into viral social media content: "${input}".
+Rules: Output strictly in this format without filler:
+🎯 3s HOOK: [Hook text]
+⚡ 15s CORE VALUE: [Value text]
+🔥 CTA: [Call to Action]
+🏷️ TAGS: [Hashtags]`,
+        
+        4: `Task: Reverse-engineer this scene into an exact image generation prompt: "${input}".
+Rules: Return ONLY the raw prompt. No extra chit-chat.`,
+        
+        5: `Task: List top 3 100% free alternatives for: "${input}".
+Rules: Output clean bullet points with Tool Name, Free Limits, and Benefit. No conversational intros.`,
+        
+        6: `Task: Create a character consistency prompt config for: "${input}".
+Rules: Return ONLY the seed-pinned prompt configuration.`,
+        
+        7: `Task: Generate 5 psychological viral hooks for: "${input}".
+Rules: Output numbered list (1-5) of hooks only.`,
+        
+        8: `Task: List today's top free AI deals and daily credit resets.
+Rules: Bullet points only.`,
+        
+        9: `Task: Fix, optimize, and explain this code:
+${input}
+Rules: Provide the corrected code first, followed by a brief 2-line explanation.`,
+        
+        10: `Task: Generate clean, responsive HTML with Tailwind CSS for: "${input}".
+Rules: Return ONLY raw HTML/Tailwind code without backticks or explanations.`
       };
 
       const finalPrompt = systemPrompts[currentEngineId] || input;
@@ -923,4 +947,4 @@
     });
   </script>
 </body>
-  </html>
+          </html>
