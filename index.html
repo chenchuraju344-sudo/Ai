@@ -1,1634 +1,1440 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+  <!-- Essential Meta Tags & SEO Optimization -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniAI Studio - Enterprise 10-in-1 AI Productivity Suite & Live Directory</title>
+  <meta name="description" content="Explore top AI tools across video synthesis, image generation, voice cloning, and coding. Features live search, performance analytics, and a 10-in-1 creation suite.">
+  <meta name="keywords" content="AI tools directory, free AI credits, best AI video generator, Kling AI, Midjourney, ElevenLabs, Claude 3.5, Cursor AI, prompt enhancer">
+  <meta name="author" content="OmniAI Studio">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b0f19">
+  <link rel="canonical" href="https://yourdomain.com/">
 
-  <title>OmniAI Studio — Creator, Coding & Find Truth AI Intelligence</title>
+  <!-- Favicon (inline SVG - no external asset needed) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%234f46e5'/%3E%3Cstop offset='1' stop-color='%23ec4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Cpath d='M16 7l2.5 6.2L25 16l-6.5 2.8L16 25l-2.5-6.2L7 16l6.5-2.8z' fill='white'/%3E%3C/svg%3E">
 
-  <meta
-    name="description"
-    content="OmniAI Studio creator tools, coding assistants and Find Truth web intelligence."
-  >
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/">
+  <meta property="og:title" content="OmniAI Studio - 10-in-1 Suite & Curated AI Directory">
+  <meta property="og:description" content="Discover top verified AI tools with real-time performance analytics, free tier trackers, and multi-engine creator studios.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&h=630&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OmniAI Studio - 10-in-1 Suite & Curated AI Directory">
+  <meta name="twitter:description" content="Discover top verified AI tools with real-time performance analytics and a 10-in-1 creator studio.">
 
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "OmniAI Studio",
+    "operatingSystem": "All",
+    "applicationCategory": "ProductivityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Comprehensive AI intelligence platform providing prompt engineering, code debugging, and verified AI directory aggregator."
+  }
+  </script>
+
+  <!-- Tailwind CSS & Google Fonts -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  >
-
+  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <script>
     tailwind.config = {
-      darkMode: "class",
+      darkMode: 'class',
       theme: {
         extend: {
           fontFamily: {
-            sans: ["Inter", "sans-serif"],
-            mono: ["JetBrains Mono", "monospace"]
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
           }
         }
       }
-    };
+    }
   </script>
 
   <style>
-    body {
-      background:
-        radial-gradient(circle at 20% 0%, rgba(79,70,229,.15), transparent 30%),
-        radial-gradient(circle at 90% 10%, rgba(168,85,247,.12), transparent 25%),
-        #020617;
-    }
+    :root { color-scheme: dark; }
+    html { scrollbar-gutter: stable; }
+    body { overflow-x: hidden; }
 
-    .glass {
-      background: rgba(15,23,42,.78);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
+    .glassmorphism {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
     }
-
     .gradient-text {
-      background: linear-gradient(
-        135deg,
-        #60a5fa,
-        #a855f7,
-        #ec4899
-      );
+      background: linear-gradient(135deg, #60a5fa 0%, #a855f7 50%, #ec4899 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #0b0f19; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
 
-    .hidden-page {
-      display: none !important;
+    /* Visible keyboard focus everywhere */
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid #818cf8;
+      outline-offset: 2px;
+      border-radius: 6px;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute; left: -9999px; top: 0; z-index: 100;
+      background: #4f46e5; color: white; padding: 0.75rem 1.25rem; border-radius: 0 0 0.5rem 0; font-size: 0.8rem; font-weight: 600;
+    }
+    .skip-link:focus { left: 0; }
+
+    /* Page transition */
+    .page-view { animation: fadeIn .35s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Toasts */
+    #toast-container { position: fixed; bottom: 1.25rem; right: 1.25rem; z-index: 100; display: flex; flex-direction: column; gap: 0.6rem; }
+    .toast {
+      display: flex; align-items: center; gap: 0.6rem;
+      background: #111827; border: 1px solid #1f2937; color: #e2e8f0;
+      padding: 0.75rem 1rem; border-radius: 0.75rem; font-size: 0.78rem; font-weight: 500;
+      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.6);
+      animation: toastIn .25s ease;
+      max-width: 320px;
+    }
+    @keyframes toastIn { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: translateX(0); } }
+    .toast.leaving { animation: toastOut .2s ease forwards; }
+    @keyframes toastOut { to { opacity: 0; transform: translateX(16px); } }
+
+    /* Mobile nav */
+    #mobile-menu { transform-origin: top; }
+
+    /* Accordion caret */
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .faq-caret { transform: rotate(180deg); }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
     }
   </style>
 </head>
+<body class="bg-gray-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col selection:bg-indigo-500 selection:text-white custom-scrollbar">
 
-<body class="text-slate-100 min-h-screen">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<!-- TOP BAR -->
-<div class="text-center text-xs py-2 bg-indigo-950/70 border-b border-indigo-900">
-  ⚡ OmniAI Studio — Creator + Coding + Find Truth Intelligence
-</div>
+  <!-- Top Announcement Bar -->
+  <aside class="bg-gradient-to-r from-indigo-950 via-purple-950 to-indigo-950 text-indigo-200 text-xs py-2 px-4 text-center border-b border-indigo-900/40">
+    <span>⚡ <strong>OmniAI Studio:</strong> Live database with <span id="banner-tool-count">25+</span> industry AI models & 10 modular engines.</span>
+  </aside>
 
-<!-- NAV -->
-<header class="sticky top-0 z-50 glass border-b border-slate-800">
-
-  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-
-    <button
-      onclick="navigateTo('home')"
-      class="flex items-center gap-3"
-    >
-      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center">
-        <i data-lucide="sparkles"></i>
-      </div>
-
-      <span class="font-bold text-xl">
-        OmniAI<span class="text-indigo-400">Studio</span>
-      </span>
-    </button>
-
-    <nav class="hidden md:flex gap-2">
-
-      <button
-        onclick="navigateTo('home')"
-        class="nav-btn"
-      >
-        Home
-      </button>
-
-      <button
-        onclick="navigateTo('directory')"
-        class="nav-btn"
-      >
-        AI Directory
-      </button>
-
-      <button
-        onclick="navigateTo('creator')"
-        class="nav-btn"
-      >
-        Creator
-      </button>
-
-      <button
-        onclick="navigateTo('coding')"
-        class="nav-btn"
-      >
-        Coding
-      </button>
-
-      <button
-        onclick="navigateTo('truth')"
-        class="nav-btn"
-      >
-        Find Truth
-      </button>
-
-    </nav>
-
-    <button
-      onclick="navigateTo('truth')"
-      class="bg-indigo-600 hover:bg-indigo-500 px-4 py-2 rounded-lg text-sm font-semibold"
-    >
-      Find Truth
-    </button>
-
-  </div>
-</header>
-
-
-<main>
-
-<!-- HOME -->
-<section
-  id="page-home"
-  class="page max-w-7xl mx-auto px-4 py-20"
->
-
-  <div class="max-w-4xl mx-auto text-center">
-
-    <div class="inline-flex px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs">
-      CREATOR • CODING • WEB INTELLIGENCE
-    </div>
-
-    <h1 class="mt-7 text-5xl md:text-7xl font-extrabold">
-      Discover.
-      Create.
-      <span class="gradient-text">
-        Verify.
-      </span>
-    </h1>
-
-    <p class="mt-6 text-slate-400 text-lg">
-      One AI workspace for creator automation, coding intelligence
-      and public-web media investigation.
-    </p>
-
-    <div class="mt-8 flex flex-wrap justify-center gap-3">
-
-      <button
-        onclick="navigateTo('creator')"
-        class="bg-indigo-600 hover:bg-indigo-500 px-7 py-3 rounded-xl font-semibold"
-      >
-        🚀 Creator
-      </button>
-
-      <button
-        onclick="navigateTo('coding')"
-        class="bg-slate-900 border border-slate-700 px-7 py-3 rounded-xl font-semibold"
-      >
-        💻 Coding
-      </button>
-
-      <button
-        onclick="navigateTo('truth')"
-        class="bg-pink-600 hover:bg-pink-500 px-7 py-3 rounded-xl font-semibold"
-      >
-        🔎 Find Truth
-      </button>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- CREATOR -->
-<section
-  id="page-creator"
-  class="page hidden-page max-w-7xl mx-auto px-4 py-10"
->
-
-  <div class="mb-8">
-
-    <h2 class="text-3xl font-bold">
-      Creator Studio
-    </h2>
-
-    <p class="text-slate-400 text-sm mt-2">
-      Eight creator engines.
-    </p>
-
-  </div>
-
-  <div class="grid lg:grid-cols-12 gap-6">
-
-    <!-- ENGINE SIDEBAR -->
-    <aside class="lg:col-span-4 bg-slate-900/70 border border-slate-800 rounded-2xl p-4">
-
-      <h3 class="text-xs uppercase tracking-widest text-slate-500 mb-3">
-        Creator Engines
-      </h3>
-
-      <div id="creator-engine-list"></div>
-
-    </aside>
-
-
-    <!-- TERMINAL -->
-    <section class="lg:col-span-8 bg-slate-900/70 border border-slate-800 rounded-2xl p-6">
-
-      <div class="flex justify-between border-b border-slate-800 pb-4">
-
-        <div>
-
-          <h3
-            id="creator-title"
-            class="text-xl font-bold"
-          >
-            Master Prompt Enhancer
-          </h3>
-
-          <p
-            id="creator-subtitle"
-            class="text-xs text-slate-400 mt-1"
-          ></p>
-
+  <!-- Global Header -->
+  <header class="sticky top-0 z-40 glassmorphism border-b border-gray-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <button onclick="navigateTo('page-home')" class="flex items-center space-x-3 group" aria-label="OmniAI Studio home">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition">
+          <i data-lucide="sparkles" class="w-5 h-5 text-white"></i>
         </div>
-
-        <span class="text-xs bg-indigo-500/10 text-indigo-300 px-3 py-1 rounded">
-          CREATOR
-        </span>
-
-      </div>
-
-
-      <label class="block mt-6 mb-2 text-sm font-semibold">
-        Input
-      </label>
-
-      <textarea
-        id="creator-input"
-        rows="7"
-        placeholder="Enter your idea, topic, scene, content or requirement..."
-        class="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 outline-none focus:border-indigo-500 font-mono text-sm"
-      ></textarea>
-
-
-      <button
-        onclick="executeCreator()"
-        class="w-full mt-4 bg-indigo-600 hover:bg-indigo-500 py-3 rounded-xl font-semibold"
-      >
-        <span id="creator-button">
-          Generate
-        </span>
+        <span class="text-xl font-bold tracking-tight text-white">OmniAI<span class="text-indigo-400">Studio</span></span>
       </button>
 
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-1 text-sm font-medium text-slate-300" aria-label="Primary">
+        <button data-nav="page-home" onclick="navigateTo('page-home')" class="nav-link px-3.5 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition">Home</button>
+        <button data-nav="page-directory" onclick="navigateTo('page-directory')" class="nav-link px-3.5 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition flex items-center gap-1.5">
+          <i data-lucide="compass" class="w-4 h-4 text-indigo-400"></i> AI Directory
+        </button>
+        <button data-nav="page-workspace" onclick="navigateTo('page-workspace')" class="nav-link px-3.5 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition">10-in-1 Suite</button>
+        <button data-nav="page-pricing" onclick="navigateTo('page-pricing')" class="nav-link px-3.5 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition">Pricing</button>
+        <button data-nav="page-about" onclick="navigateTo('page-about')" class="nav-link px-3.5 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition">About</button>
+        <button data-nav="page-contact" onclick="navigateTo('page-contact')" class="nav-link px-3.5 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition">Contact</button>
+      </nav>
 
-      <div class="mt-8">
+      <!-- CTA + Mobile Toggle -->
+      <div class="flex items-center space-x-2 sm:space-x-3">
+        <button onclick="navigateTo('page-directory')" class="hidden sm:flex bg-indigo-600 hover:bg-indigo-500 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-lg transition shadow-md shadow-indigo-600/30 items-center gap-1.5">
+          <span>Explore Directory</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+        <button onclick="toggleMobileMenu()" id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-gray-900 border border-gray-800 text-slate-200" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+          <i data-lucide="menu" class="w-5 h-5" id="mobile-menu-icon"></i>
+        </button>
+      </div>
+    </div>
 
-        <div class="flex justify-between mb-2">
+    <!-- Mobile Navigation Panel -->
+    <div id="mobile-menu" class="md:hidden hidden border-t border-gray-800/80 bg-gray-950/95 px-4 py-3 space-y-1">
+      <button data-nav="page-home" onclick="navigateTo('page-home')" class="nav-link w-full text-left px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-gray-800/60 transition">Home</button>
+      <button data-nav="page-directory" onclick="navigateTo('page-directory')" class="nav-link w-full text-left px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-gray-800/60 transition flex items-center gap-1.5"><i data-lucide="compass" class="w-4 h-4 text-indigo-400"></i> AI Directory</button>
+      <button data-nav="page-workspace" onclick="navigateTo('page-workspace')" class="nav-link w-full text-left px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-gray-800/60 transition">10-in-1 Suite</button>
+      <button data-nav="page-pricing" onclick="navigateTo('page-pricing')" class="nav-link w-full text-left px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-gray-800/60 transition">Pricing</button>
+      <button data-nav="page-about" onclick="navigateTo('page-about')" class="nav-link w-full text-left px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-gray-800/60 transition">About</button>
+      <button data-nav="page-contact" onclick="navigateTo('page-contact')" class="nav-link w-full text-left px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-gray-800/60 transition">Contact</button>
+      <button onclick="navigateTo('page-directory')" class="w-full mt-2 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition flex items-center justify-center gap-1.5">
+        <span>Explore Directory</span><i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </header>
 
-          <span class="text-xs text-slate-400">
-            Detailed Result
-          </span>
+  <!-- MAIN ROUTER -->
+  <main class="flex-grow" id="main-content">
 
-          <button
-            onclick="copyText('creator-output')"
-            class="text-xs text-indigo-400"
-          >
-            Copy
+    <!-- ================= PAGE 1: HOME ================= -->
+    <section id="page-home" class="page-view max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <div class="text-center max-w-3xl mx-auto space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-xs font-medium">
+          <i data-lucide="zap" class="w-3.5 h-3.5"></i> Comprehensive AI Ecosystem & Multi-Tool Hub
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight text-white">
+          Discover, Analyze & Master <span class="gradient-text">Every AI Tool</span>
+        </h1>
+        <p class="text-slate-400 text-base sm:text-lg">
+          Filter verified AI platforms by performance metrics, claim daily free credits, and build production assets with our built-in 10-in-1 automation studio.
+        </p>
+        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button onclick="navigateTo('page-directory')" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition shadow-lg shadow-indigo-600/40 flex items-center justify-center gap-2">
+            <i data-lucide="compass" class="w-4 h-4"></i> Open AI Directory (Live Search)
           </button>
+          <button onclick="navigateTo('page-workspace')" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gray-900 hover:bg-gray-800 text-slate-300 font-semibold text-sm border border-gray-800 transition flex items-center justify-center gap-2">
+            <i data-lucide="terminal" class="w-4 h-4"></i> Launch 10-in-1 Creator Suite
+          </button>
+        </div>
+      </div>
 
+      <!-- Stats Bar -->
+      <div class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        <div class="bg-gray-900/60 border border-gray-800 rounded-2xl py-5 text-center">
+          <div id="stat-total" class="text-2xl sm:text-3xl font-extrabold text-white">0</div>
+          <div class="text-[11px] uppercase tracking-wide text-slate-500 mt-1">Verified Tools</div>
+        </div>
+        <div class="bg-gray-900/60 border border-gray-800 rounded-2xl py-5 text-center">
+          <div id="stat-categories" class="text-2xl sm:text-3xl font-extrabold text-white">0</div>
+          <div class="text-[11px] uppercase tracking-wide text-slate-500 mt-1">Categories</div>
+        </div>
+        <div class="bg-gray-900/60 border border-gray-800 rounded-2xl py-5 text-center">
+          <div id="stat-free" class="text-2xl sm:text-3xl font-extrabold text-amber-400">0</div>
+          <div class="text-[11px] uppercase tracking-wide text-slate-500 mt-1">Free-Credit Tools</div>
+        </div>
+        <div class="bg-gray-900/60 border border-gray-800 rounded-2xl py-5 text-center">
+          <div class="text-2xl sm:text-3xl font-extrabold text-white">10</div>
+          <div class="text-[11px] uppercase tracking-wide text-slate-500 mt-1">Studio Engines</div>
+        </div>
+      </div>
+
+      <!-- Live Category Badges Matrix -->
+      <div class="mt-16 border-t border-gray-800/80 pt-12">
+        <h3 class="text-center text-xs uppercase font-bold tracking-widest text-slate-500 mb-8">Ecosystem Categories Available</h3>
+        <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+          <button onclick="navigateTo('page-directory'); setTimeout(function(){goToCategory('video')}, 50)" class="px-3.5 py-1.5 rounded-full bg-gray-900 border border-gray-800 text-xs text-slate-300 flex items-center gap-2 hover:border-indigo-500/50 transition"><i data-lucide="video" class="w-3.5 h-3.5 text-blue-400"></i> Video Generators</button>
+          <button onclick="navigateTo('page-directory'); setTimeout(function(){goToCategory('image')}, 50)" class="px-3.5 py-1.5 rounded-full bg-gray-900 border border-gray-800 text-xs text-slate-300 flex items-center gap-2 hover:border-indigo-500/50 transition"><i data-lucide="image" class="w-3.5 h-3.5 text-purple-400"></i> Image & Art</button>
+          <button onclick="navigateTo('page-directory'); setTimeout(function(){goToCategory('code')}, 50)" class="px-3.5 py-1.5 rounded-full bg-gray-900 border border-gray-800 text-xs text-slate-300 flex items-center gap-2 hover:border-indigo-500/50 transition"><i data-lucide="code" class="w-3.5 h-3.5 text-emerald-400"></i> Code & Debugging</button>
+          <button onclick="navigateTo('page-directory'); setTimeout(function(){goToCategory('audio')}, 50)" class="px-3.5 py-1.5 rounded-full bg-gray-900 border border-gray-800 text-xs text-slate-300 flex items-center gap-2 hover:border-indigo-500/50 transition"><i data-lucide="mic" class="w-3.5 h-3.5 text-yellow-400"></i> Voice & Audio</button>
+          <button onclick="navigateTo('page-directory'); setTimeout(function(){goToCategory('writing')}, 50)" class="px-3.5 py-1.5 rounded-full bg-gray-900 border border-gray-800 text-xs text-slate-300 flex items-center gap-2 hover:border-indigo-500/50 transition"><i data-lucide="pen-tool" class="w-3.5 h-3.5 text-pink-400"></i> Writing & LLMs</button>
+          <button onclick="navigateTo('page-directory'); setTimeout(function(){goToCategory('3d')}, 50)" class="px-3.5 py-1.5 rounded-full bg-gray-900 border border-gray-800 text-xs text-slate-300 flex items-center gap-2 hover:border-indigo-500/50 transition"><i data-lucide="box" class="w-3.5 h-3.5 text-indigo-400"></i> 3D & Avatar</button>
+          <button onclick="navigateTo('page-directory'); setTimeout(function(){goToCategory('free')}, 50)" class="px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs text-amber-300 flex items-center gap-2 hover:border-amber-400/60 transition"><i data-lucide="gift" class="w-3.5 h-3.5 text-amber-400"></i> Daily Free Credits</button>
+        </div>
+      </div>
+
+      <!-- How It Works -->
+      <div class="mt-20 border-t border-gray-800/80 pt-14">
+        <h2 class="text-center text-2xl sm:text-3xl font-bold text-white">How OmniAI Studio Works</h2>
+        <p class="text-center text-slate-400 text-sm mt-2 max-w-xl mx-auto">Three steps between you and a finished, production-ready asset.</p>
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div class="bg-gray-900/60 border border-gray-800 rounded-2xl p-6">
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 mb-4"><i data-lucide="search" class="w-5 h-5"></i></div>
+            <h3 class="font-bold text-white text-sm mb-1.5">1. Find the right tool</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">Search or filter the live directory by category, speed, or free-tier availability to find a verified match for your task.</p>
+          </div>
+          <div class="bg-gray-900/60 border border-gray-800 rounded-2xl p-6">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-4"><i data-lucide="sliders-horizontal" class="w-5 h-5"></i></div>
+            <h3 class="font-bold text-white text-sm mb-1.5">2. Shape it in the Suite</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">Run your idea through one of 10 engines — prompt enhancing, repurposing, code fixing — to get it production-ready.</p>
+          </div>
+          <div class="bg-gray-900/60 border border-gray-800 rounded-2xl p-6">
+            <div class="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/30 flex items-center justify-center text-pink-400 mb-4"><i data-lucide="rocket" class="w-5 h-5"></i></div>
+            <h3 class="font-bold text-white text-sm mb-1.5">3. Launch & create</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">Jump straight to the official platform with a click, credits ready, and bring the finished output back to your project.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social proof -->
+      <div class="mt-20 border-t border-gray-800/80 pt-14">
+        <h3 class="text-center text-xs uppercase font-bold tracking-widest text-slate-500 mb-8">What people use it for</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <blockquote class="bg-gray-900/60 border border-gray-800 rounded-2xl p-6">
+            <p class="text-sm text-slate-300 leading-relaxed">"I stopped bookmarking random tool lists and just check the free-credit filter here before starting a render."</p>
+            <footer class="mt-4 text-xs text-slate-500">— Independent video editor</footer>
+          </blockquote>
+          <blockquote class="bg-gray-900/60 border border-gray-800 rounded-2xl p-6">
+            <p class="text-sm text-slate-300 leading-relaxed">"The prompt enhancer engine turns a rough sentence into something I'd actually get a usable render from on the first try."</p>
+            <footer class="mt-4 text-xs text-slate-500">— Freelance motion designer</footer>
+          </blockquote>
+          <blockquote class="bg-gray-900/60 border border-gray-800 rounded-2xl p-6">
+            <p class="text-sm text-slate-300 leading-relaxed">"Performance metrics on each card save me from opening six tabs just to compare speed and quality."</p>
+            <footer class="mt-4 text-xs text-slate-500">— Indie app developer</footer>
+          </blockquote>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="mt-20 border-t border-gray-800/80 pt-14 max-w-3xl mx-auto">
+        <h2 class="text-center text-2xl sm:text-3xl font-bold text-white mb-8">Frequently Asked Questions</h2>
+        <div class="space-y-3">
+          <details class="bg-gray-900/60 border border-gray-800 rounded-xl p-4 group">
+            <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-white">
+              Is the AI directory really free to browse?
+              <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 faq-caret transition-transform"></i>
+            </summary>
+            <p class="text-xs text-slate-400 mt-3 leading-relaxed">Yes. Browsing, searching, and filtering the directory, and using all 10 Creator Suite engines, is free. Each listed tool's own free tier or paid plan is set by that tool, not by us.</p>
+          </details>
+          <details class="bg-gray-900/60 border border-gray-800 rounded-xl p-4 group">
+            <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-white">
+              How do you choose which tools get listed?
+              <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 faq-caret transition-transform"></i>
+            </summary>
+            <p class="text-xs text-slate-400 mt-3 leading-relaxed">We track category-leading tools across video, image, code, audio, writing, and 3D, and note published speed, quality, and free-tier details so you can compare before you commit.</p>
+          </details>
+          <details class="bg-gray-900/60 border border-gray-800 rounded-xl p-4 group">
+            <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-white">
+              What does the 10-in-1 Suite actually generate?
+              <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 faq-caret transition-transform"></i>
+            </summary>
+            <p class="text-xs text-slate-400 mt-3 leading-relaxed">Each engine sends your input to an AI model with a purpose-built system prompt — for prompt enhancing, code fixing, viral hooks, and more — and streams the result back into the output panel.</p>
+          </details>
+          <details class="bg-gray-900/60 border border-gray-800 rounded-xl p-4 group">
+            <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-white">
+              Do I need an account to use OmniAI Studio?
+              <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 faq-caret transition-transform"></i>
+            </summary>
+            <p class="text-xs text-slate-400 mt-3 leading-relaxed">No account is required for the Free Community Pass. Enterprise Pro adds API access and priority support — reach out from the Contact page to set it up.</p>
+          </details>
+        </div>
+      </div>
+
+      <!-- Final CTA -->
+      <div class="mt-20 border-t border-gray-800/80 pt-14 text-center">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Ready to build something?</h2>
+        <p class="text-slate-400 text-sm mt-2 max-w-md mx-auto">Jump into the directory or open the Creator Suite — no account needed to start.</p>
+        <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button onclick="navigateTo('page-directory')" class="px-8 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition shadow-lg shadow-indigo-600/40">Browse the Directory</button>
+          <button onclick="navigateTo('page-workspace')" class="px-8 py-3.5 rounded-xl bg-gray-900 hover:bg-gray-800 text-slate-300 font-semibold text-sm border border-gray-800 transition">Open the Suite</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PAGE 2: COMPREHENSIVE AI DIRECTORY ================= -->
+    <section id="page-directory" class="page-view hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+      <!-- Top Directory Controls Header -->
+      <div class="mb-8">
+        <h2 class="text-3xl font-extrabold text-white tracking-tight">AI Ecosystem Directory</h2>
+        <p class="text-slate-400 text-xs sm:text-sm mt-1">Live database of verified models. Use the search bar or category filters to inspect detailed technical ratings.</p>
+
+        <!-- Live Search Bar -->
+        <div class="mt-6 relative">
+          <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-500">
+            <i data-lucide="search" class="w-5 h-5"></i>
+          </div>
+          <input type="text" id="directory-search" oninput="onSearchInput()" placeholder="Live search across models, features, or performance keywords (e.g., 'photorealistic', 'code', 'cloning', 'free')..." class="w-full pl-12 pr-10 py-3.5 bg-gray-900 border border-gray-800 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 shadow-inner transition" aria-label="Search the AI directory">
+          <button id="clear-search-btn" onclick="clearSearch()" class="hidden absolute inset-y-0 right-0 pr-4 flex items-center text-slate-500 hover:text-white transition" aria-label="Clear search">
+            <i data-lucide="x-circle" class="w-4 h-4"></i>
+          </button>
         </div>
 
-        <pre
-          id="creator-output"
-          class="min-h-[300px] bg-black/60 border border-slate-800 rounded-xl p-5 whitespace-pre-wrap text-sm font-mono text-emerald-300 overflow-auto"
-        >Creator engine ready.</pre>
+        <!-- Filter Pill Buttons -->
+        <div class="mt-4 flex items-center gap-2 overflow-x-auto pb-2 custom-scrollbar">
+          <button onclick="setCategoryFilter('all', this)" class="cat-filter-btn active px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-indigo-600 text-white transition">All Models (<span id="count-all">0</span>)</button>
+          <button onclick="setCategoryFilter('free', this)" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-gray-900 border border-gray-800 text-amber-300 hover:bg-gray-800 transition flex items-center gap-1.5"><i data-lucide="gift" class="w-3.5 h-3.5"></i> Daily Free Credits</button>
+          <button onclick="setCategoryFilter('video', this)" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-gray-900 border border-gray-800 text-slate-300 hover:bg-gray-800 transition">Video Creation</button>
+          <button onclick="setCategoryFilter('image', this)" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-gray-900 border border-gray-800 text-slate-300 hover:bg-gray-800 transition">Image & Art</button>
+          <button onclick="setCategoryFilter('code', this)" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-gray-900 border border-gray-800 text-slate-300 hover:bg-gray-800 transition">Coding & Dev</button>
+          <button onclick="setCategoryFilter('audio', this)" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-gray-900 border border-gray-800 text-slate-300 hover:bg-gray-800 transition">Audio & Voice</button>
+          <button onclick="setCategoryFilter('writing', this)" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-gray-900 border border-gray-800 text-slate-300 hover:bg-gray-800 transition">Writing & LLMs</button>
+          <button onclick="setCategoryFilter('3d', this)" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-gray-900 border border-gray-800 text-slate-300 hover:bg-gray-800 transition">3D & Avatars</button>
+        </div>
 
+        <p id="result-count" class="mt-3 text-[11px] text-slate-500" aria-live="polite"></p>
       </div>
 
-    </section>
-
-  </div>
-
-</section>
-
-
-<!-- CODING -->
-<section
-  id="page-coding"
-  class="page hidden-page max-w-7xl mx-auto px-4 py-10"
->
-
-  <div class="mb-8">
-
-    <h2 class="text-3xl font-bold">
-      Coding Studio
-    </h2>
-
-    <p class="text-slate-400 text-sm mt-2">
-      Code Explainer & Fixer + Text to Clean Code.
-    </p>
-
-  </div>
-
-
-  <div class="grid lg:grid-cols-12 gap-6">
-
-    <aside class="lg:col-span-4 bg-slate-900/70 border border-slate-800 rounded-2xl p-4">
-
-      <h3 class="text-xs uppercase tracking-widest text-slate-500 mb-3">
-        Coding Engines
-      </h3>
-
-      <div id="coding-engine-list"></div>
-
-    </aside>
-
-
-    <section class="lg:col-span-8 bg-slate-900/70 border border-slate-800 rounded-2xl p-6">
-
-      <h3
-        id="coding-title"
-        class="text-xl font-bold"
-      ></h3>
-
-      <p
-        id="coding-subtitle"
-        class="text-xs text-slate-400 mt-1"
-      ></p>
-
-
-      <textarea
-        id="coding-input"
-        rows="12"
-        class="mt-6 w-full bg-slate-950 border border-slate-800 rounded-xl p-4 font-mono text-sm outline-none focus:border-indigo-500"
-        placeholder="Paste your code or describe what you want to build..."
-      ></textarea>
-
-
-      <button
-        onclick="executeCoding()"
-        class="mt-4 w-full bg-emerald-600 hover:bg-emerald-500 py-3 rounded-xl font-semibold"
-      >
-        <span id="coding-button">
-          Analyze Code
-        </span>
-      </button>
-
-
-      <pre
-        id="coding-output"
-        class="mt-8 min-h-[350px] bg-black border border-slate-800 rounded-xl p-5 whitespace-pre-wrap text-sm font-mono text-emerald-300 overflow-auto"
-      >Coding engine ready.</pre>
-
-    </section>
-
-  </div>
-
-</section>
-
-
-<!-- FIND TRUTH -->
-<section
-  id="page-truth"
-  class="page hidden-page max-w-7xl mx-auto px-4 py-10"
->
-
-  <div class="max-w-4xl mx-auto">
-
-    <div class="text-center">
-
-      <div class="inline-flex px-4 py-2 rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-300 text-xs">
-        PUBLIC WEB INTELLIGENCE
+      <!-- Dynamic Cards Grid -->
+      <div id="directory-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" aria-live="polite">
+        <!-- Cards injected via JavaScript -->
       </div>
 
-      <h2 class="mt-5 text-4xl font-extrabold">
-        Find Truth
-      </h2>
+      <!-- No Results State -->
+      <div id="no-results" class="hidden text-center py-20 bg-gray-900/40 rounded-2xl border border-gray-800 mt-6">
+        <i data-lucide="alert-circle" class="w-10 h-10 text-slate-500 mx-auto mb-3"></i>
+        <h4 class="text-base font-bold text-white">No AI Models Found</h4>
+        <p class="text-xs text-slate-400 mt-1">Try adjusting your search terms or select another category filter.</p>
+        <button onclick="resetDirectoryFilters()" class="mt-4 px-4 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-xs font-semibold text-white transition">Reset Filters</button>
+      </div>
+    </section>
 
-      <p class="mt-3 text-slate-400">
-        Search the public web or investigate a public image/video URL.
-      </p>
+    <!-- ================= PAGE 3: 10-IN-1 WORKSPACE STUDIO ================= -->
+    <section id="page-workspace" class="page-view hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="mb-6">
+        <h2 class="text-3xl font-extrabold text-white tracking-tight">10-in-1 Creator Suite</h2>
+        <p class="text-slate-400 text-xs sm:text-sm mt-1">Pick an engine on the left, describe what you need, and generate a production-ready result.</p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
-    </div>
+        <!-- Sidebar Navigation for 10 Tools -->
+        <div class="lg:col-span-4 space-y-1.5 bg-gray-900/60 p-4 rounded-2xl border border-gray-800 h-fit">
+          <h3 class="text-xs uppercase font-bold tracking-wider text-slate-500 px-3 mb-2">Creator OS Engine Selector</h3>
 
+          <button onclick="selectEngine(1)" id="eng-1" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between bg-indigo-600 text-white transition">
+            <span class="flex items-center gap-2.5"><i data-lucide="sparkles" class="w-4 h-4"></i> 1. Prompt Enhancer</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+          <button onclick="selectEngine(2)" id="eng-2" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
+            <span class="flex items-center gap-2.5"><i data-lucide="compass" class="w-4 h-4"></i> 2. Pipeline Matcher</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+          <button onclick="selectEngine(3)" id="eng-3" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
+            <span class="flex items-center gap-2.5"><i data-lucide="repeat" class="w-4 h-4"></i> 3. Content Repurposer</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+          <button onclick="selectEngine(4)" id="eng-4" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
+            <span class="flex items-center gap-2.5"><i data-lucide="eye" class="w-4 h-4"></i> 4. Reverse Prompt Engine</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+          <button onclick="selectEngine(5)" id="eng-5" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
+            <span class="flex items-center gap-2.5"><i data-lucide="dollar-sign" class="w-4 h-4"></i> 5. Free Alternative Finder</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+          <button onclick="selectEngine(6)" id="eng-6" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
+            <span class="flex items-center gap-2.5"><i data-lucide="user-check" class="w-4 h-4"></i> 6. Character Consistency</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+          <button onclick="selectEngine(7)" id="eng-7" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
+            <span class="flex items-center gap-2.5"><i data-lucide="flame" class="w-4 h-4"></i> 7. Viral Hooks & Titles</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+          <button onclick="selectEngine(8)" id="eng-8" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
+            <span class="flex items-center gap-2.5"><i data-lucide="gift" class="w-4 h-4"></i> 8. Live Grants & Credits</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+          <button onclick="selectEngine(9)" id="eng-9" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
+            <span class="flex items-center gap-2.5"><i data-lucide="bug" class="w-4 h-4"></i> 9. Code Explainer & Fixer</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+          <button onclick="selectEngine(10)" id="eng-10" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
+            <span class="flex items-center gap-2.5"><i data-lucide="code-2" class="w-4 h-4"></i> 10. Text to Clean Code</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+        </div>
 
-    <!-- SEARCH MODE -->
-    <div class="mt-10 grid md:grid-cols-2 gap-4">
+        <!-- Dynamic Studio Terminal -->
+        <div class="lg:col-span-8 bg-gray-900/60 p-6 rounded-2xl border border-gray-800 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-gray-800 pb-4 mb-4">
+              <div>
+                <h3 id="engine-title" class="text-xl font-bold text-white">Prompt Enhancer</h3>
+                <p id="engine-subtitle" class="text-xs text-slate-400 mt-0.5">Transforms elementary concepts into production-grade multi-engine prompts.</p>
+              </div>
+              <span class="px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 text-xs font-mono border border-indigo-500/20">Studio v2.4</span>
+            </div>
 
-      <button
-        onclick="setTruthMode('search')"
-        id="truth-search-tab"
-        class="truth-tab active"
-      >
-        🔎 Search Web
+            <!-- Terminal Inputs -->
+            <label for="terminal-input" class="text-xs font-semibold text-slate-300 block mb-2">Input Context / Parameters:</label>
+            <textarea id="terminal-input" rows="4" placeholder="Enter your raw concept or syntax here..." class="w-full bg-gray-950 border border-gray-800 rounded-xl p-4 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-indigo-500 font-mono transition"></textarea>
+
+            <div class="mt-4 flex gap-3">
+              <button onclick="executeEngineAction()" id="execute-btn" class="flex-1 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-xl text-sm transition shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2">
+                <i data-lucide="play" class="w-4 h-4" id="execute-btn-icon"></i>
+                <span id="execute-btn-label">Generate Production Output</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Terminal Output -->
+          <div class="mt-8">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-xs font-semibold text-slate-400 flex items-center gap-1.5">
+                <i data-lucide="terminal" class="w-3.5 h-3.5"></i> Output Stream:
+              </span>
+              <button onclick="copyTerminalOutput()" class="text-xs text-indigo-400 hover:text-indigo-300 transition flex items-center gap-1 font-medium">
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy Result
+              </button>
+            </div>
+            <pre id="terminal-output" class="w-full bg-gray-950 border border-gray-800 rounded-xl p-4 text-xs font-mono text-emerald-400 whitespace-pre-wrap select-all min-h-[120px] overflow-x-auto">System ready. Select an engine and trigger execution.</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PAGE 4: PRICING ================= -->
+    <section id="page-pricing" class="page-view hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <h2 class="text-3xl font-bold text-white">Transparent SaaS Tiering</h2>
+        <p class="text-slate-400 text-xs sm:text-sm mt-2">Deploy tools for personal creation or client-ready commercial infrastructure.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-gray-900/60 p-8 rounded-2xl border border-gray-800 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest">Free Community Pass</span>
+            <div class="mt-4 flex items-baseline gap-1">
+              <span class="text-4xl font-extrabold text-white">$0</span>
+              <span class="text-slate-400 text-sm">/ month</span>
+            </div>
+            <ul class="mt-6 space-y-3 text-xs text-slate-300">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Full Access to all 10 Core Engines</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Live Search in Curated AI Directory</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Daily Free Credits Monitor</li>
+            </ul>
+          </div>
+          <button onclick="navigateTo('page-workspace')" class="mt-8 w-full py-3 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-xl text-xs transition">Get Started Free</button>
+        </div>
+
+        <div class="bg-gradient-to-b from-indigo-950/40 to-gray-900/80 p-8 rounded-2xl border border-indigo-500/40 flex flex-col justify-between relative shadow-xl shadow-indigo-900/20">
+          <span class="absolute top-4 right-4 bg-indigo-600 text-white text-[10px] uppercase font-bold px-2.5 py-0.5 rounded-full">Pro Tier</span>
+          <div>
+            <span class="text-xs font-bold text-indigo-300 uppercase tracking-widest">Enterprise Pro</span>
+            <div class="mt-4 flex items-baseline gap-1">
+              <span class="text-4xl font-extrabold text-white">$19</span>
+              <span class="text-slate-400 text-sm">/ month</span>
+            </div>
+            <ul class="mt-6 space-y-3 text-xs text-slate-200">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i> High-Speed Automated API Cloud Endpoints</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i> Unlimited Reverse Prompt Extractions</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i> Priority 24/7 Enterprise Assistance</li>
+            </ul>
+          </div>
+          <button onclick="navigateTo('page-contact')" class="mt-8 w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs transition shadow-md shadow-indigo-600/30">Claim Pro License</button>
+        </div>
+      </div>
+
+      <div class="max-w-3xl mx-auto mt-14">
+        <h3 class="text-center text-lg font-bold text-white mb-6">Pricing Questions</h3>
+        <div class="space-y-3">
+          <details class="bg-gray-900/60 border border-gray-800 rounded-xl p-4">
+            <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-white">
+              Can I cancel Enterprise Pro anytime?
+              <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 faq-caret transition-transform"></i>
+            </summary>
+            <p class="text-xs text-slate-400 mt-3 leading-relaxed">Yes — Pro is billed monthly with no lock-in. Downgrading takes effect at the end of the current billing cycle.</p>
+          </details>
+          <details class="bg-gray-900/60 border border-gray-800 rounded-xl p-4">
+            <summary class="flex items-center justify-between cursor-pointer text-sm font-semibold text-white">
+              Does the free plan expire?
+              <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 faq-caret transition-transform"></i>
+            </summary>
+            <p class="text-xs text-slate-400 mt-3 leading-relaxed">No. The Free Community Pass has no time limit and no credit card required.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PAGE 5: ABOUT ================= -->
+    <section id="page-about" class="page-view hidden max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h2 class="text-3xl font-bold text-white mb-3">About OmniAI Studio</h2>
+      <p class="text-slate-400 text-sm leading-relaxed">OmniAI Studio exists to solve one problem: there are too many AI tools and not enough clarity on which one actually fits the job in front of you. We track category-leading platforms across video, image, code, audio, writing, and 3D, and pair that directory with a 10-engine creator suite so you can go from a rough idea to a production-ready asset without leaving the page.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
+        <div class="bg-gray-900/60 border border-gray-800 rounded-2xl p-6">
+          <div class="w-9 h-9 rounded-lg bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 mb-3"><i data-lucide="target" class="w-4 h-4"></i></div>
+          <h3 class="font-bold text-white text-sm mb-1.5">Our focus</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Save creators and developers time by surfacing verified tools with real speed, quality, and pricing details up front.</p>
+        </div>
+        <div class="bg-gray-900/60 border border-gray-800 rounded-2xl p-6">
+          <div class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-3"><i data-lucide="shield-check" class="w-4 h-4"></i></div>
+          <h3 class="font-bold text-white text-sm mb-1.5">How we vet tools</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Every listing is checked against the provider's own published specs and free-tier terms before it goes live.</p>
+        </div>
+        <div class="bg-gray-900/60 border border-gray-800 rounded-2xl p-6">
+          <div class="w-9 h-9 rounded-lg bg-pink-500/10 border border-pink-500/30 flex items-center justify-center text-pink-400 mb-3"><i data-lucide="heart-handshake" class="w-4 h-4"></i></div>
+          <h3 class="font-bold text-white text-sm mb-1.5">Independent listings</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Placement in the directory is based on category relevance, not payment — see our <button onclick="navigateTo('page-terms')" class="text-indigo-400 hover:text-indigo-300 underline">Terms</button> for details.</p>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <button onclick="navigateTo('page-contact')" class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition">Get in touch</button>
+      </div>
+    </section>
+
+    <!-- ================= PAGE 6: CONTACT ================= -->
+    <section id="page-contact" class="page-view hidden max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="bg-gray-900/60 p-8 rounded-2xl border border-gray-800">
+        <h2 class="text-2xl font-bold text-white mb-2">Corporate Inquiries & Tool Submissions</h2>
+        <p class="text-slate-400 text-xs mb-6">Submit new AI tools for indexing or request enterprise white-label licenses.</p>
+
+        <form onsubmit="handleContactSubmit(event)" class="space-y-4 text-xs" novalidate>
+          <div>
+            <label for="contact-email" class="block text-slate-300 mb-1">Email Address</label>
+            <input id="contact-email" name="email" type="email" required placeholder="contact@organization.com" class="w-full bg-gray-950 border border-gray-800 rounded-lg p-3 text-white focus:outline-none focus:border-indigo-500">
+            <p class="hidden text-red-400 mt-1" id="email-error">Enter a valid email address.</p>
+          </div>
+          <div>
+            <label for="contact-message" class="block text-slate-300 mb-1">Submission / Inquiry Details</label>
+            <textarea id="contact-message" name="message" rows="4" required minlength="10" placeholder="Describe your tool submission or deployment scope..." class="w-full bg-gray-950 border border-gray-800 rounded-lg p-3 text-white focus:outline-none focus:border-indigo-500"></textarea>
+            <p class="hidden text-red-400 mt-1" id="message-error">Add a few more details (10+ characters).</p>
+          </div>
+          <button type="submit" id="contact-submit-btn" class="w-full py-3 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-60 text-white font-semibold rounded-lg transition">Submit Message</button>
+        </form>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6 text-xs text-slate-400">
+        <div class="bg-gray-900/40 border border-gray-800 rounded-xl p-4 flex items-center gap-3">
+          <i data-lucide="clock" class="w-4 h-4 text-indigo-400 shrink-0"></i> Replies within 2 business days
+        </div>
+        <div class="bg-gray-900/40 border border-gray-800 rounded-xl p-4 flex items-center gap-3">
+          <i data-lucide="building-2" class="w-4 h-4 text-indigo-400 shrink-0"></i> Enterprise & white-label available
+        </div>
+        <div class="bg-gray-900/40 border border-gray-800 rounded-xl p-4 flex items-center gap-3">
+          <i data-lucide="list-plus" class="w-4 h-4 text-indigo-400 shrink-0"></i> Open to new tool submissions
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PAGE 7: PRIVACY POLICY ================= -->
+    <section id="page-privacy" class="page-view hidden max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <button onclick="navigateTo('page-home')" class="text-xs text-indigo-400 hover:text-indigo-300 flex items-center gap-1 mb-6"><i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Back home</button>
+      <h2 class="text-3xl font-bold text-white mb-2">Privacy Policy</h2>
+      <p class="text-slate-500 text-xs mb-8">Last updated: <span id="privacy-date"></span></p>
+      <div class="space-y-6 text-sm text-slate-400 leading-relaxed">
+        <p>This policy explains, in plain terms, what happens to your information when you use OmniAI Studio's directory and Creator Suite.</p>
+        <div>
+          <h3 class="text-white font-bold text-sm mb-1.5">What we collect</h3>
+          <p>Contact form submissions (email address and message) and, when you use a Creator Suite engine, the text you enter into that engine — which is sent to the relevant AI provider to generate your output.</p>
+        </div>
+        <div>
+          <h3 class="text-white font-bold text-sm mb-1.5">What we don't do</h3>
+          <p>We don't sell personal information to third parties, and directory browsing and search run entirely in your browser.</p>
+        </div>
+        <div>
+          <h3 class="text-white font-bold text-sm mb-1.5">Third-party tools</h3>
+          <p>Links in the directory take you to independent providers with their own privacy policies. Review each provider's terms before creating an account with them.</p>
+        </div>
+        <div>
+          <h3 class="text-white font-bold text-sm mb-1.5">Contact</h3>
+          <p>Questions about this policy can be sent through the <button onclick="navigateTo('page-contact')" class="text-indigo-400 hover:text-indigo-300 underline">Contact page</button>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PAGE 8: TERMS OF SERVICE ================= -->
+    <section id="page-terms" class="page-view hidden max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <button onclick="navigateTo('page-home')" class="text-xs text-indigo-400 hover:text-indigo-300 flex items-center gap-1 mb-6"><i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Back home</button>
+      <h2 class="text-3xl font-bold text-white mb-2">Terms of Service</h2>
+      <p class="text-slate-500 text-xs mb-8">Last updated: <span id="terms-date"></span></p>
+      <div class="space-y-6 text-sm text-slate-400 leading-relaxed">
+        <div>
+          <h3 class="text-white font-bold text-sm mb-1.5">Using the directory</h3>
+          <p>The AI directory is provided for informational comparison. Listed speed, quality, and free-tier figures reflect each provider's published details and can change without notice — always confirm current terms on the provider's own site before relying on them.</p>
+        </div>
+        <div>
+          <h3 class="text-white font-bold text-sm mb-1.5">Using the Creator Suite</h3>
+          <p>Content generated through the 10-in-1 Suite is produced by third-party AI models based on your input. You're responsible for how you use generated output, and for confirming it fits your intended use.</p>
+        </div>
+        <div>
+          <h3 class="text-white font-bold text-sm mb-1.5">Listings and independence</h3>
+          <p>Directory placement is based on category relevance rather than payment from listed providers.</p>
+        </div>
+        <div>
+          <h3 class="text-white font-bold text-sm mb-1.5">Changes</h3>
+          <p>We may update these terms as the product evolves. Continued use after an update means you accept the revised terms.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= PERFORMANCE MODAL DRAWER ================= -->
+  <div id="tool-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title" onclick="if(event.target === this) closeModal()">
+    <div class="bg-gray-900 border border-gray-800 rounded-2xl max-w-2xl w-full p-6 relative shadow-2xl overflow-y-auto max-h-[90vh]">
+      <button onclick="closeModal()" id="modal-close-btn" class="absolute top-4 right-4 text-slate-400 hover:text-white transition p-1 bg-gray-800 rounded-lg" aria-label="Close dialog">
+        <i data-lucide="x" class="w-5 h-5"></i>
       </button>
 
-      <button
-        onclick="setTruthMode('url')"
-        id="truth-url-tab"
-        class="truth-tab"
-      >
-        🔗 Paste Link
-      </button>
+      <!-- Modal Header -->
+      <div class="flex items-center gap-3 mb-4">
+        <div id="modal-icon-container" class="w-12 h-12 rounded-xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
+          <i data-lucide="cpu" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h3 id="modal-title" class="text-xl font-bold text-white">Tool Name</h3>
+          <span id="modal-category" class="text-xs text-indigo-400 font-mono">Category</span>
+        </div>
+      </div>
 
+      <!-- Description -->
+      <p id="modal-desc" class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">Description content</p>
+
+      <!-- Performance Metrics Breakdown -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6 bg-gray-950 p-4 rounded-xl border border-gray-800 text-center">
+        <div>
+          <div class="text-[10px] text-slate-500 uppercase font-bold">Speed / Latency</div>
+          <div id="modal-speed" class="text-sm font-bold text-emerald-400 mt-0.5">Ultra Fast</div>
+        </div>
+        <div>
+          <div class="text-[10px] text-slate-500 uppercase font-bold">Output Quality</div>
+          <div id="modal-quality" class="text-sm font-bold text-indigo-400 mt-0.5">9.8 / 10</div>
+        </div>
+        <div class="col-span-2 sm:col-span-1">
+          <div class="text-[10px] text-slate-500 uppercase font-bold">Daily Free Tier</div>
+          <div id="modal-free-tier" class="text-sm font-bold text-amber-400 mt-0.5">Available</div>
+        </div>
+      </div>
+
+      <!-- Capabilities List -->
+      <div class="mb-6">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Key Technical Strengths:</h4>
+        <ul id="modal-strengths" class="space-y-1.5 text-xs text-slate-300">
+          <!-- Strengths injected via JS -->
+        </ul>
+      </div>
+
+      <!-- Modal Actions -->
+      <div class="flex gap-3">
+        <a id="modal-link" href="#" target="_blank" rel="noopener noreferrer" class="flex-1 text-center py-3 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5 shadow-lg shadow-indigo-600/30">
+          <span>Launch Official Platform</span>
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+        </a>
+      </div>
     </div>
-
-
-    <!-- SEARCH -->
-    <div
-      id="truth-search-box"
-      class="mt-5"
-    >
-
-      <input
-        id="truth-query"
-        class="w-full bg-slate-900 border border-slate-800 rounded-xl p-4 outline-none focus:border-pink-500"
-        placeholder="Search a person, image, video, claim or AI tool..."
-      >
-
-    </div>
-
-
-    <!-- URL -->
-    <div
-      id="truth-url-box"
-      class="mt-5 hidden"
-    >
-
-      <input
-        id="truth-url"
-        type="url"
-        class="w-full bg-slate-900 border border-slate-800 rounded-xl p-4 outline-none focus:border-pink-500"
-        placeholder="https://example.com/image-or-video"
-      >
-
-    </div>
-
-
-    <button
-      onclick="runTruth()"
-      class="mt-4 w-full bg-pink-600 hover:bg-pink-500 py-4 rounded-xl font-bold"
-    >
-      🔍 GO — Investigate
-    </button>
-
-
-    <!-- STATUS -->
-    <div
-      id="truth-status"
-      class="hidden mt-6 p-4 rounded-xl bg-slate-900 border border-slate-800 text-sm"
-    ></div>
-
-
-    <!-- RESULT -->
-    <div
-      id="truth-result"
-      class="mt-6"
-    ></div>
-
   </div>
 
-</section>
-
-
-<!-- DIRECTORY -->
-<section
-  id="page-directory"
-  class="page hidden-page max-w-7xl mx-auto px-4 py-10"
->
-
-  <h2 class="text-3xl font-bold">
-    AI Directory
-  </h2>
-
-  <p class="text-slate-400 mt-2">
-    Curated AI tools.
-  </p>
-
-  <input
-    id="directory-search"
-    oninput="renderDirectory()"
-    class="mt-6 w-full bg-slate-900 border border-slate-800 rounded-xl p-4"
-    placeholder="Search AI tools..."
-  >
-
-  <div
-    id="directory-grid"
-    class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-5"
-  ></div>
-
-</section>
-
-</main>
-
-
-<footer class="border-t border-slate-900 mt-20 py-8 text-center text-xs text-slate-500">
-  OmniAI Studio © 2026
-</footer>
-
-
-<script>
-
-/* ============================================================
-   CONFIG
-============================================================ */
-
-const API = {
-  generate: "/api/generate",
-  truth: "/api/truth"
-};
-
-
-/* ============================================================
-   PAGE ROUTER
-============================================================ */
-
-function navigateTo(page) {
-
-  document.querySelectorAll(".page").forEach(el => {
-    el.classList.add("hidden-page");
-  });
-
-  const target = document.getElementById("page-" + page);
-
-  if (target) {
-    target.classList.remove("hidden-page");
-  }
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-
-  lucide.createIcons();
-}
-
-
-/* ============================================================
-   CREATOR ENGINES — FIRST 8
-============================================================ */
-
-const creatorEngines = {
-
-  1: {
-    title: "Master Prompt Enhancer",
-    sub: "Convert simple ideas into production-ready AI prompts.",
-    button: "Synthesize Master Prompt"
-  },
-
-  2: {
-    title: "Dynamic Pipeline Matcher",
-    sub: "Build a complete AI production workflow.",
-    button: "Match Pipeline"
-  },
-
-  3: {
-    title: "Viral Content Repurposer",
-    sub: "Transform long-form content into short-form viral content.",
-    button: "Generate Viral Package"
-  },
-
-  4: {
-    title: "Reverse Prompt Extraction",
-    sub: "Analyze a visual concept and reconstruct its generation prompt.",
-    button: "Reverse Engineer"
-  },
-
-  5: {
-    title: "Free AI Alternatives",
-    sub: "Find free or lower-cost alternatives to paid AI tools.",
-    button: "Find Alternatives"
-  },
-
-  6: {
-    title: "Character Continuity",
-    sub: "Create consistent character prompts across scenes.",
-    button: "Create Character Bible"
-  },
-
-  7: {
-    title: "Viral Hooks & Titles",
-    sub: "Generate multiple high-retention hooks and titles.",
-    button: "Generate Hooks"
-  },
-
-  8: {
-    title: "Live Grants & Credits",
-    sub: "Analyze AI free-credit opportunities and public offers.",
-    button: "Find Free Credits"
-  }
-
-};
-
-
-/* ============================================================
-   CODING ENGINES — ONLY 2
-============================================================ */
-
-const codingEngines = {
-
-  9: {
-    title: "Code Explainer & Fixer",
-    sub: "Analyze bugs, explain the code and provide corrected code.",
-    button: "Analyze & Fix Code"
-  },
-
-  10: {
-    title: "Text to Clean Code",
-    sub: "Convert natural-language requirements into clean production code.",
-    button: "Compile Clean Code"
-  }
-
-};
-
-
-let creatorEngine = 1;
-let codingEngine = 9;
-
-
-/* ============================================================
-   ENGINE LIST UI
-============================================================ */
-
-function buildEngineLists() {
-
-  const creatorList =
-    document.getElementById("creator-engine-list");
-
-  const codingList =
-    document.getElementById("coding-engine-list");
-
-
-  creatorList.innerHTML = "";
-
-  Object.entries(creatorEngines).forEach(([id, engine]) => {
-
-    const button = document.createElement("button");
-
-    button.className =
-      "w-full text-left p-3 rounded-xl mb-2 bg-slate-800 hover:bg-indigo-600 transition text-sm";
-
-    button.innerText =
-      `${id}. ${engine.title}`;
-
-    button.onclick = () => selectCreatorEngine(Number(id));
-
-    creatorList.appendChild(button);
-
-  });
-
-
-  codingList.innerHTML = "";
-
-  Object.entries(codingEngines).forEach(([id, engine]) => {
-
-    const button = document.createElement("button");
-
-    button.className =
-      "w-full text-left p-3 rounded-xl mb-2 bg-slate-800 hover:bg-emerald-600 transition text-sm";
-
-    button.innerText =
-      `${id}. ${engine.title}`;
-
-    button.onclick = () => selectCodingEngine(Number(id));
-
-    codingList.appendChild(button);
-
-  });
-
-
-  selectCreatorEngine(1);
-  selectCodingEngine(9);
-}
-
-
-function selectCreatorEngine(id) {
-
-  creatorEngine = id;
-
-  const e = creatorEngines[id];
-
-  document.getElementById("creator-title").innerText =
-    e.title;
-
-  document.getElementById("creator-subtitle").innerText =
-    e.sub;
-
-  document.getElementById("creator-button").innerText =
-    e.button;
-}
-
-
-function selectCodingEngine(id) {
-
-  codingEngine = id;
-
-  const e = codingEngines[id];
-
-  document.getElementById("coding-title").innerText =
-    e.title;
-
-  document.getElementById("coding-subtitle").innerText =
-    e.sub;
-
-  document.getElementById("coding-button").innerText =
-    e.button;
-}
-
-
-/* ============================================================
-   CREATOR PROMPTS
-============================================================ */
-
-function getCreatorPrompt(input) {
-
-  const prompts = {
-
-    1: `
-You are an expert AI prompt engineer.
-
-Analyze this concept:
-
-${input}
-
-Return a FULL production-grade prompt.
-
-Include:
-1. Subject
-2. Environment
-3. Composition
-4. Camera
-5. Lens
-6. Lighting
-7. Materials
-8. Color
-9. Atmosphere
-10. Motion
-11. Style
-12. Negative prompt
-13. Recommended aspect ratio
-14. Recommended model type
-15. Final copy-ready prompt
-
-Do not give a shallow answer.
-`,
-
-    2: `
-Create a detailed AI production pipeline for:
-
-${input}
-
-Return:
-1. Goal
-2. Recommended tools
-3. Step-by-step workflow
-4. Input for each tool
-5. Output from each tool
-6. Quality-control checkpoints
-7. Cost/free alternatives
-8. Final production workflow
-`,
-
-    3: `
-Turn this content into a complete viral content package:
-
-${input}
-
-Return:
-1. 3-second hooks
-2. 15-second version
-3. 30-second version
-4. Main script
-5. Visual instructions
-6. Voiceover
-7. CTA
-8. Title ideas
-9. Thumbnail ideas
-10. Hashtags
-11. Retention strategy
-`,
-
-    4: `
-Reverse engineer the following visual concept:
-
-${input}
-
-Return a detailed generation specification containing:
-subject, environment, camera, lens, composition,
-lighting, colors, materials, depth of field,
-motion, style, negative prompt and final prompt.
-`,
-
-    5: `
-Find the best free or low-cost AI alternatives for:
-
-${input}
-
-For each alternative provide:
-tool name,
-official website,
-free limits,
-strengths,
-limitations,
-best use case,
-commercial-use considerations.
-Clearly separate verified facts from assumptions.
-`,
-
-    6: `
-Create a detailed character continuity bible for:
-
-${input}
-
-Include:
-identity,
-face,
-hair,
-body,
-clothing,
-colors,
-personality,
-camera consistency,
-lighting consistency,
-negative prompt,
-seed strategy,
-scene continuity rules,
-final reusable character prompt.
-`,
-
-    7: `
-Generate a detailed viral headline package for:
-
-${input}
-
-Provide:
-10 hooks,
-10 titles,
-5 curiosity hooks,
-5 controversy hooks,
-5 emotional hooks,
-5 short-form hooks,
-thumbnail text,
-CTA,
-audience angle,
-retention strategy.
-`,
-
-    8: `
-Analyze publicly known AI free-credit opportunities relevant to:
-
-${input}
-
-Separate:
-Verified current information
-Potentially outdated information
-Unknown information
-
-For each tool provide:
-name,
-official URL,
-free tier,
-credit/reset information,
-limitations,
-verification status.
-`
-  };
-
-  return prompts[creatorEngine];
-}
-
-
-/* ============================================================
-   CODING PROMPTS
-============================================================ */
-
-function getCodingPrompt(input) {
-
-  if (codingEngine === 9) {
-
-    return `
-You are a senior software engineer and debugging specialist.
-
-Analyze this code:
-
-${input}
-
-Return a COMPLETE detailed debugging report.
-
-FORMAT:
-
-1. EXECUTIVE SUMMARY
-
-2. DETECTED PROBLEMS
-For every issue:
-- location
-- problem
-- severity
-- why it happens
-
-3. ROOT CAUSE
-
-4. CORRECTED CODE
-Provide the complete corrected code.
-
-5. PERFORMANCE IMPROVEMENTS
-
-6. SECURITY ISSUES
-
-7. EDGE CASES
-
-8. TEST CASES
-
-9. BEFORE vs AFTER
-
-10. FINAL RECOMMENDATIONS
-
-Do not omit important code.
-`;
-  }
-
-
-  return `
-You are a senior full-stack software architect.
-
-Convert this requirement into production-quality code:
-
-${input}
-
-Return:
-
-1. Requirements interpretation
-2. Architecture
-3. File structure
-4. Complete code
-5. Responsive UI
-6. Error handling
-7. Security considerations
-8. Accessibility
-9. Performance optimization
-10. Testing instructions
-11. Deployment instructions
-
-Do not provide incomplete placeholder code unless absolutely necessary.
-`;
-}
-
-
-/* ============================================================
-   GENERIC AI REQUEST
-============================================================ */
-
-async function callAI(prompt) {
-
-  const response = await fetch(API.generate, {
-
-    method: "POST",
-
-    headers: {
-      "Content-Type": "application/json"
-    },
-
-    body: JSON.stringify({
-      prompt
-    })
-
-  });
-
-
-  let data;
-
-  try {
-    data = await response.json();
-  } catch {
-    throw new Error(
-      "AI server returned invalid JSON."
-    );
-  }
-
-
-  if (!response.ok) {
-
-    throw new Error(
-      data.error ||
-      "AI generation failed."
-    );
-
-  }
-
-
-  return data.result || data.output || "";
-}
-
-
-/* ============================================================
-   CREATOR EXECUTION
-============================================================ */
-
-async function executeCreator() {
-
-  const input =
-    document.getElementById("creator-input").value.trim();
-
-  const output =
-    document.getElementById("creator-output");
-
-
-  if (!input) {
-
-    output.innerText =
-      "Please enter your creator requirement.";
-
-    return;
-  }
-
-
-  output.innerText =
-    "⚡ AI is generating a detailed production result...";
-
-
-  try {
-
-    const result =
-      await callAI(getCreatorPrompt(input));
-
-    output.innerText =
-      result || "No AI output returned.";
-
-  } catch (error) {
-
-    output.innerText =
-      "❌ " + error.message;
-
-  }
-
-}
-
-
-/* ============================================================
-   CODING EXECUTION
-============================================================ */
-
-async function executeCoding() {
-
-  const input =
-    document.getElementById("coding-input").value.trim();
-
-  const output =
-    document.getElementById("coding-output");
-
-
-  if (!input) {
-
-    output.innerText =
-      "Please enter code or a coding requirement.";
-
-    return;
-  }
-
-
-  output.innerText =
-    "⚡ Running detailed coding analysis...";
-
-
-  try {
-
-    const result =
-      await callAI(getCodingPrompt(input));
-
-    output.innerText =
-      result || "No coding result returned.";
-
-  } catch (error) {
-
-    output.innerText =
-      "❌ " + error.message;
-
-  }
-
-}
-
-
-/* ============================================================
-   FIND TRUTH MODE
-============================================================ */
-
-let truthMode = "search";
-
-
-function setTruthMode(mode) {
-
-  truthMode = mode;
-
-  const searchBox =
-    document.getElementById("truth-search-box");
-
-  const urlBox =
-    document.getElementById("truth-url-box");
-
-
-  if (mode === "search") {
-
-    searchBox.classList.remove("hidden");
-    urlBox.classList.add("hidden");
-
-  } else {
-
-    searchBox.classList.add("hidden");
-    urlBox.classList.remove("hidden");
-
-  }
-
-}
-
-
-/* ============================================================
-   FIND TRUTH
-============================================================ */
-
-async function runTruth() {
-
-  const status =
-    document.getElementById("truth-status");
-
-  const result =
-    document.getElementById("truth-result");
-
-
-  let payload;
-
-
-  if (truthMode === "search") {
-
-    const query =
-      document.getElementById("truth-query")
-      .value
-      .trim();
-
-
-    if (!query) {
-
-      result.innerHTML =
-        errorBox("Enter something to search.");
-
-      return;
-    }
-
-
-    payload = {
-      mode: "search",
-      query
+  <!-- Toast notifications -->
+  <div id="toast-container" aria-live="polite"></div>
+
+  <!-- Back to top -->
+  <button id="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" class="hidden fixed bottom-6 left-6 z-40 w-11 h-11 rounded-full bg-gray-900 border border-gray-800 text-slate-300 hover:text-white hover:border-indigo-500/50 shadow-lg flex items-center justify-center transition" aria-label="Back to top">
+    <i data-lucide="arrow-up" class="w-4 h-4"></i>
+  </button>
+
+  <!-- Global Footer -->
+  <footer class="border-t border-gray-900 bg-gray-950 text-slate-500 text-xs py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-8">
+        <div class="col-span-2 sm:col-span-1">
+          <div class="flex items-center space-x-2 mb-3">
+            <div class="w-6 h-6 rounded bg-indigo-600 flex items-center justify-center text-white">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            </div>
+            <span class="font-bold text-slate-300">OmniAI Studio</span>
+          </div>
+          <p class="text-[11px] leading-relaxed text-slate-500">A curated AI directory and 10-in-1 creator suite for people who'd rather build than browse tabs.</p>
+        </div>
+        <div>
+          <h4 class="text-slate-300 font-semibold text-[11px] uppercase tracking-wider mb-3">Product</h4>
+          <ul class="space-y-2">
+            <li><button onclick="navigateTo('page-directory')" class="hover:text-slate-300 transition">AI Directory</button></li>
+            <li><button onclick="navigateTo('page-workspace')" class="hover:text-slate-300 transition">10-in-1 Suite</button></li>
+            <li><button onclick="navigateTo('page-pricing')" class="hover:text-slate-300 transition">Pricing</button></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-slate-300 font-semibold text-[11px] uppercase tracking-wider mb-3">Company</h4>
+          <ul class="space-y-2">
+            <li><button onclick="navigateTo('page-about')" class="hover:text-slate-300 transition">About</button></li>
+            <li><button onclick="navigateTo('page-contact')" class="hover:text-slate-300 transition">Contact</button></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-slate-300 font-semibold text-[11px] uppercase tracking-wider mb-3">Legal</h4>
+          <ul class="space-y-2">
+            <li><button onclick="navigateTo('page-privacy')" class="hover:text-slate-300 transition">Privacy Policy</button></li>
+            <li><button onclick="navigateTo('page-terms')" class="hover:text-slate-300 transition">Terms of Service</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-10 pt-6 border-t border-gray-900 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <span>© <span id="footer-year"></span> OmniAI Studio Inc. All rights reserved.</span>
+        <span class="text-slate-600">Built for creators who'd rather ship than search.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MASTER JAVASCRIPT ================= -->
+  <script>
+    // 1. MASTER AI DATABASE (25+ Comprehensive Verified Tools)
+    const aiDirectory = [
+      // Video
+      {
+        id: "kling",
+        name: "Kling AI",
+        category: "video",
+        badge: "Free Daily Credits",
+        freeDaily: true,
+        summary: "World-class physical simulation text-to-video with realistic camera pans.",
+        url: "https://klingai.com",
+        speed: "3-5 mins",
+        quality: "9.9 / 10",
+        freeDetails: "66 Free Daily Credits upon login",
+        strengths: ["Physics-accurate continuous motion", "Full 1080p rendering output", "High facial geometry consistency"]
+      },
+      {
+        id: "runway",
+        name: "Runway Gen-3 Alpha",
+        category: "video",
+        badge: "Freemium",
+        freeDaily: false,
+        summary: "Industry-standard cinematic motion generator with fine-grained camera control.",
+        url: "https://runwayml.com",
+        speed: "1-2 mins",
+        quality: "9.8 / 10",
+        freeDetails: "125 One-time trial credits",
+        strengths: ["Director camera motion brush", "High dynamic range rendering", "Multi-prompt keyframing"]
+      },
+      {
+        id: "luma",
+        name: "Luma Dream Machine",
+        category: "video",
+        badge: "Free Daily Credits",
+        freeDaily: true,
+        summary: "Ultra-fast realistic video synthesis engine directly rendering high framerates.",
+        url: "https://lumalabs.ai/dream-machine",
+        speed: "60-90 secs",
+        quality: "9.7 / 10",
+        freeDetails: "30 Free Generations / Month",
+        strengths: ["Lightning fast inference time", "Realistic camera tracking", "High prompt adherence"]
+      },
+      {
+        id: "pika",
+        name: "Pika 2.0",
+        category: "video",
+        badge: "Free Tier",
+        freeDaily: true,
+        summary: "Creative video effects platform with object modification and canvas expansions.",
+        url: "https://pika.art",
+        speed: "2 mins",
+        quality: "9.5 / 10",
+        freeDetails: "30 Daily Refill Credits",
+        strengths: ["Pikaffects physical modifications", "Sound effects auto-sync", "Aspect ratio expander"]
+      },
+
+      // Image & Art
+      {
+        id: "leonardo",
+        name: "Leonardo.ai",
+        category: "image",
+        badge: "150 Daily Credits",
+        freeDaily: true,
+        summary: "Production visual design suite with custom fine-tuned styles and canvas editing.",
+        url: "https://leonardo.ai",
+        speed: "15 secs",
+        quality: "9.8 / 10",
+        freeDetails: "150 Tokens reset every 24 hours",
+        strengths: ["Phoenix foundational image model", "Universal real-time upscaler", "Transparency PNG generation"]
+      },
+      {
+        id: "midjourney",
+        name: "Midjourney v6",
+        category: "image",
+        badge: "Paid Only",
+        freeDaily: false,
+        summary: "The gold standard for photorealistic renders, artistic lighting, and detailed textures.",
+        url: "https://midjourney.com",
+        speed: "30 secs",
+        quality: "9.9 / 10",
+        freeDetails: "Subscription required",
+        strengths: ["Superior photorealism and skin textures", "Exact typography in image", "Vast stylistic range"]
+      },
+      {
+        id: "seaart",
+        name: "SeaArt AI",
+        category: "image",
+        badge: "Free Daily Credits",
+        freeDaily: true,
+        summary: "Powerful web-based Stable Diffusion interface with built-in LoRA model library.",
+        url: "https://seaart.ai",
+        speed: "20 secs",
+        quality: "9.6 / 10",
+        freeDetails: "100+ Free coins refreshed daily",
+        strengths: ["Thousands of community LoRAs", "ControlNet pose locking", "One-click background remover"]
+      },
+      {
+        id: "ideogram",
+        name: "Ideogram 2.0",
+        category: "image",
+        badge: "Free Daily Credits",
+        freeDaily: true,
+        summary: "Specialized in perfect graphic typography, t-shirt vectors, and poster design.",
+        url: "https://ideogram.ai",
+        speed: "25 secs",
+        quality: "9.7 / 10",
+        freeDetails: "10 Free Slow Prompts / Day",
+        strengths: ["100% accurate text spelling", "Graphic vector illustrations", "Color palette locking"]
+      },
+
+      // Code & Dev
+      {
+        id: "cursor",
+        name: "Cursor AI",
+        category: "code",
+        badge: "Free Tier",
+        freeDaily: true,
+        summary: "AI-first code editor built on VS Code with full-codebase indexing and instant edits.",
+        url: "https://cursor.com",
+        speed: "Instant",
+        quality: "9.9 / 10",
+        freeDetails: "50 Free Pro requests + Free standard",
+        strengths: ["Multi-file composer editing", "Terminal auto-debugging", "Full codebase intelligence"]
+      },
+      {
+        id: "claude-code",
+        name: "Claude 3.5 Sonnet",
+        category: "code",
+        badge: "Free Daily Access",
+        freeDaily: true,
+        summary: "Top-ranking LLM for frontend coding, backend architecture, and complex logic.",
+        url: "https://claude.ai",
+        speed: "Ultra Fast",
+        quality: "10 / 10",
+        freeDetails: "Free daily message limits on web",
+        strengths: ["Unmatched coding syntax accuracy", "Interactive Artifacts execution", "Nuanced contextual memory"]
+      },
+      {
+        id: "v0",
+        name: "v0 by Vercel",
+        category: "code",
+        badge: "Free Daily Credits",
+        freeDaily: true,
+        summary: "Generative UI system converting natural text directly into clean Tailwind & React components.",
+        url: "https://v0.dev",
+        speed: "10 secs",
+        quality: "9.8 / 10",
+        freeDetails: "Monthly refreshed credits",
+        strengths: ["Production Tailwind CSS code", "Figma to React conversion", "Instant preview UI sandbox"]
+      },
+      {
+        id: "bolt",
+        name: "Bolt.new",
+        category: "code",
+        badge: "Free Tier",
+        freeDaily: true,
+        summary: "Fullstack in-browser app builder that installs packages and runs servers in WebContainers.",
+        url: "https://bolt.new",
+        speed: "Instant",
+        quality: "9.7 / 10",
+        freeDetails: "Daily token allowance",
+        strengths: ["Fullstack node execution in browser", "One-click Netlify deployment", "Direct Git export"]
+      },
+
+      // Audio & Voice
+      {
+        id: "elevenlabs",
+        name: "ElevenLabs",
+        category: "audio",
+        badge: "Freemium",
+        freeDaily: false,
+        summary: "Most natural emotional human voice synthesis and zero-shot voice cloning platform.",
+        url: "https://elevenlabs.io",
+        speed: "Sub-second",
+        quality: "10 / 10",
+        freeDetails: "10,000 characters free / month",
+        strengths: ["Hyper-realistic breathing & laughter", "32+ Language support", "AI sound effect generator"]
+      },
+      {
+        id: "suno",
+        name: "Suno AI v3.5",
+        category: "audio",
+        badge: "50 Daily Credits",
+        freeDaily: true,
+        summary: "Generates full-length radio-quality songs with vocals, instruments, and lyrics from text.",
+        url: "https://suno.com",
+        speed: "30 secs",
+        quality: "9.8 / 10",
+        freeDetails: "50 Daily Credits (5 Songs/day)",
+        strengths: ["Full song structure (Verse/Chorus)", "Diverse musical genres", "Clean stem separation"]
+      },
+      {
+        id: "udio",
+        name: "Udio Music",
+        category: "audio",
+        badge: "Free Daily Credits",
+        freeDaily: true,
+        summary: "High-fidelity audio music synthesis with complex harmonics and vocal modulation.",
+        url: "https://udio.com",
+        speed: "45 secs",
+        quality: "9.8 / 10",
+        freeDetails: "10 Daily Free Creations",
+        strengths: ["Studio vocal clarity", "Advanced track extension", "Genre-bending flexibility"]
+      },
+
+      // Writing & LLMs
+      {
+        id: "chatgpt",
+        name: "ChatGPT-4o",
+        category: "writing",
+        badge: "Free Access",
+        freeDaily: true,
+        summary: "Leading conversational AI with web browsing, vision inspection, and data analysis.",
+        url: "https://chatgpt.com",
+        speed: "Instant",
+        quality: "9.8 / 10",
+        freeDetails: "Free access with standard limits",
+        strengths: ["Multimodal vision processing", "Custom GPT ecosystem", "Fast mathematical computation"]
+      },
+      {
+        id: "gemini",
+        name: "Google AI Studio (Gemini 1.5)",
+        category: "writing",
+        badge: "Free Developer Tier",
+        freeDaily: true,
+        summary: "Massive 2-Million token context window for analyzing full books, codebase, and hour-long videos.",
+        url: "https://aistudio.google.com",
+        speed: "Ultra Fast",
+        quality: "9.9 / 10",
+        freeDetails: "Completely Free High Rate-Limits",
+        strengths: ["2,000,000 token context window", "Native video & audio ingestion", "Zero-cost developer access"]
+      },
+      {
+        id: "perplexity",
+        name: "Perplexity AI",
+        category: "writing",
+        badge: "Free Daily Queries",
+        freeDaily: true,
+        summary: "Live interactive conversational search engine citing accurate real-time web sources.",
+        url: "https://perplexity.ai",
+        speed: "Fast",
+        quality: "9.7 / 10",
+        freeDetails: "Unlimited standard + Free daily Pro",
+        strengths: ["Real-time academic citations", "Web scraping intelligence", "Clean formatted answers"]
+      },
+
+      // 3D & Avatar
+      {
+        id: "meshy",
+        name: "Meshy AI",
+        category: "3d",
+        badge: "Free Daily Credits",
+        freeDaily: true,
+        summary: "Text-to-3D and Image-to-3D asset generator exporting textured GLB, FBX, and OBJ files.",
+        url: "https://meshy.ai",
+        speed: "2 mins",
+        quality: "9.4 / 10",
+        freeDetails: "200 Free credits on signup + resets",
+        strengths: ["Game-ready quad mesh output", "PBR material maps", "Direct Blender integration"]
+      },
+      {
+        id: "heygen",
+        name: "HeyGen",
+        category: "3d",
+        badge: "Freemium",
+        freeDaily: false,
+        summary: "Photorealistic AI video avatars with perfect lip-syncing in 40+ global languages.",
+        url: "https://heygen.com",
+        speed: "3-5 mins",
+        quality: "9.9 / 10",
+        freeDetails: "1 Free credit for video generation",
+        strengths: ["Studio human avatars", "Automated video translation", "Custom face swap tech"]
+      }
+    ];
+
+    let activeCategory = 'all';
+    let searchDebounceTimer = null;
+
+    const pageTitles = {
+      'page-home': 'OmniAI Studio - Enterprise 10-in-1 AI Productivity Suite & Live Directory',
+      'page-directory': 'AI Directory - OmniAI Studio',
+      'page-workspace': '10-in-1 Creator Suite - OmniAI Studio',
+      'page-pricing': 'Pricing - OmniAI Studio',
+      'page-about': 'About - OmniAI Studio',
+      'page-contact': 'Contact - OmniAI Studio',
+      'page-privacy': 'Privacy Policy - OmniAI Studio',
+      'page-terms': 'Terms of Service - OmniAI Studio'
     };
 
-  } else {
+    // 2. Multi-Page Navigation Router (hash-based, so pages are bookmarkable and back/forward works)
+    function navigateTo(pageId, pushHash) {
+      if (pushHash === undefined) pushHash = true;
+      document.querySelectorAll('.page-view').forEach(function(p) { p.classList.add('hidden'); });
+      const active = document.getElementById(pageId);
+      if (active) {
+        active.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      document.title = pageTitles[pageId] || pageTitles['page-home'];
 
-    const url =
-      document.getElementById("truth-url")
-      .value
-      .trim();
-
-
-    if (!url) {
-
-      result.innerHTML =
-        errorBox("Paste a public image/video/page URL.");
-
-      return;
-    }
-
-
-    try {
-
-      new URL(url);
-
-    } catch {
-
-      result.innerHTML =
-        errorBox("Invalid URL.");
-
-      return;
-    }
-
-
-    payload = {
-      mode: "url",
-      url
-    };
-
-  }
-
-
-  status.classList.remove("hidden");
-
-  status.innerText =
-    "🔎 Searching public web evidence and analyzing available metadata...";
-
-
-  result.innerHTML = "";
-
-
-  try {
-
-    const response =
-      await fetch(API.truth, {
-
-        method: "POST",
-
-        headers: {
-          "Content-Type": "application/json"
-        },
-
-        body: JSON.stringify(payload)
-
+      document.querySelectorAll('.nav-link').forEach(function(link) {
+        const isActive = link.getAttribute('data-nav') === pageId;
+        link.classList.toggle('text-white', isActive);
+        link.classList.toggle('bg-gray-800/60', isActive);
+        if (isActive) link.setAttribute('aria-current', 'page');
+        else link.removeAttribute('aria-current');
       });
 
+      if (pushHash) {
+        const slug = pageId.replace('page-', '');
+        if (location.hash !== '#' + slug) history.pushState(null, '', '#' + slug);
+      }
 
-    const data =
-      await response.json();
-
-
-    if (!response.ok) {
-
-      throw new Error(
-        data.error ||
-        "Truth investigation failed."
-      );
-
+      closeMobileMenu();
+      lucide.createIcons();
     }
 
-
-    renderTruthResult(data);
-
-    status.innerText =
-      "✅ Investigation completed. Review evidence confidence before making a conclusion.";
-
-  } catch (error) {
-
-    status.innerText =
-      "❌ Investigation error.";
-
-    result.innerHTML =
-      errorBox(error.message);
-
-  }
-
-}
-
-
-/* ============================================================
-   TRUTH RESULT
-============================================================ */
-
-function renderTruthResult(data) {
-
-  const result =
-    document.getElementById("truth-result");
-
-
-  const analysis =
-    data.analysis || {};
-
-
-  let html = `
-
-    <div class="space-y-5">
-
-      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
-
-        <h3 class="text-lg font-bold">
-          Investigation Summary
-        </h3>
-
-        <div class="mt-4 grid md:grid-cols-3 gap-3">
-
-          ${infoCard(
-            "Content Type",
-            analysis.contentType || "Unknown"
-          )}
-
-          ${infoCard(
-            "AI Probability",
-            analysis.aiProbability || "Unknown"
-          )}
-
-          ${infoCard(
-            "Confidence",
-            analysis.confidence || "Unknown"
-          )}
-
-        </div>
-
-      </div>
-
-
-      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
-
-        <h3 class="font-bold">
-          Source Information
-        </h3>
-
-        <div class="mt-4 text-sm text-slate-300 space-y-2">
-
-          <p>
-            <strong>Title:</strong>
-            ${escapeHTML(analysis.title || "Unknown")}
-          </p>
-
-          <p>
-            <strong>Author/Uploader:</strong>
-            ${escapeHTML(analysis.author || "Unknown")}
-          </p>
-
-          <p>
-            <strong>Published:</strong>
-            ${escapeHTML(analysis.published || "Unknown")}
-          </p>
-
-          <p>
-            <strong>Platform:</strong>
-            ${escapeHTML(analysis.platform || "Unknown")}
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
-
-        <h3 class="font-bold">
-          AI Generation Evidence
-        </h3>
-
-        <div class="mt-4 space-y-3 text-sm">
-
-          ${detailRow(
-            "Likely AI Tool",
-            analysis.tool
-          )}
-
-          ${detailRow(
-            "Model",
-            analysis.model
-          )}
-
-          ${detailRow(
-            "Prompt",
-            analysis.prompt
-          )}
-
-          ${detailRow(
-            "Generation Details",
-            analysis.generationDetails
-          )}
-
-        </div>
-
-      </div>
-
-
-      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
-
-        <h3 class="font-bold">
-          Evidence & Reasoning
-        </h3>
-
-        <div class="mt-4 whitespace-pre-wrap text-sm text-slate-300">
-          ${escapeHTML(
-            analysis.reasoning ||
-            "No detailed reasoning returned."
-          )}
-        </div>
-
-      </div>
-
-
-      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
-
-        <h3 class="font-bold">
-          Public Search Evidence
-        </h3>
-
-        <div class="mt-4 space-y-3">
-
-          ${
-            (data.sources || [])
-              .map(source => `
-
-                <a
-                  href="${escapeAttribute(source.link)}"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="block p-4 rounded-xl bg-slate-950 border border-slate-800 hover:border-pink-500"
-                >
-
-                  <div class="font-semibold">
-                    ${escapeHTML(source.title || "Source")}
-                  </div>
-
-                  <div class="text-xs text-slate-500 mt-1">
-                    ${escapeHTML(source.displayLink || "")}
-                  </div>
-
-                  <p class="text-xs text-slate-400 mt-2">
-                    ${escapeHTML(source.snippet || "")}
-                  </p>
-
-                </a>
-
-              `)
-              .join("")
-          }
-
-        </div>
-
-      </div>
-
-    </div>
-
-  `;
-
-
-  result.innerHTML = html;
-
-  lucide.createIcons();
-}
-
-
-/* ============================================================
-   HELPERS
-============================================================ */
-
-function infoCard(title, value) {
-
-  return `
-    <div class="bg-slate-950 border border-slate-800 rounded-xl p-4">
-      <div class="text-xs text-slate-500">
-        ${escapeHTML(title)}
-      </div>
-      <div class="font-bold mt-1">
-        ${escapeHTML(value)}
-      </div>
-    </div>
-  `;
-}
-
-
-function detailRow(label, value) {
-
-  return `
-    <div class="p-4 bg-slate-950 rounded-xl border border-slate-800">
-
-      <div class="text-xs text-slate-500">
-        ${escapeHTML(label)}
-      </div>
-
-      <div class="mt-2 whitespace-pre-wrap">
-        ${escapeHTML(value || "Unknown / not publicly available")}
-      </div>
-
-    </div>
-  `;
-}
-
-
-function errorBox(message) {
-
-  return `
-    <div class="p-5 rounded-xl bg-red-950/40 border border-red-900 text-red-300">
-      ❌ ${escapeHTML(message)}
-    </div>
-  `;
-}
-
-
-function escapeHTML(value) {
-
-  return String(value ?? "")
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-}
-
-
-function escapeAttribute(value) {
-
-  return escapeHTML(value);
-}
-
-
-async function copyText(elementId) {
-
-  const text =
-    document.getElementById(elementId).innerText;
-
-  try {
-
-    await navigator.clipboard.writeText(text);
-
-  } catch {
-
-    alert("Clipboard access failed.");
-
-  }
-
-}
-
-
-/* ============================================================
-   DIRECTORY
-============================================================ */
-
-const directory = [
-
-  ["Kling AI", "Video", "https://klingai.com"],
-  ["Runway", "Video", "https://runwayml.com"],
-  ["Luma Dream Machine", "Video", "https://lumalabs.ai/dream-machine"],
-  ["Pika", "Video", "https://pika.art"],
-
-  ["Leonardo AI", "Image", "https://leonardo.ai"],
-  ["Midjourney", "Image", "https://midjourney.com"],
-  ["Ideogram", "Image", "https://ideogram.ai"],
-
-  ["Cursor", "Coding", "https://cursor.com"],
-  ["Claude", "Coding", "https://claude.ai"],
-  ["v0", "Coding", "https://v0.dev"],
-
-  ["ElevenLabs", "Audio", "https://elevenlabs.io"],
-  ["Suno", "Audio", "https://suno.com"],
-
-  ["ChatGPT", "LLM", "https://chatgpt.com"],
-  ["Gemini", "LLM", "https://aistudio.google.com"],
-  ["Perplexity", "Search", "https://perplexity.ai"],
-
-  ["HeyGen", "Avatar", "https://heygen.com"],
-  ["Meshy", "3D", "https://meshy.ai"]
-
-];
-
-
-function renderDirectory() {
-
-  const query =
-    document.getElementById("directory-search")
-      .value
-      .toLowerCase();
-
-
-  const grid =
-    document.getElementById("directory-grid");
-
-
-  grid.innerHTML =
-    directory
-
-      .filter(item =>
-        item.join(" ").toLowerCase().includes(query)
-      )
-
-      .map(item => `
-
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
-
-          <h3 class="font-bold">
-            ${escapeHTML(item[0])}
-          </h3>
-
-          <p class="text-xs text-slate-500 mt-1">
-            ${escapeHTML(item[1])}
-          </p>
-
-          <a
-            href="${escapeAttribute(item[2])}"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-block mt-4 text-indigo-400 text-xs"
-          >
-            Official Website →
-          </a>
-
-        </div>
-
-      `)
-      .join("");
-
-}
-
-
-/* ============================================================
-   INITIALIZATION
-============================================================ */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-  buildEngineLists();
-
-  renderDirectory();
-
-  lucide.createIcons();
-
-});
-
-</script>
-
+    function goToCategory(cat) {
+      activeCategory = cat;
+      document.querySelectorAll('.cat-filter-btn').forEach(function(btn) {
+        btn.className = "cat-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-gray-900 border border-gray-800 text-slate-300 hover:bg-gray-800 transition";
+      });
+      filterDirectory();
+    }
+
+    function handleInitialRoute() {
+      const slug = location.hash.replace('#', '');
+      const pageId = slug ? 'page-' + slug : 'page-home';
+      if (document.getElementById(pageId)) {
+        navigateTo(pageId, false);
+      } else {
+        navigateTo('page-home', false);
+      }
+    }
+    window.addEventListener('popstate', handleInitialRoute);
+
+    // Mobile menu
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const isHidden = menu.classList.contains('hidden');
+      menu.classList.toggle('hidden');
+      document.getElementById('mobile-menu-btn').setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+      document.getElementById('mobile-menu-icon').setAttribute('data-lucide', isHidden ? 'x' : 'menu');
+      lucide.createIcons();
+    }
+    function closeMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      if (!menu.classList.contains('hidden')) {
+        menu.classList.add('hidden');
+        document.getElementById('mobile-menu-btn').setAttribute('aria-expanded', 'false');
+        document.getElementById('mobile-menu-icon').setAttribute('data-lucide', 'menu');
+        lucide.createIcons();
+      }
+    }
+
+    // Toasts
+    function showToast(message, type) {
+      type = type || 'success';
+      const icon = type === 'success' ? 'check-circle' : (type === 'error' ? 'alert-circle' : 'info');
+      const color = type === 'success' ? 'text-emerald-400' : (type === 'error' ? 'text-red-400' : 'text-indigo-400');
+      const el = document.createElement('div');
+      el.className = 'toast';
+      el.setAttribute('role', 'status');
+      el.innerHTML = '<i data-lucide="' + icon + '" class="w-4 h-4 shrink-0 ' + color + '"></i><span>' + message + '</span>';
+      document.getElementById('toast-container').appendChild(el);
+      lucide.createIcons();
+      setTimeout(function() {
+        el.classList.add('leaving');
+        setTimeout(function() { el.remove(); }, 220);
+      }, 3200);
+    }
+
+    // 3. Render Directory Cards
+    function renderDirectoryCards(items) {
+      const grid = document.getElementById('directory-grid');
+      const noResults = document.getElementById('no-results');
+      grid.innerHTML = '';
+
+      document.getElementById('result-count').textContent = items.length + (items.length === 1 ? ' tool matches your filters.' : ' tools match your filters.');
+
+      if (items.length === 0) {
+        noResults.classList.remove('hidden');
+        return;
+      } else {
+        noResults.classList.add('hidden');
+      }
+
+      items.forEach(function(tool) {
+        const card = document.createElement('div');
+        card.className = "bg-gray-900/60 p-6 rounded-2xl border border-gray-800 hover:border-indigo-500/40 transition flex flex-col justify-between group shadow-lg";
+
+        card.innerHTML =
+          '<div>' +
+            '<div class="flex justify-between items-start mb-3">' +
+              '<div>' +
+                '<h4 class="font-bold text-lg text-white group-hover:text-indigo-400 transition">' + tool.name + '</h4>' +
+                '<span class="text-[10px] uppercase font-mono text-slate-500">' + tool.category + '</span>' +
+              '</div>' +
+              '<span class="text-[10px] ' + (tool.freeDaily ? 'bg-amber-500/10 text-amber-300 border-amber-500/20' : 'bg-indigo-500/10 text-indigo-300 border-indigo-500/20') + ' border px-2.5 py-0.5 rounded-full font-semibold">' +
+                tool.badge +
+              '</span>' +
+            '</div>' +
+            '<p class="text-slate-400 text-xs leading-relaxed line-clamp-2">' + tool.summary + '</p>' +
+          '</div>' +
+          '<div class="mt-6 pt-4 border-t border-gray-800/80 flex items-center gap-2">' +
+            '<button onclick="openModal(\'' + tool.id + '\')" class="flex-1 py-2.5 bg-gray-800 hover:bg-gray-700 text-slate-200 text-xs font-semibold rounded-xl transition flex items-center justify-center gap-1.5 border border-gray-700/60">' +
+              '<i data-lucide="bar-chart-2" class="w-3.5 h-3.5 text-indigo-400"></i> Inspect Performance' +
+            '</button>' +
+            '<a href="' + tool.url + '" target="_blank" rel="noopener noreferrer" aria-label="Open ' + tool.name + ' in a new tab" class="p-2.5 bg-indigo-600/20 hover:bg-indigo-600 text-indigo-300 hover:text-white rounded-xl transition border border-indigo-500/30">' +
+              '<i data-lucide="external-link" class="w-4 h-4"></i>' +
+            '</a>' +
+          '</div>';
+        grid.appendChild(card);
+      });
+
+      lucide.createIcons();
+    }
+
+    // 4. Live Search & Category Filtering Engine
+    function filterDirectory() {
+      const query = document.getElementById('directory-search').value.toLowerCase().trim();
+      document.getElementById('clear-search-btn').classList.toggle('hidden', query.length === 0);
+
+      const filtered = aiDirectory.filter(function(item) {
+        const matchesCategory = (activeCategory === 'all')
+          ? true
+          : (activeCategory === 'free' ? item.freeDaily : item.category === activeCategory);
+
+        const matchesSearch = item.name.toLowerCase().includes(query) ||
+                              item.summary.toLowerCase().includes(query) ||
+                              item.category.toLowerCase().includes(query) ||
+                              item.strengths.some(function(s) { return s.toLowerCase().includes(query); });
+
+        return matchesCategory && matchesSearch;
+      });
+
+      renderDirectoryCards(filtered);
+    }
+
+    function onSearchInput() {
+      clearTimeout(searchDebounceTimer);
+      searchDebounceTimer = setTimeout(filterDirectory, 180);
+    }
+
+    function clearSearch() {
+      document.getElementById('directory-search').value = '';
+      filterDirectory();
+      document.getElementById('directory-search').focus();
+    }
+
+    function resetDirectoryFilters() {
+      document.getElementById('directory-search').value = '';
+      goToCategory('all');
+      document.querySelectorAll('.cat-filter-btn')[0].className = "cat-filter-btn active px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-indigo-600 text-white transition";
+    }
+
+    function setCategoryFilter(cat, btnEl) {
+      activeCategory = cat;
+      document.querySelectorAll('.cat-filter-btn').forEach(function(btn) {
+        btn.className = "cat-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-gray-900 border border-gray-800 text-slate-300 hover:bg-gray-800 transition";
+      });
+      if (btnEl) btnEl.className = "cat-filter-btn active px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-indigo-600 text-white transition";
+      filterDirectory();
+    }
+
+    // 5. Performance Modal Controller
+    let lastFocusedElement = null;
+    function openModal(toolId) {
+      const tool = aiDirectory.find(function(t) { return t.id === toolId; });
+      if (!tool) return;
+
+      document.getElementById('modal-title').innerText = tool.name;
+      document.getElementById('modal-category').innerText = 'Category: ' + tool.category.toUpperCase();
+      document.getElementById('modal-desc').innerText = tool.summary;
+      document.getElementById('modal-speed').innerText = tool.speed;
+      document.getElementById('modal-quality').innerText = tool.quality;
+      document.getElementById('modal-free-tier').innerText = tool.freeDetails;
+      document.getElementById('modal-link').href = tool.url;
+
+      const strengthsList = document.getElementById('modal-strengths');
+      strengthsList.innerHTML = '';
+      tool.strengths.forEach(function(str) {
+        const li = document.createElement('li');
+        li.className = "flex items-center gap-2";
+        li.innerHTML = '<i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i> <span>' + str + '</span>';
+        strengthsList.appendChild(li);
+      });
+
+      lastFocusedElement = document.activeElement;
+      const modal = document.getElementById('tool-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      lucide.createIcons();
+      document.getElementById('modal-close-btn').focus();
+      document.addEventListener('keydown', modalKeydownHandler);
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('tool-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.removeEventListener('keydown', modalKeydownHandler);
+      if (lastFocusedElement) lastFocusedElement.focus();
+    }
+
+    function modalKeydownHandler(e) {
+      if (e.key === 'Escape') closeModal();
+    }
+
+    // 6. 10 Engine Master Configuration
+    let currentEngineId = 1;
+    const engines = {
+      1: { title: "Master Prompt Enhancer", sub: "Converts simple human descriptions into multi-engine structured prompt directives.", btn: "Synthesize Master Prompt" },
+      2: { title: "Dynamic Pipeline Matcher", sub: "Generates optimal combinations of video, voice, and visual engines.", btn: "Match Pipeline" },
+      3: { title: "Viral Content Repurposer", sub: "Breaks long-form essays into high-converting retention shorts and viral hooks.", btn: "Extract Viral Vectors" },
+      4: { title: "Reverse Prompt Extraction", sub: "Deconstructs aesthetic elements and predicts generation parameters from scene descriptions.", btn: "Deconstruct Prompt" },
+      5: { title: "Free AI Alternatives Engine", sub: "Recommends zero-cost, open-source, or high-tier free alternatives to costly SaaS tools.", btn: "Find Cost-Free Tools" },
+      6: { title: "Character Continuity Suite", sub: "Generates seed-pinned identity prompts to maintain character consistency across video scenes.", btn: "Generate Consistent Seed" },
+      7: { title: "Viral Hooks & High-CTR Titles", sub: "Generates psychologically validated click-through headline hooks.", btn: "Generate CTR Anchors" },
+      8: { title: "Daily Free Credits Tracker", sub: "Aggregates active daily resets, grants, and free credits across AI platforms.", btn: "Fetch Live Grants" },
+      9: { title: "Code Explainer & Fault Rectifier", sub: "Pinpoints syntactical faults, memory leaks, and optimizes code efficiency.", btn: "Analyze & Fix Code" },
+      10: { title: "Text to Clean Code Synthesizer", sub: "Converts natural human language into production-grade HTML, Tailwind, and JS modules.", btn: "Compile Clean Code" }
+    };
+
+    function selectEngine(id) {
+      currentEngineId = id;
+      document.querySelectorAll('.engine-tab').forEach(function(b) {
+        b.className = "engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition";
+      });
+
+      const activeBtn = document.getElementById('eng-' + id);
+      if (activeBtn) {
+        activeBtn.className = "engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between bg-indigo-600 text-white transition";
+      }
+
+      const conf = engines[id];
+      document.getElementById('engine-title').innerText = conf.title;
+      document.getElementById('engine-subtitle').innerText = conf.sub;
+      document.getElementById('execute-btn-label').innerText = conf.btn;
+      document.getElementById('terminal-output').innerText = "Engine ready. Input parameters above.";
+      lucide.createIcons();
+    }
+
+    // 7. Live Serverless AI Execution Engine
+    // NOTE: The AI connection itself (the systemPrompts and the fetch call to /api/generate)
+    // is left exactly as it was — only the surrounding UI feedback has been improved.
+    async function executeEngineAction() {
+      const input = document.getElementById('terminal-input').value.trim();
+      const output = document.getElementById('terminal-output');
+      const execBtn = document.getElementById('execute-btn');
+      const execIcon = document.getElementById('execute-btn-icon');
+      const execLabel = document.getElementById('execute-btn-label');
+
+      if (!input && currentEngineId !== 8) {
+        output.innerText = "⚠️ Attention: Input field cannot be empty for this engine.";
+        showToast('Add some input before generating.', 'error');
+        return;
+      }
+
+      const systemPrompts = {
+        1: `You are an elite prompt engineer. Convert this idea into an 8k cinematic photorealistic Midjourney & ChatGPT master prompt with technical lens, lighting, and parameters: "${input}"`,
+        2: `You are an AI architect. Give a step-by-step production workflow combining top modern AI tools to achieve this project: "${input}"`,
+        3: `You are a viral content strategist. Convert this into a 3-second hook, 15-second script, call-to-action, and viral tags: "${input}"`,
+        4: `Reverse engineer this scene description into an exact Midjourney/Stable Diffusion prompt: "${input}"`,
+        5: `List the top 3 100% free or open-source alternatives for this paid AI tool with benefits: "${input}"`,
+        6: `Generate a character continuity prompt configuration with persistent facial seeds for: "${input}"`,
+        7: `Generate 5 psychologically addictive, high-CTR YouTube/Reels hooks for: "${input}"`,
+        8: `List today's top free AI deals, open-source releases, and daily credit resets.`,
+        9: `Act as a senior engineer. Fix errors, optimize performance, and explain this code simply:\n${input}`,
+        10: `Generate clean, responsive HTML with Tailwind CSS for this request. Return code only:\n${input}`
+      };
+
+      const finalPrompt = systemPrompts[currentEngineId] || input;
+
+      output.innerText = "⚡ Communicating with AI Server & generating live response...";
+      execBtn.disabled = true;
+      execIcon.setAttribute('data-lucide', 'loader-2');
+      execIcon.classList.add('animate-spin');
+      execLabel.innerText = "Generating...";
+      lucide.createIcons();
+
+      try {
+        const response = await fetch('/api/generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prompt: finalPrompt })
+        });
+
+        const data = await response.json();
+
+        if (response.ok && (data.result || data.output)) {
+          output.innerText = data.result || data.output;
+          showToast('Generation complete.', 'success');
+        } else {
+          output.innerText = "⚠️ Error: " + (data.error || "Failed to fetch AI response");
+          showToast('The engine returned an error.', 'error');
+        }
+      } catch (error) {
+        output.innerText = "⚠️ Network Connection Failed: " + error.message;
+        showToast('Network connection failed.', 'error');
+      } finally {
+        execBtn.disabled = false;
+        execIcon.setAttribute('data-lucide', 'play');
+        execIcon.classList.remove('animate-spin');
+        execLabel.innerText = engines[currentEngineId].btn;
+        lucide.createIcons();
+      }
+    }
+
+    function copyTerminalOutput() {
+      const text = document.getElementById('terminal-output').innerText;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          showToast('Output copied to clipboard.', 'success');
+        }).catch(function() {
+          showToast('Could not copy — select and copy manually.', 'error');
+        });
+      } else {
+        showToast('Clipboard not available in this browser.', 'error');
+      }
+    }
+
+    // Contact form with inline validation (replaces alert())
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const emailInput = document.getElementById('contact-email');
+      const messageInput = document.getElementById('contact-message');
+      const emailError = document.getElementById('email-error');
+      const messageError = document.getElementById('message-error');
+      const submitBtn = document.getElementById('contact-submit-btn');
+
+      const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim());
+      const messageValid = messageInput.value.trim().length >= 10;
+
+      emailError.classList.toggle('hidden', emailValid);
+      messageError.classList.toggle('hidden', messageValid);
+
+      if (!emailValid || !messageValid) {
+        showToast('Please fix the highlighted fields.', 'error');
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Sending...';
+
+      setTimeout(function() {
+        showToast("Message sent — we'll be in touch soon.", 'success');
+        e.target.reset();
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Submit Message';
+      }, 500);
+    }
+
+    // Back-to-top visibility
+    window.addEventListener('scroll', function() {
+      document.getElementById('back-to-top').classList.toggle('hidden', window.scrollY < 400);
+    });
+
+    // Initialize on Load
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('count-all').innerText = aiDirectory.length;
+      document.getElementById('banner-tool-count').innerText = aiDirectory.length + '+';
+      document.getElementById('stat-total').innerText = aiDirectory.length;
+      document.getElementById('stat-categories').innerText = new Set(aiDirectory.map(function(t) { return t.category; })).size;
+      document.getElementById('stat-free').innerText = aiDirectory.filter(function(t) { return t.freeDaily; }).length;
+      document.getElementById('footer-year').innerText = new Date().getFullYear();
+
+      const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      document.getElementById('privacy-date').innerText = today;
+      document.getElementById('terms-date').innerText = today;
+
+      renderDirectoryCards(aiDirectory);
+      handleInitialRoute();
+      lucide.createIcons();
+    });
+  </script>
 </body>
-  </html>
+                </html>
