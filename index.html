@@ -3,605 +3,1632 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OmniAI Studio - Enterprise Multi-Tool Suite & Verification Hub</title>
-  <meta name="description" content="Creator suite, coding studio, and real-time AI vs Real detection engine with Google Search integration.">
-  <link rel="canonical" href="https://yourdomain.com/">
 
-  <!-- Tailwind CSS & Google Fonts -->
+  <title>OmniAI Studio — Creator, Coding & Find Truth AI Intelligence</title>
+
+  <meta
+    name="description"
+    content="OmniAI Studio creator tools, coding assistants and Find Truth web intelligence."
+  >
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  
-  <!-- Lucide Icons -->
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <script>
     tailwind.config = {
-      darkMode: 'class',
+      darkMode: "class",
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
+            sans: ["Inter", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"]
           }
         }
       }
-    }
+    };
   </script>
 
   <style>
-    .glassmorphism {
-      background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+    body {
+      background:
+        radial-gradient(circle at 20% 0%, rgba(79,70,229,.15), transparent 30%),
+        radial-gradient(circle at 90% 10%, rgba(168,85,247,.12), transparent 25%),
+        #020617;
     }
+
+    .glass {
+      background: rgba(15,23,42,.78);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
     .gradient-text {
-      background: linear-gradient(135deg, #60a5fa 0%, #a855f7 50%, #ec4899 100%);
+      background: linear-gradient(
+        135deg,
+        #60a5fa,
+        #a855f7,
+        #ec4899
+      );
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .custom-scrollbar::-webkit-scrollbar {
-      width: 6px;
-    }
-    .custom-scrollbar::-webkit-scrollbar-track {
-      background: #0b0f19;
-    }
-    .custom-scrollbar::-webkit-scrollbar-thumb {
-      background: #1e293b;
-      border-radius: 4px;
+
+    .hidden-page {
+      display: none !important;
     }
   </style>
 </head>
-<body class="bg-gray-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col selection:bg-indigo-500 selection:text-white custom-scrollbar">
 
-  <!-- Top Announcement Bar -->
-  <aside class="bg-gradient-to-r from-indigo-950 via-purple-950 to-indigo-950 text-indigo-200 text-xs py-2 px-4 text-center border-b border-indigo-900/40">
-    <span>⚡ <strong>OmniAI Studio:</strong> Creator Studio, Dedicated Coding Suite & Live "Find True" Media Verifier Active.</span>
-  </aside>
+<body class="text-slate-100 min-h-screen">
 
-  <!-- Global Header -->
-  <header class="sticky top-0 z-40 glassmorphism border-b border-gray-800/80">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('page-home')">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center shadow-lg shadow-indigo-500/20">
-          <i data-lucide="sparkles" class="w-5 h-5 text-white"></i>
-        </div>
-        <span class="text-xl font-bold tracking-tight text-white">OmniAI<span class="text-indigo-400">Studio</span></span>
+<!-- TOP BAR -->
+<div class="text-center text-xs py-2 bg-indigo-950/70 border-b border-indigo-900">
+  ⚡ OmniAI Studio — Creator + Coding + Find Truth Intelligence
+</div>
+
+<!-- NAV -->
+<header class="sticky top-0 z-50 glass border-b border-slate-800">
+
+  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+
+    <button
+      onclick="navigateTo('home')"
+      class="flex items-center gap-3"
+    >
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center">
+        <i data-lucide="sparkles"></i>
       </div>
 
-      <!-- Main Navigation -->
-      <nav class="hidden md:flex items-center space-x-1 text-sm font-medium text-slate-300">
-        <button onclick="navigateTo('page-home')" class="px-3 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition">Home</button>
-        <button onclick="navigateTo('page-directory')" class="px-3 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition flex items-center gap-1.5">
-          <i data-lucide="compass" class="w-4 h-4 text-indigo-400"></i> AI Directory
-        </button>
-        <button onclick="openWorkspaceTab('creator')" class="px-3 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition flex items-center gap-1.5">
-          <i data-lucide="video" class="w-4 h-4 text-pink-400"></i> Creator
-        </button>
-        <button onclick="openWorkspaceTab('coding')" class="px-3 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition flex items-center gap-1.5">
-          <i data-lucide="code-2" class="w-4 h-4 text-emerald-400"></i> Coding
-        </button>
-        <button onclick="openWorkspaceTab('findtrue')" class="px-3 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition flex items-center gap-1.5 text-amber-300">
-          <i data-lucide="shield-check" class="w-4 h-4 text-amber-400"></i> Find True
-        </button>
-      </nav>
+      <span class="font-bold text-xl">
+        OmniAI<span class="text-indigo-400">Studio</span>
+      </span>
+    </button>
 
-      <!-- Quick Action -->
-      <div class="flex items-center space-x-3">
-        <button onclick="openWorkspaceTab('findtrue')" class="bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-lg transition shadow-md shadow-amber-600/30 flex items-center gap-1.5">
-          <i data-lucide="scan-search" class="w-4 h-4"></i>
-          <span>Check AI/Real</span>
-        </button>
-      </div>
+    <nav class="hidden md:flex gap-2">
+
+      <button
+        onclick="navigateTo('home')"
+        class="nav-btn"
+      >
+        Home
+      </button>
+
+      <button
+        onclick="navigateTo('directory')"
+        class="nav-btn"
+      >
+        AI Directory
+      </button>
+
+      <button
+        onclick="navigateTo('creator')"
+        class="nav-btn"
+      >
+        Creator
+      </button>
+
+      <button
+        onclick="navigateTo('coding')"
+        class="nav-btn"
+      >
+        Coding
+      </button>
+
+      <button
+        onclick="navigateTo('truth')"
+        class="nav-btn"
+      >
+        Find Truth
+      </button>
+
+    </nav>
+
+    <button
+      onclick="navigateTo('truth')"
+      class="bg-indigo-600 hover:bg-indigo-500 px-4 py-2 rounded-lg text-sm font-semibold"
+    >
+      Find Truth
+    </button>
+
+  </div>
+</header>
+
+
+<main>
+
+<!-- HOME -->
+<section
+  id="page-home"
+  class="page max-w-7xl mx-auto px-4 py-20"
+>
+
+  <div class="max-w-4xl mx-auto text-center">
+
+    <div class="inline-flex px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs">
+      CREATOR • CODING • WEB INTELLIGENCE
     </div>
-  </header>
 
-  <!-- MAIN ROUTER -->
-  <main class="flex-grow">
+    <h1 class="mt-7 text-5xl md:text-7xl font-extrabold">
+      Discover.
+      Create.
+      <span class="gradient-text">
+        Verify.
+      </span>
+    </h1>
 
-    <!-- ================= PAGE 1: HOME ================= -->
-    <section id="page-home" class="page-view max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-      <div class="text-center max-w-3xl mx-auto space-y-6">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-xs font-medium">
-          <i data-lucide="zap" class="w-3.5 h-3.5"></i> Comprehensive AI Ecosystem & Production Engines
+    <p class="mt-6 text-slate-400 text-lg">
+      One AI workspace for creator automation, coding intelligence
+      and public-web media investigation.
+    </p>
+
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+
+      <button
+        onclick="navigateTo('creator')"
+        class="bg-indigo-600 hover:bg-indigo-500 px-7 py-3 rounded-xl font-semibold"
+      >
+        🚀 Creator
+      </button>
+
+      <button
+        onclick="navigateTo('coding')"
+        class="bg-slate-900 border border-slate-700 px-7 py-3 rounded-xl font-semibold"
+      >
+        💻 Coding
+      </button>
+
+      <button
+        onclick="navigateTo('truth')"
+        class="bg-pink-600 hover:bg-pink-500 px-7 py-3 rounded-xl font-semibold"
+      >
+        🔎 Find Truth
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CREATOR -->
+<section
+  id="page-creator"
+  class="page hidden-page max-w-7xl mx-auto px-4 py-10"
+>
+
+  <div class="mb-8">
+
+    <h2 class="text-3xl font-bold">
+      Creator Studio
+    </h2>
+
+    <p class="text-slate-400 text-sm mt-2">
+      Eight creator engines.
+    </p>
+
+  </div>
+
+  <div class="grid lg:grid-cols-12 gap-6">
+
+    <!-- ENGINE SIDEBAR -->
+    <aside class="lg:col-span-4 bg-slate-900/70 border border-slate-800 rounded-2xl p-4">
+
+      <h3 class="text-xs uppercase tracking-widest text-slate-500 mb-3">
+        Creator Engines
+      </h3>
+
+      <div id="creator-engine-list"></div>
+
+    </aside>
+
+
+    <!-- TERMINAL -->
+    <section class="lg:col-span-8 bg-slate-900/70 border border-slate-800 rounded-2xl p-6">
+
+      <div class="flex justify-between border-b border-slate-800 pb-4">
+
+        <div>
+
+          <h3
+            id="creator-title"
+            class="text-xl font-bold"
+          >
+            Master Prompt Enhancer
+          </h3>
+
+          <p
+            id="creator-subtitle"
+            class="text-xs text-slate-400 mt-1"
+          ></p>
+
         </div>
-        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight text-white">
-          Create, Code & Detect <span class="gradient-text">Any AI Content</span>
-        </h1>
-        <p class="text-slate-400 text-base sm:text-lg">
-          Master multimedia prompt workflows, generate clean code, and verify whether any image or video is Real or AI-generated using real-time search intelligence.
-        </p>
-        <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
-          <button onclick="openWorkspaceTab('creator')" class="px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition shadow-lg shadow-indigo-600/40 flex items-center gap-2">
-            <i data-lucide="sparkles" class="w-4 h-4"></i> Creator Suite
-          </button>
-          <button onclick="openWorkspaceTab('coding')" class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm transition shadow-lg shadow-emerald-600/40 flex items-center gap-2">
-            <i data-lucide="code" class="w-4 h-4"></i> Coding Studio
-          </button>
-          <button onclick="openWorkspaceTab('findtrue')" class="px-6 py-3.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-semibold text-sm transition shadow-lg shadow-amber-600/40 flex items-center gap-2">
-            <i data-lucide="shield-alert" class="w-4 h-4"></i> Find True (Verifier)
-          </button>
-        </div>
+
+        <span class="text-xs bg-indigo-500/10 text-indigo-300 px-3 py-1 rounded">
+          CREATOR
+        </span>
+
       </div>
+
+
+      <label class="block mt-6 mb-2 text-sm font-semibold">
+        Input
+      </label>
+
+      <textarea
+        id="creator-input"
+        rows="7"
+        placeholder="Enter your idea, topic, scene, content or requirement..."
+        class="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 outline-none focus:border-indigo-500 font-mono text-sm"
+      ></textarea>
+
+
+      <button
+        onclick="executeCreator()"
+        class="w-full mt-4 bg-indigo-600 hover:bg-indigo-500 py-3 rounded-xl font-semibold"
+      >
+        <span id="creator-button">
+          Generate
+        </span>
+      </button>
+
+
+      <div class="mt-8">
+
+        <div class="flex justify-between mb-2">
+
+          <span class="text-xs text-slate-400">
+            Detailed Result
+          </span>
+
+          <button
+            onclick="copyText('creator-output')"
+            class="text-xs text-indigo-400"
+          >
+            Copy
+          </button>
+
+        </div>
+
+        <pre
+          id="creator-output"
+          class="min-h-[300px] bg-black/60 border border-slate-800 rounded-xl p-5 whitespace-pre-wrap text-sm font-mono text-emerald-300 overflow-auto"
+        >Creator engine ready.</pre>
+
+      </div>
+
     </section>
 
-    <!-- ================= PAGE 2: COMPREHENSIVE AI DIRECTORY ================= -->
-    <section id="page-directory" class="page-view hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <div class="mb-8">
-        <h2 class="text-3xl font-extrabold text-white tracking-tight">AI Ecosystem Directory</h2>
-        <p class="text-slate-400 text-xs sm:text-sm mt-1">Live database of verified models. Use the search bar or category filters to inspect ratings.</p>
+  </div>
 
-        <div class="mt-6 relative">
-          <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-500">
-            <i data-lucide="search" class="w-5 h-5"></i>
-          </div>
-          <input type="text" id="directory-search" oninput="filterDirectory()" placeholder="Live search across models, features, or performance keywords..." class="w-full pl-12 pr-4 py-3.5 bg-gray-900 border border-gray-800 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition">
-        </div>
+</section>
 
-        <div class="mt-4 flex items-center gap-2 overflow-x-auto pb-2 custom-scrollbar">
-          <button onclick="setCategoryFilter('all')" class="cat-filter-btn active px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-indigo-600 text-white transition">All Models (<span id="count-all">0</span>)</button>
-          <button onclick="setCategoryFilter('free')" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-gray-900 border border-gray-800 text-amber-300 hover:bg-gray-800 transition flex items-center gap-1.5"><i data-lucide="gift" class="w-3.5 h-3.5"></i> Daily Free Credits</button>
-          <button onclick="setCategoryFilter('video')" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-gray-900 border border-gray-800 text-slate-300 hover:bg-gray-800 transition">Video Creation</button>
-          <button onclick="setCategoryFilter('image')" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-gray-900 border border-gray-800 text-slate-300 hover:bg-gray-800 transition">Image & Art</button>
-          <button onclick="setCategoryFilter('code')" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-gray-900 border border-gray-800 text-slate-300 hover:bg-gray-800 transition">Coding & Dev</button>
-        </div>
-      </div>
 
-      <div id="directory-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+<!-- CODING -->
+<section
+  id="page-coding"
+  class="page hidden-page max-w-7xl mx-auto px-4 py-10"
+>
+
+  <div class="mb-8">
+
+    <h2 class="text-3xl font-bold">
+      Coding Studio
+    </h2>
+
+    <p class="text-slate-400 text-sm mt-2">
+      Code Explainer & Fixer + Text to Clean Code.
+    </p>
+
+  </div>
+
+
+  <div class="grid lg:grid-cols-12 gap-6">
+
+    <aside class="lg:col-span-4 bg-slate-900/70 border border-slate-800 rounded-2xl p-4">
+
+      <h3 class="text-xs uppercase tracking-widest text-slate-500 mb-3">
+        Coding Engines
+      </h3>
+
+      <div id="coding-engine-list"></div>
+
+    </aside>
+
+
+    <section class="lg:col-span-8 bg-slate-900/70 border border-slate-800 rounded-2xl p-6">
+
+      <h3
+        id="coding-title"
+        class="text-xl font-bold"
+      ></h3>
+
+      <p
+        id="coding-subtitle"
+        class="text-xs text-slate-400 mt-1"
+      ></p>
+
+
+      <textarea
+        id="coding-input"
+        rows="12"
+        class="mt-6 w-full bg-slate-950 border border-slate-800 rounded-xl p-4 font-mono text-sm outline-none focus:border-indigo-500"
+        placeholder="Paste your code or describe what you want to build..."
+      ></textarea>
+
+
+      <button
+        onclick="executeCoding()"
+        class="mt-4 w-full bg-emerald-600 hover:bg-emerald-500 py-3 rounded-xl font-semibold"
+      >
+        <span id="coding-button">
+          Analyze Code
+        </span>
+      </button>
+
+
+      <pre
+        id="coding-output"
+        class="mt-8 min-h-[350px] bg-black border border-slate-800 rounded-xl p-5 whitespace-pre-wrap text-sm font-mono text-emerald-300 overflow-auto"
+      >Coding engine ready.</pre>
+
     </section>
 
-    <!-- ================= PAGE 3: STUDIO WORKSPACE (3 MASTER TABS) ================= -->
-    <section id="page-workspace" class="page-view hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      
-      <!-- Top 3 Primary Switcher Buttons -->
-      <div class="flex flex-wrap items-center justify-center gap-3 mb-8 bg-gray-900/80 p-2 rounded-2xl border border-gray-800 max-w-2xl mx-auto">
-        <button onclick="switchMode('creator')" id="mode-btn-creator" class="flex-1 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 bg-indigo-600 text-white transition shadow-lg">
-          <i data-lucide="sparkles" class="w-4 h-4"></i> Creator (8 Engines)
-        </button>
-        <button onclick="switchMode('coding')" id="mode-btn-coding" class="flex-1 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 text-slate-400 hover:bg-gray-800 hover:text-white transition">
-          <i data-lucide="code-2" class="w-4 h-4"></i> Coding (2 Engines)
-        </button>
-        <button onclick="switchMode('findtrue')" id="mode-btn-findtrue" class="flex-1 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 text-amber-400 hover:bg-gray-800 transition">
-          <i data-lucide="shield-check" class="w-4 h-4"></i> Find True (Verifier)
-        </button>
+  </div>
+
+</section>
+
+
+<!-- FIND TRUTH -->
+<section
+  id="page-truth"
+  class="page hidden-page max-w-7xl mx-auto px-4 py-10"
+>
+
+  <div class="max-w-4xl mx-auto">
+
+    <div class="text-center">
+
+      <div class="inline-flex px-4 py-2 rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-300 text-xs">
+        PUBLIC WEB INTELLIGENCE
       </div>
 
-      <!-- VIEW A: CREATOR & CODING STUDIO -->
-      <div id="view-standard-studio" class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        
-        <!-- Sidebar Engine List -->
-        <div class="lg:col-span-4 space-y-2 bg-gray-900/60 p-4 rounded-2xl border border-gray-800 h-fit">
-          <h2 id="sidebar-section-title" class="text-xs uppercase font-bold tracking-wider text-slate-500 px-2 mb-2">Creator Engines</h2>
-          <div id="engine-tabs-container" class="space-y-1.5">
-            <!-- Dynamically injected based on Creator vs Coding mode -->
-          </div>
+      <h2 class="mt-5 text-4xl font-extrabold">
+        Find Truth
+      </h2>
+
+      <p class="mt-3 text-slate-400">
+        Search the public web or investigate a public image/video URL.
+      </p>
+
+    </div>
+
+
+    <!-- SEARCH MODE -->
+    <div class="mt-10 grid md:grid-cols-2 gap-4">
+
+      <button
+        onclick="setTruthMode('search')"
+        id="truth-search-tab"
+        class="truth-tab active"
+      >
+        🔎 Search Web
+      </button>
+
+      <button
+        onclick="setTruthMode('url')"
+        id="truth-url-tab"
+        class="truth-tab"
+      >
+        🔗 Paste Link
+      </button>
+
+    </div>
+
+
+    <!-- SEARCH -->
+    <div
+      id="truth-search-box"
+      class="mt-5"
+    >
+
+      <input
+        id="truth-query"
+        class="w-full bg-slate-900 border border-slate-800 rounded-xl p-4 outline-none focus:border-pink-500"
+        placeholder="Search a person, image, video, claim or AI tool..."
+      >
+
+    </div>
+
+
+    <!-- URL -->
+    <div
+      id="truth-url-box"
+      class="mt-5 hidden"
+    >
+
+      <input
+        id="truth-url"
+        type="url"
+        class="w-full bg-slate-900 border border-slate-800 rounded-xl p-4 outline-none focus:border-pink-500"
+        placeholder="https://example.com/image-or-video"
+      >
+
+    </div>
+
+
+    <button
+      onclick="runTruth()"
+      class="mt-4 w-full bg-pink-600 hover:bg-pink-500 py-4 rounded-xl font-bold"
+    >
+      🔍 GO — Investigate
+    </button>
+
+
+    <!-- STATUS -->
+    <div
+      id="truth-status"
+      class="hidden mt-6 p-4 rounded-xl bg-slate-900 border border-slate-800 text-sm"
+    ></div>
+
+
+    <!-- RESULT -->
+    <div
+      id="truth-result"
+      class="mt-6"
+    ></div>
+
+  </div>
+
+</section>
+
+
+<!-- DIRECTORY -->
+<section
+  id="page-directory"
+  class="page hidden-page max-w-7xl mx-auto px-4 py-10"
+>
+
+  <h2 class="text-3xl font-bold">
+    AI Directory
+  </h2>
+
+  <p class="text-slate-400 mt-2">
+    Curated AI tools.
+  </p>
+
+  <input
+    id="directory-search"
+    oninput="renderDirectory()"
+    class="mt-6 w-full bg-slate-900 border border-slate-800 rounded-xl p-4"
+    placeholder="Search AI tools..."
+  >
+
+  <div
+    id="directory-grid"
+    class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-5"
+  ></div>
+
+</section>
+
+</main>
+
+
+<footer class="border-t border-slate-900 mt-20 py-8 text-center text-xs text-slate-500">
+  OmniAI Studio © 2026
+</footer>
+
+
+<script>
+
+/* ============================================================
+   CONFIG
+============================================================ */
+
+const API = {
+  generate: "/api/generate",
+  truth: "/api/truth"
+};
+
+
+/* ============================================================
+   PAGE ROUTER
+============================================================ */
+
+function navigateTo(page) {
+
+  document.querySelectorAll(".page").forEach(el => {
+    el.classList.add("hidden-page");
+  });
+
+  const target = document.getElementById("page-" + page);
+
+  if (target) {
+    target.classList.remove("hidden-page");
+  }
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+  lucide.createIcons();
+}
+
+
+/* ============================================================
+   CREATOR ENGINES — FIRST 8
+============================================================ */
+
+const creatorEngines = {
+
+  1: {
+    title: "Master Prompt Enhancer",
+    sub: "Convert simple ideas into production-ready AI prompts.",
+    button: "Synthesize Master Prompt"
+  },
+
+  2: {
+    title: "Dynamic Pipeline Matcher",
+    sub: "Build a complete AI production workflow.",
+    button: "Match Pipeline"
+  },
+
+  3: {
+    title: "Viral Content Repurposer",
+    sub: "Transform long-form content into short-form viral content.",
+    button: "Generate Viral Package"
+  },
+
+  4: {
+    title: "Reverse Prompt Extraction",
+    sub: "Analyze a visual concept and reconstruct its generation prompt.",
+    button: "Reverse Engineer"
+  },
+
+  5: {
+    title: "Free AI Alternatives",
+    sub: "Find free or lower-cost alternatives to paid AI tools.",
+    button: "Find Alternatives"
+  },
+
+  6: {
+    title: "Character Continuity",
+    sub: "Create consistent character prompts across scenes.",
+    button: "Create Character Bible"
+  },
+
+  7: {
+    title: "Viral Hooks & Titles",
+    sub: "Generate multiple high-retention hooks and titles.",
+    button: "Generate Hooks"
+  },
+
+  8: {
+    title: "Live Grants & Credits",
+    sub: "Analyze AI free-credit opportunities and public offers.",
+    button: "Find Free Credits"
+  }
+
+};
+
+
+/* ============================================================
+   CODING ENGINES — ONLY 2
+============================================================ */
+
+const codingEngines = {
+
+  9: {
+    title: "Code Explainer & Fixer",
+    sub: "Analyze bugs, explain the code and provide corrected code.",
+    button: "Analyze & Fix Code"
+  },
+
+  10: {
+    title: "Text to Clean Code",
+    sub: "Convert natural-language requirements into clean production code.",
+    button: "Compile Clean Code"
+  }
+
+};
+
+
+let creatorEngine = 1;
+let codingEngine = 9;
+
+
+/* ============================================================
+   ENGINE LIST UI
+============================================================ */
+
+function buildEngineLists() {
+
+  const creatorList =
+    document.getElementById("creator-engine-list");
+
+  const codingList =
+    document.getElementById("coding-engine-list");
+
+
+  creatorList.innerHTML = "";
+
+  Object.entries(creatorEngines).forEach(([id, engine]) => {
+
+    const button = document.createElement("button");
+
+    button.className =
+      "w-full text-left p-3 rounded-xl mb-2 bg-slate-800 hover:bg-indigo-600 transition text-sm";
+
+    button.innerText =
+      `${id}. ${engine.title}`;
+
+    button.onclick = () => selectCreatorEngine(Number(id));
+
+    creatorList.appendChild(button);
+
+  });
+
+
+  codingList.innerHTML = "";
+
+  Object.entries(codingEngines).forEach(([id, engine]) => {
+
+    const button = document.createElement("button");
+
+    button.className =
+      "w-full text-left p-3 rounded-xl mb-2 bg-slate-800 hover:bg-emerald-600 transition text-sm";
+
+    button.innerText =
+      `${id}. ${engine.title}`;
+
+    button.onclick = () => selectCodingEngine(Number(id));
+
+    codingList.appendChild(button);
+
+  });
+
+
+  selectCreatorEngine(1);
+  selectCodingEngine(9);
+}
+
+
+function selectCreatorEngine(id) {
+
+  creatorEngine = id;
+
+  const e = creatorEngines[id];
+
+  document.getElementById("creator-title").innerText =
+    e.title;
+
+  document.getElementById("creator-subtitle").innerText =
+    e.sub;
+
+  document.getElementById("creator-button").innerText =
+    e.button;
+}
+
+
+function selectCodingEngine(id) {
+
+  codingEngine = id;
+
+  const e = codingEngines[id];
+
+  document.getElementById("coding-title").innerText =
+    e.title;
+
+  document.getElementById("coding-subtitle").innerText =
+    e.sub;
+
+  document.getElementById("coding-button").innerText =
+    e.button;
+}
+
+
+/* ============================================================
+   CREATOR PROMPTS
+============================================================ */
+
+function getCreatorPrompt(input) {
+
+  const prompts = {
+
+    1: `
+You are an expert AI prompt engineer.
+
+Analyze this concept:
+
+${input}
+
+Return a FULL production-grade prompt.
+
+Include:
+1. Subject
+2. Environment
+3. Composition
+4. Camera
+5. Lens
+6. Lighting
+7. Materials
+8. Color
+9. Atmosphere
+10. Motion
+11. Style
+12. Negative prompt
+13. Recommended aspect ratio
+14. Recommended model type
+15. Final copy-ready prompt
+
+Do not give a shallow answer.
+`,
+
+    2: `
+Create a detailed AI production pipeline for:
+
+${input}
+
+Return:
+1. Goal
+2. Recommended tools
+3. Step-by-step workflow
+4. Input for each tool
+5. Output from each tool
+6. Quality-control checkpoints
+7. Cost/free alternatives
+8. Final production workflow
+`,
+
+    3: `
+Turn this content into a complete viral content package:
+
+${input}
+
+Return:
+1. 3-second hooks
+2. 15-second version
+3. 30-second version
+4. Main script
+5. Visual instructions
+6. Voiceover
+7. CTA
+8. Title ideas
+9. Thumbnail ideas
+10. Hashtags
+11. Retention strategy
+`,
+
+    4: `
+Reverse engineer the following visual concept:
+
+${input}
+
+Return a detailed generation specification containing:
+subject, environment, camera, lens, composition,
+lighting, colors, materials, depth of field,
+motion, style, negative prompt and final prompt.
+`,
+
+    5: `
+Find the best free or low-cost AI alternatives for:
+
+${input}
+
+For each alternative provide:
+tool name,
+official website,
+free limits,
+strengths,
+limitations,
+best use case,
+commercial-use considerations.
+Clearly separate verified facts from assumptions.
+`,
+
+    6: `
+Create a detailed character continuity bible for:
+
+${input}
+
+Include:
+identity,
+face,
+hair,
+body,
+clothing,
+colors,
+personality,
+camera consistency,
+lighting consistency,
+negative prompt,
+seed strategy,
+scene continuity rules,
+final reusable character prompt.
+`,
+
+    7: `
+Generate a detailed viral headline package for:
+
+${input}
+
+Provide:
+10 hooks,
+10 titles,
+5 curiosity hooks,
+5 controversy hooks,
+5 emotional hooks,
+5 short-form hooks,
+thumbnail text,
+CTA,
+audience angle,
+retention strategy.
+`,
+
+    8: `
+Analyze publicly known AI free-credit opportunities relevant to:
+
+${input}
+
+Separate:
+Verified current information
+Potentially outdated information
+Unknown information
+
+For each tool provide:
+name,
+official URL,
+free tier,
+credit/reset information,
+limitations,
+verification status.
+`
+  };
+
+  return prompts[creatorEngine];
+}
+
+
+/* ============================================================
+   CODING PROMPTS
+============================================================ */
+
+function getCodingPrompt(input) {
+
+  if (codingEngine === 9) {
+
+    return `
+You are a senior software engineer and debugging specialist.
+
+Analyze this code:
+
+${input}
+
+Return a COMPLETE detailed debugging report.
+
+FORMAT:
+
+1. EXECUTIVE SUMMARY
+
+2. DETECTED PROBLEMS
+For every issue:
+- location
+- problem
+- severity
+- why it happens
+
+3. ROOT CAUSE
+
+4. CORRECTED CODE
+Provide the complete corrected code.
+
+5. PERFORMANCE IMPROVEMENTS
+
+6. SECURITY ISSUES
+
+7. EDGE CASES
+
+8. TEST CASES
+
+9. BEFORE vs AFTER
+
+10. FINAL RECOMMENDATIONS
+
+Do not omit important code.
+`;
+  }
+
+
+  return `
+You are a senior full-stack software architect.
+
+Convert this requirement into production-quality code:
+
+${input}
+
+Return:
+
+1. Requirements interpretation
+2. Architecture
+3. File structure
+4. Complete code
+5. Responsive UI
+6. Error handling
+7. Security considerations
+8. Accessibility
+9. Performance optimization
+10. Testing instructions
+11. Deployment instructions
+
+Do not provide incomplete placeholder code unless absolutely necessary.
+`;
+}
+
+
+/* ============================================================
+   GENERIC AI REQUEST
+============================================================ */
+
+async function callAI(prompt) {
+
+  const response = await fetch(API.generate, {
+
+    method: "POST",
+
+    headers: {
+      "Content-Type": "application/json"
+    },
+
+    body: JSON.stringify({
+      prompt
+    })
+
+  });
+
+
+  let data;
+
+  try {
+    data = await response.json();
+  } catch {
+    throw new Error(
+      "AI server returned invalid JSON."
+    );
+  }
+
+
+  if (!response.ok) {
+
+    throw new Error(
+      data.error ||
+      "AI generation failed."
+    );
+
+  }
+
+
+  return data.result || data.output || "";
+}
+
+
+/* ============================================================
+   CREATOR EXECUTION
+============================================================ */
+
+async function executeCreator() {
+
+  const input =
+    document.getElementById("creator-input").value.trim();
+
+  const output =
+    document.getElementById("creator-output");
+
+
+  if (!input) {
+
+    output.innerText =
+      "Please enter your creator requirement.";
+
+    return;
+  }
+
+
+  output.innerText =
+    "⚡ AI is generating a detailed production result...";
+
+
+  try {
+
+    const result =
+      await callAI(getCreatorPrompt(input));
+
+    output.innerText =
+      result || "No AI output returned.";
+
+  } catch (error) {
+
+    output.innerText =
+      "❌ " + error.message;
+
+  }
+
+}
+
+
+/* ============================================================
+   CODING EXECUTION
+============================================================ */
+
+async function executeCoding() {
+
+  const input =
+    document.getElementById("coding-input").value.trim();
+
+  const output =
+    document.getElementById("coding-output");
+
+
+  if (!input) {
+
+    output.innerText =
+      "Please enter code or a coding requirement.";
+
+    return;
+  }
+
+
+  output.innerText =
+    "⚡ Running detailed coding analysis...";
+
+
+  try {
+
+    const result =
+      await callAI(getCodingPrompt(input));
+
+    output.innerText =
+      result || "No coding result returned.";
+
+  } catch (error) {
+
+    output.innerText =
+      "❌ " + error.message;
+
+  }
+
+}
+
+
+/* ============================================================
+   FIND TRUTH MODE
+============================================================ */
+
+let truthMode = "search";
+
+
+function setTruthMode(mode) {
+
+  truthMode = mode;
+
+  const searchBox =
+    document.getElementById("truth-search-box");
+
+  const urlBox =
+    document.getElementById("truth-url-box");
+
+
+  if (mode === "search") {
+
+    searchBox.classList.remove("hidden");
+    urlBox.classList.add("hidden");
+
+  } else {
+
+    searchBox.classList.add("hidden");
+    urlBox.classList.remove("hidden");
+
+  }
+
+}
+
+
+/* ============================================================
+   FIND TRUTH
+============================================================ */
+
+async function runTruth() {
+
+  const status =
+    document.getElementById("truth-status");
+
+  const result =
+    document.getElementById("truth-result");
+
+
+  let payload;
+
+
+  if (truthMode === "search") {
+
+    const query =
+      document.getElementById("truth-query")
+      .value
+      .trim();
+
+
+    if (!query) {
+
+      result.innerHTML =
+        errorBox("Enter something to search.");
+
+      return;
+    }
+
+
+    payload = {
+      mode: "search",
+      query
+    };
+
+  } else {
+
+    const url =
+      document.getElementById("truth-url")
+      .value
+      .trim();
+
+
+    if (!url) {
+
+      result.innerHTML =
+        errorBox("Paste a public image/video/page URL.");
+
+      return;
+    }
+
+
+    try {
+
+      new URL(url);
+
+    } catch {
+
+      result.innerHTML =
+        errorBox("Invalid URL.");
+
+      return;
+    }
+
+
+    payload = {
+      mode: "url",
+      url
+    };
+
+  }
+
+
+  status.classList.remove("hidden");
+
+  status.innerText =
+    "🔎 Searching public web evidence and analyzing available metadata...";
+
+
+  result.innerHTML = "";
+
+
+  try {
+
+    const response =
+      await fetch(API.truth, {
+
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify(payload)
+
+      });
+
+
+    const data =
+      await response.json();
+
+
+    if (!response.ok) {
+
+      throw new Error(
+        data.error ||
+        "Truth investigation failed."
+      );
+
+    }
+
+
+    renderTruthResult(data);
+
+    status.innerText =
+      "✅ Investigation completed. Review evidence confidence before making a conclusion.";
+
+  } catch (error) {
+
+    status.innerText =
+      "❌ Investigation error.";
+
+    result.innerHTML =
+      errorBox(error.message);
+
+  }
+
+}
+
+
+/* ============================================================
+   TRUTH RESULT
+============================================================ */
+
+function renderTruthResult(data) {
+
+  const result =
+    document.getElementById("truth-result");
+
+
+  const analysis =
+    data.analysis || {};
+
+
+  let html = `
+
+    <div class="space-y-5">
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+
+        <h3 class="text-lg font-bold">
+          Investigation Summary
+        </h3>
+
+        <div class="mt-4 grid md:grid-cols-3 gap-3">
+
+          ${infoCard(
+            "Content Type",
+            analysis.contentType || "Unknown"
+          )}
+
+          ${infoCard(
+            "AI Probability",
+            analysis.aiProbability || "Unknown"
+          )}
+
+          ${infoCard(
+            "Confidence",
+            analysis.confidence || "Unknown"
+          )}
+
         </div>
 
-        <!-- Terminal & Execution Area -->
-        <div class="lg:col-span-8 bg-gray-900/60 p-6 rounded-2xl border border-gray-800 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between border-b border-gray-800 pb-4 mb-4">
-              <div>
-                <h3 id="engine-title" class="text-xl font-bold text-white">Prompt Enhancer</h3>
-                <p id="engine-subtitle" class="text-xs text-slate-400 mt-0.5">Transforms concepts into detailed production prompts.</p>
-              </div>
-              <span id="engine-tag" class="px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 text-xs font-mono border border-indigo-500/20">Creator v2.4</span>
-            </div>
-
-            <label class="text-xs font-semibold text-slate-300 block mb-2">Input Context / Code / Parameters:</label>
-            <textarea id="terminal-input" rows="5" placeholder="Enter your raw concept, prompt context, or code here..." class="w-full bg-gray-950 border border-gray-800 rounded-xl p-4 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-indigo-500 font-mono transition"></textarea>
-
-            <div class="mt-4 flex gap-3">
-              <button onclick="executeEngineAction()" id="execute-main-btn" class="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3.5 rounded-xl text-sm transition shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2">
-                <i data-lucide="play" class="w-4 h-4"></i>
-                <span id="execute-btn-label">Generate Detailed Production Output</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Detailed Output Terminal -->
-          <div class="mt-8">
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-xs font-semibold text-slate-400 flex items-center gap-1.5">
-                <i data-lucide="terminal" class="w-3.5 h-3.5"></i> Comprehensive Output Stream:
-              </span>
-              <button onclick="copyTerminalOutput('terminal-output')" class="text-xs text-indigo-400 hover:text-indigo-300 transition flex items-center gap-1 font-medium">
-                <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy Output
-              </button>
-            </div>
-            <div id="terminal-output" class="w-full bg-gray-950 border border-gray-800 rounded-xl p-5 text-xs font-mono text-emerald-400 whitespace-pre-wrap select-all min-h-[160px] max-h-[420px] overflow-y-auto custom-scrollbar">Engine initialized. Provide parameters above and click generate.</div>
-          </div>
-        </div>
       </div>
 
-      <!-- VIEW B: FIND TRUE (AI DETECTION & VERIFICATION SUITE) -->
-      <div id="view-findtrue-studio" class="hidden max-w-4xl mx-auto space-y-6">
-        <div class="bg-gray-900/60 p-8 rounded-2xl border border-gray-800 shadow-xl">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
-              <i data-lucide="shield-alert" class="w-6 h-6"></i>
-            </div>
-            <div>
-              <h3 class="text-2xl font-bold text-white">Find True: Media Authenticity & Origin Verifier</h3>
-              <p class="text-xs text-slate-400">Identify whether an image/video is authentic or AI-generated, predict generation prompts, models, and trace upload origin.</p>
-            </div>
-          </div>
 
-          <!-- Paste Link & Search Controls -->
-          <div class="space-y-4 mt-6">
-            <div>
-              <label class="text-xs font-semibold text-slate-300 block mb-1.5">Paste Media Link (Image/Video URL) or Search Topic:</label>
-              <div class="flex gap-2">
-                <div class="relative flex-1">
-                  <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-500">
-                    <i data-lucide="link-2" class="w-4 h-4"></i>
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+
+        <h3 class="font-bold">
+          Source Information
+        </h3>
+
+        <div class="mt-4 text-sm text-slate-300 space-y-2">
+
+          <p>
+            <strong>Title:</strong>
+            ${escapeHTML(analysis.title || "Unknown")}
+          </p>
+
+          <p>
+            <strong>Author/Uploader:</strong>
+            ${escapeHTML(analysis.author || "Unknown")}
+          </p>
+
+          <p>
+            <strong>Published:</strong>
+            ${escapeHTML(analysis.published || "Unknown")}
+          </p>
+
+          <p>
+            <strong>Platform:</strong>
+            ${escapeHTML(analysis.platform || "Unknown")}
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+
+        <h3 class="font-bold">
+          AI Generation Evidence
+        </h3>
+
+        <div class="mt-4 space-y-3 text-sm">
+
+          ${detailRow(
+            "Likely AI Tool",
+            analysis.tool
+          )}
+
+          ${detailRow(
+            "Model",
+            analysis.model
+          )}
+
+          ${detailRow(
+            "Prompt",
+            analysis.prompt
+          )}
+
+          ${detailRow(
+            "Generation Details",
+            analysis.generationDetails
+          )}
+
+        </div>
+
+      </div>
+
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+
+        <h3 class="font-bold">
+          Evidence & Reasoning
+        </h3>
+
+        <div class="mt-4 whitespace-pre-wrap text-sm text-slate-300">
+          ${escapeHTML(
+            analysis.reasoning ||
+            "No detailed reasoning returned."
+          )}
+        </div>
+
+      </div>
+
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+
+        <h3 class="font-bold">
+          Public Search Evidence
+        </h3>
+
+        <div class="mt-4 space-y-3">
+
+          ${
+            (data.sources || [])
+              .map(source => `
+
+                <a
+                  href="${escapeAttribute(source.link)}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block p-4 rounded-xl bg-slate-950 border border-slate-800 hover:border-pink-500"
+                >
+
+                  <div class="font-semibold">
+                    ${escapeHTML(source.title || "Source")}
                   </div>
-                  <input type="url" id="findtrue-url-input" placeholder="Paste link (e.g. https://...image.jpg or video URL) or describe scene..." class="w-full pl-11 pr-4 py-3.5 bg-gray-950 border border-gray-800 rounded-xl text-sm text-white placeholder-slate-600 focus:outline-none focus:border-amber-500 transition">
-                </div>
-                <button onclick="executeFindTrue()" class="px-8 py-3.5 bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white font-bold text-sm rounded-xl transition shadow-lg shadow-amber-600/30 flex items-center gap-2">
-                  <span>Go / Analyze</span>
-                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </button>
-              </div>
-            </div>
 
-            <!-- Optional Config for Google Live Search API -->
-            <details class="text-xs text-slate-400 bg-gray-950/60 p-3 rounded-xl border border-gray-800/60">
-              <summary class="cursor-pointer font-medium text-slate-300 flex items-center gap-1.5">
-                <i data-lucide="settings" class="w-3.5 h-3.5 text-amber-400"></i> Advanced: Google Live Search API Key Config (Optional)
-              </summary>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3 pt-3 border-t border-gray-800">
-                <div>
-                  <label class="block text-[11px] text-slate-400 mb-1">Google Custom Search API Key:</label>
-                  <input type="password" id="google-api-key" placeholder="AIzaSy..." class="w-full p-2.5 bg-gray-900 border border-gray-800 rounded-lg text-white font-mono text-xs focus:border-amber-500 focus:outline-none">
-                </div>
-                <div>
-                  <label class="block text-[11px] text-slate-400 mb-1">Search Engine ID (CX):</label>
-                  <input type="text" id="google-cx-key" placeholder="0123456789..." class="w-full p-2.5 bg-gray-900 border border-gray-800 rounded-lg text-white font-mono text-xs focus:border-amber-500 focus:outline-none">
-                </div>
-              </div>
-            </details>
-          </div>
+                  <div class="text-xs text-slate-500 mt-1">
+                    ${escapeHTML(source.displayLink || "")}
+                  </div>
+
+                  <p class="text-xs text-slate-400 mt-2">
+                    ${escapeHTML(source.snippet || "")}
+                  </p>
+
+                </a>
+
+              `)
+              .join("")
+          }
+
         </div>
 
-        <!-- Verification Results Dashboard -->
-        <div id="findtrue-result-card" class="bg-gray-900/60 p-6 rounded-2xl border border-gray-800 hidden">
-          <div class="flex items-center justify-between border-b border-gray-800 pb-4 mb-4">
-            <h4 class="text-base font-bold text-white flex items-center gap-2">
-              <i data-lucide="file-check" class="w-4 h-4 text-amber-400"></i> Verification & Provenance Report
-            </h4>
-            <span id="findtrue-verdict-badge" class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">Analyzing...</span>
-          </div>
-
-          <div id="findtrue-report-content" class="text-xs font-mono text-slate-200 whitespace-pre-wrap leading-relaxed bg-gray-950 p-5 rounded-xl border border-gray-800">
-            <!-- Injected detailed analysis -->
-          </div>
-
-          <div class="mt-4 flex justify-end">
-            <button onclick="copyTerminalOutput('findtrue-report-content')" class="text-xs text-amber-400 hover:text-amber-300 transition flex items-center gap-1 font-medium">
-              <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy Full Analysis
-            </button>
-          </div>
-        </div>
       </div>
-    </section>
 
-  </main>
+    </div>
 
-  <!-- Global Footer -->
-  <footer class="border-t border-gray-900 bg-gray-950 text-slate-500 text-xs py-8 mt-auto">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <div class="flex items-center space-x-2">
-        <div class="w-6 h-6 rounded bg-indigo-600 flex items-center justify-center text-white">
-          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-        </div>
-        <span class="font-bold text-slate-300">OmniAI Studio</span>
-        <span>© 2026. All rights reserved.</span>
+  `;
+
+
+  result.innerHTML = html;
+
+  lucide.createIcons();
+}
+
+
+/* ============================================================
+   HELPERS
+============================================================ */
+
+function infoCard(title, value) {
+
+  return `
+    <div class="bg-slate-950 border border-slate-800 rounded-xl p-4">
+      <div class="text-xs text-slate-500">
+        ${escapeHTML(title)}
       </div>
-      <div class="flex space-x-6">
-        <button onclick="navigateTo('page-home')" class="hover:text-slate-300 transition">Privacy</button>
-        <button onclick="navigateTo('page-directory')" class="hover:text-slate-300 transition">Directory Index</button>
-        <button onclick="openWorkspaceTab('findtrue')" class="hover:text-slate-300 transition">Find True Engine</button>
+      <div class="font-bold mt-1">
+        ${escapeHTML(value)}
       </div>
     </div>
-  </footer>
+  `;
+}
 
-  <!-- ================= MASTER JAVASCRIPT ================= -->
-  <script>
-    // 1. Directory Data
-    const aiDirectory = [
-      { id: "kling", name: "Kling AI", category: "video", badge: "Free Daily Credits", freeDaily: true, summary: "High physics realism text-to-video generation.", url: "https://klingai.com" },
-      { id: "runway", name: "Runway Gen-3", category: "video", badge: "Freemium", freeDaily: false, summary: "Cinematic camera motion and visual effects.", url: "https://runwayml.com" },
-      { id: "midjourney", name: "Midjourney v6", category: "image", badge: "Paid Only", freeDaily: false, summary: "Photorealistic textures and complex lighting.", url: "https://midjourney.com" },
-      { id: "leonardo", name: "Leonardo.ai", category: "image", badge: "150 Daily Credits", freeDaily: true, summary: "Fine-tuned models with daily free reset.", url: "https://leonardo.ai" },
-      { id: "cursor", name: "Cursor AI", category: "code", badge: "Free Tier", freeDaily: true, summary: "Full codebase intelligence VS Code editor.", url: "https://cursor.com" },
-      { id: "claude", name: "Claude 3.5 Sonnet", category: "code", badge: "Free Daily Access", freeDaily: true, summary: "Top-tier code architecture & frontend synthesis.", url: "https://claude.ai" }
-    ];
 
-    // 2. Navigation Router
-    function navigateTo(pageId) {
-      document.querySelectorAll('.page-view').forEach(p => p.classList.add('hidden'));
-      const active = document.getElementById(pageId);
-      if(active) {
-        active.classList.remove('hidden');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-      lucide.createIcons();
-    }
+function detailRow(label, value) {
 
-    function openWorkspaceTab(mode) {
-      navigateTo('page-workspace');
-      switchMode(mode);
-    }
+  return `
+    <div class="p-4 bg-slate-950 rounded-xl border border-slate-800">
 
-    // 3. Engine Database Categorized
-    const creatorEngines = [
-      { id: 1, title: "Master Prompt Enhancer", sub: "Builds comprehensive 8K production prompts.", btn: "Generate Detailed Master Prompt", icon: "sparkles", promptHeader: "Generate a comprehensive, ultra-detailed prompt with aspect ratios, camera lens parameters, and lighting controls for:" },
-      { id: 2, title: "Dynamic Pipeline Matcher", sub: "Maps exact AI tools for video/image workflows.", btn: "Generate Full AI Workflow Pipeline", icon: "compass", promptHeader: "Provide a detailed step-by-step production pipeline using current AI tools (Video, Voice, Upscaling) for:" },
-      { id: 3, title: "Viral Content Repurposer", sub: "Formats content into high-retention video scripts.", btn: "Generate Full Viral Script & Hooks", icon: "repeat", promptHeader: "Create a complete, detailed short-form video breakdown with hook, 3-scene visual prompts, voiceover, and hashtags for:" },
-      { id: 4, title: "Reverse Prompt Extraction", sub: "Deconstructs aesthetic elements into exact prompts.", btn: "Reverse Engineer Detailed Prompt", icon: "eye", promptHeader: "Reverse engineer this scene description into a complete prompt with lighting, medium, camera, and style parameters:" },
-      { id: 5, title: "Free AI Alternatives Finder", sub: "Lists zero-cost options with exact credit tiers.", btn: "Find Detailed Free Alternatives", icon: "dollar-sign", promptHeader: "Provide a comprehensive breakdown of 3 completely free or daily credit-supported alternatives for:" },
-      { id: 6, title: "Character Continuity Engine", sub: "Maintains seed and facial consistency across scenes.", btn: "Generate Seed-Locked Continuity Suite", icon: "user-check", promptHeader: "Generate a consistent character design sheet with seed prompts, facial attributes, and multi-angle scene directives for:" },
-      { id: 7, title: "Viral Hooks & High-CTR Titles", sub: "Generates high-converting retention anchors.", btn: "Generate 10 Detailed Hooks & Angles", icon: "flame", promptHeader: "Generate 10 psychology-backed viral hooks with retention triggers for:" },
-      { id: 8, title: "Daily Free Credits Tracker", sub: "Lists active daily resets and developer quotas.", btn: "Fetch Comprehensive Credit Guide", icon: "gift", promptHeader: "Provide an up-to-date detailed list of platforms offering daily free resets in video, image, voice, and LLMs:" }
-    ];
+      <div class="text-xs text-slate-500">
+        ${escapeHTML(label)}
+      </div>
 
-    const codingEngines = [
-      { id: 9, title: "Code Explainer & Fault Rectifier", sub: "Pinpoints bugs, memory leaks, and fixes syntax.", btn: "Analyze, Fix & Explain Code", icon: "bug", promptHeader: "Analyze this code comprehensively. 1. Point out all bugs and performance bottlenecks. 2. Provide the 100% complete corrected code. 3. Explain how the fix works step-by-step:\n" },
-      { id: 10, title: "Text to Clean Code Synthesizer", sub: "Converts requirements into clean HTML/JS/Python modules.", btn: "Compile Full Production Code", icon: "code-2", promptHeader: "Write complete, production-ready, clean, well-commented code for the following specification with zero placeholders:\n" }
-    ];
+      <div class="mt-2 whitespace-pre-wrap">
+        ${escapeHTML(value || "Unknown / not publicly available")}
+      </div>
 
-    let currentMode = 'creator';
-    let currentEngine = creatorEngines[0];
+    </div>
+  `;
+}
 
-    function switchMode(mode) {
-      currentMode = mode;
-      
-      // Update Button Styles
-      ['creator', 'coding', 'findtrue'].forEach(m => {
-        const btn = document.getElementById(`mode-btn-${m}`);
-        if(m === mode) {
-          btn.className = `flex-1 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 ${m === 'coding' ? 'bg-emerald-600 text-white' : m === 'findtrue' ? 'bg-amber-600 text-white' : 'bg-indigo-600 text-white'} transition shadow-lg`;
-        } else {
-          btn.className = `flex-1 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 text-slate-400 hover:bg-gray-800 hover:text-white transition`;
-        }
-      });
 
-      const standardView = document.getElementById('view-standard-studio');
-      const findtrueView = document.getElementById('view-findtrue-studio');
+function errorBox(message) {
 
-      if(mode === 'findtrue') {
-        standardView.classList.add('hidden');
-        findtrueView.classList.remove('hidden');
-      } else {
-        findtrueView.classList.add('hidden');
-        standardView.classList.remove('hidden');
-        renderEngineList(mode === 'creator' ? creatorEngines : codingEngines);
-      }
-      lucide.createIcons();
-    }
+  return `
+    <div class="p-5 rounded-xl bg-red-950/40 border border-red-900 text-red-300">
+      ❌ ${escapeHTML(message)}
+    </div>
+  `;
+}
 
-    function renderEngineList(engineArray) {
-      const container = document.getElementById('engine-tabs-container');
-      const sectionTitle = document.getElementById('sidebar-section-title');
-      sectionTitle.innerText = currentMode === 'creator' ? "Creator Engines (8)" : "Coding Engines (2)";
-      container.innerHTML = '';
 
-      engineArray.forEach((eng, idx) => {
-        const btn = document.createElement('button');
-        btn.onclick = () => selectEngineItem(eng);
-        btn.id = `tab-eng-${eng.id}`;
-        btn.className = `w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between transition ${idx === 0 ? (currentMode === 'coding' ? 'bg-emerald-600 text-white' : 'bg-indigo-600 text-white') : 'text-slate-400 hover:bg-gray-800 hover:text-white'}`;
-        btn.innerHTML = `
-          <span class="flex items-center gap-2.5"><i data-lucide="${eng.icon}" class="w-4 h-4"></i> ${eng.title}</span>
-          <i data-lucide="chevron-right" class="w-4 h-4"></i>
-        `;
-        container.appendChild(btn);
-      });
+function escapeHTML(value) {
 
-      selectEngineItem(engineArray[0]);
-    }
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
 
-    function selectEngineItem(eng) {
-      currentEngine = eng;
-      const themeColor = currentMode === 'coding' ? 'bg-emerald-600' : 'bg-indigo-600';
 
-      document.querySelectorAll('#engine-tabs-container button').forEach(b => {
-        b.className = "w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition";
-      });
+function escapeAttribute(value) {
 
-      const activeTab = document.getElementById(`tab-eng-${eng.id}`);
-      if(activeTab) activeTab.className = `w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between ${themeColor} text-white transition`;
+  return escapeHTML(value);
+}
 
-      document.getElementById('engine-title').innerText = eng.title;
-      document.getElementById('engine-subtitle').innerText = eng.sub;
-      document.getElementById('execute-btn-label').innerText = eng.btn;
-      
-      const execBtn = document.getElementById('execute-main-btn');
-      execBtn.className = `flex-1 ${currentMode === 'coding' ? 'bg-emerald-600 hover:bg-emerald-500 shadow-emerald-600/30' : 'bg-indigo-600 hover:bg-indigo-500 shadow-indigo-600/30'} text-white font-semibold py-3.5 rounded-xl text-sm transition shadow-lg flex items-center justify-center gap-2`;
 
-      document.getElementById('terminal-output').innerText = `Engine [${eng.title}] loaded. Provide input above to generate detailed response.`;
-      lucide.createIcons();
-    }
+async function copyText(elementId) {
 
-    // 4. Detailed AI Execution Function
-    async function executeEngineAction() {
-      const input = document.getElementById('terminal-input').value.trim();
-      const output = document.getElementById('terminal-output');
+  const text =
+    document.getElementById(elementId).innerText;
 
-      if (!input && currentEngine.id !== 8) {
-        output.innerText = "⚠️ Error: Please input your topic, prompt context, or code to execute.";
-        return;
-      }
+  try {
 
-      const fullPrompt = `${currentEngine.promptHeader}\n"${input}"\n\nPlease provide a fully expanded, comprehensive, step-by-step and highly detailed response.`;
+    await navigator.clipboard.writeText(text);
 
-      output.innerText = "⚡ Processing with AI Engine & Compiling Comprehensive Response...";
+  } catch {
 
-      try {
-        const response = await fetch('/api/generate', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ prompt: fullPrompt })
-        });
+    alert("Clipboard access failed.");
 
-        const data = await response.json();
-        if (response.ok && (data.result || data.output)) {
-          output.innerText = data.result || data.output;
-        } else {
-          output.innerText = "⚠️ Execution Response:\n" + (data.error || "Completed with standard output format.");
-        }
-      } catch (err) {
-        // High fidelity fallback generator for standalone execution
-        output.innerText = `[DETAILED ENGINE RESULT: ${currentEngine.title.toUpperCase()}]\n\n` + 
-          `Processed Input: ${input || 'Universal Request'}\n\n` +
-          `Status: Generated successfully.\n` +
-          `Detailed Blueprint:\n` +
-          `1. Core Objective: High-performance execution tailored for ${currentEngine.title}.\n` +
-          `2. Technical Specifications: Optimized with multi-layer reasoning.\n` +
-          `3. Ready-to-use Production Directive Generated for deployment.`;
-      }
-    }
+  }
 
-    // 5. FIND TRUE: AI Media Detection & Google Search API Integration
-    async function executeFindTrue() {
-      const inputUrl = document.getElementById('findtrue-url-input').value.trim();
-      const apiKey = document.getElementById('google-api-key').value.trim();
-      const cxKey = document.getElementById('google-cx-key').value.trim();
-      
-      const resultCard = document.getElementById('findtrue-result-card');
-      const reportContent = document.getElementById('findtrue-report-content');
-      const verdictBadge = document.getElementById('findtrue-verdict-badge');
+}
 
-      if(!inputUrl) {
-        alert("Please paste an Image/Video URL or describe the scene.");
-        return;
-      }
 
-      resultCard.classList.remove('hidden');
-      reportContent.innerText = "🔍 Contacting Live Index & Performing Forensic AI Analysis...";
-      verdictBadge.innerText = "Scanning Metadata...";
-      verdictBadge.className = "px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30";
+/* ============================================================
+   DIRECTORY
+============================================================ */
 
-      let searchResultsSummary = "No external Search API keys provided. Running deep synthetic forensic analysis.";
+const directory = [
 
-      // Live Google Search if API Key is configured
-      if(apiKey && cxKey) {
-        try {
-          const googleRes = await fetch(`https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${cxKey}&q=${encodeURIComponent(inputUrl)}`);
-          const searchData = await googleRes.json();
-          if(searchData.items && searchData.items.length > 0) {
-            searchResultsSummary = searchData.items.slice(0, 3).map(item => `• Title: ${item.title}\n  Source: ${item.link}\n  Snippet: ${item.snippet}`).join('\n\n');
-          }
-        } catch(e) {
-          searchResultsSummary = "Google Search Query attempted; Proceeding with multimodal heuristics.";
-        }
-      }
+  ["Kling AI", "Video", "https://klingai.com"],
+  ["Runway", "Video", "https://runwayml.com"],
+  ["Luma Dream Machine", "Video", "https://lumalabs.ai/dream-machine"],
+  ["Pika", "Video", "https://pika.art"],
 
-      // Detailed Forensic Prompt for Verification
-      const analysisPrompt = `Task: Perform a complete forensic analysis on this image/video URL or scene to determine if it is REAL or AI-GENERATED.
-Target: "${inputUrl}"
-Search Intelligence:
-${searchResultsSummary}
+  ["Leonardo AI", "Image", "https://leonardo.ai"],
+  ["Midjourney", "Image", "https://midjourney.com"],
+  ["Ideogram", "Image", "https://ideogram.ai"],
 
-Please deliver a complete and detailed analysis in this format:
-1. VERDICT: [100% REAL / AI-GENERATED / HYBRID VFX / DEEPFAKE]
-2. PROBABILITY SCORE: [e.g., 98.4% AI-Generated]
-3. PROBABLE GENERATION TOOLS USED: [e.g., Midjourney v6, Kling AI, Sora, Runway Gen-3, Stable Diffusion XL, Flux.1]
-4. REVERSE-ENGINEERED PROMPT: [The exact prompt and style modifiers likely given to generate this visual]
-5. ORIGIN & TIMELINE TRACE: [When it surfaced, typical creator attribution, and upload patterns]
-6. FORENSIC ARTIFACTS DETECTED: [Lighting inconsistencies, finger anatomy, text anomalies, unnatural frame blending, or realistic sensor noise]`;
+  ["Cursor", "Coding", "https://cursor.com"],
+  ["Claude", "Coding", "https://claude.ai"],
+  ["v0", "Coding", "https://v0.dev"],
 
-      try {
-        const response = await fetch('/api/generate', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ prompt: analysisPrompt })
-        });
+  ["ElevenLabs", "Audio", "https://elevenlabs.io"],
+  ["Suno", "Audio", "https://suno.com"],
 
-        const data = await response.json();
-        const finalReport = data.result || data.output || generateLocalFindTrueReport(inputUrl);
+  ["ChatGPT", "LLM", "https://chatgpt.com"],
+  ["Gemini", "LLM", "https://aistudio.google.com"],
+  ["Perplexity", "Search", "https://perplexity.ai"],
 
-        reportContent.innerText = finalReport;
-        
-        if(finalReport.toLowerCase().includes("ai-generated") || finalReport.toLowerCase().includes("deepfake")) {
-          verdictBadge.innerText = "🚨 HIGH PROBABILITY: AI-GENERATED";
-          verdictBadge.className = "px-3 py-1 rounded-full text-xs font-bold bg-rose-500/20 text-rose-400 border border-rose-500/30";
-        } else {
-          verdictBadge.innerText = "✅ VERIFIED: AUTHENTIC / REAL";
-          verdictBadge.className = "px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30";
-        }
-      } catch (err) {
-        const fallbackReport = generateLocalFindTrueReport(inputUrl);
-        reportContent.innerText = fallbackReport;
-        verdictBadge.innerText = "⚠️ SCAN COMPLETE";
-      }
-    }
+  ["HeyGen", "Avatar", "https://heygen.com"],
+  ["Meshy", "3D", "https://meshy.ai"]
 
-    function generateLocalFindTrueReport(url) {
-      return `=====================================================
-FIND TRUE™ FORENSIC MEDIA & PROVENANCE REPORT
-Target: ${url}
-=====================================================
+];
 
-1. VERDICT:
-   [AI-GENERATED / SYNTHETIC MEDIA DETECTED]
 
-2. PROBABILITY SCORE:
-   97.8% Synthetic Probability (High Confidence)
+function renderDirectory() {
 
-3. LIKELY AI ENGINE(S) USED:
-   • Primary Model: Midjourney v6.0 / Flux.1 (Dev)
-   • Video Animation (if video): Kling AI v1.5 or Runway Gen-3 Alpha
-   • Post-processing: Topaz Video AI / Real-ESRGAN Upscaler
+  const query =
+    document.getElementById("directory-search")
+      .value
+      .toLowerCase();
 
-4. PREDICTED REVERSE-ENGINEERED PROMPT:
-   "Cinematic medium shot of the subject, ultra-detailed skin textures, hyperrealistic volumetrics, 8k resolution, photorealistic depth of field, natural dramatic lighting, shot on 35mm lens --ar 16:9 --style raw --v 6.0"
 
-5. METADATA & ORIGIN PATTERNS:
-   • Estimated Surface Date: Recent Viral Wave
-   • Diffusion Noise Signature: Sub-pixel micro-smoothing visible in background textures.
-   • Compression Trace: WebP/H.264 re-encoded payload.
+  const grid =
+    document.getElementById("directory-grid");
 
-6. FORENSIC ARTIFACTS:
-   • Geometric consistency in ambient shadows shows synthetic diffusion.
-   • Specular highlights on reflective surfaces lack natural ray-traced bounce.`;
-    }
 
-    function copyTerminalOutput(elementId) {
-      const text = document.getElementById(elementId).innerText;
-      navigator.clipboard.writeText(text);
-      alert("Analysis copied to clipboard!");
-    }
+  grid.innerHTML =
+    directory
 
-    function renderDirectoryCards(items) {
-      const grid = document.getElementById('directory-grid');
-      grid.innerHTML = '';
-      items.forEach(tool => {
-        const card = document.createElement('div');
-        card.className = "bg-gray-900/60 p-6 rounded-2xl border border-gray-800 hover:border-indigo-500/40 transition flex flex-col justify-between";
-        card.innerHTML = `
-          <div>
-            <div class="flex justify-between items-start mb-2">
-              <h4 class="font-bold text-lg text-white">${tool.name}</h4>
-              <span class="text-[10px] bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-2 py-0.5 rounded-full">${tool.badge}</span>
-            </div>
-            <p class="text-slate-400 text-xs">${tool.summary}</p>
-          </div>
-          <a href="${tool.url}" target="_blank" class="mt-4 py-2 bg-gray-800 hover:bg-gray-700 text-center text-xs font-semibold rounded-xl text-slate-200 transition">Visit Platform</a>
-        `;
-        grid.appendChild(card);
-      });
-      lucide.createIcons();
-    }
+      .filter(item =>
+        item.join(" ").toLowerCase().includes(query)
+      )
 
-    document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('count-all').innerText = aiDirectory.length;
-      renderDirectoryCards(aiDirectory);
-      renderEngineList(creatorEngines);
-      lucide.createIcons();
-    });
-  </script>
+      .map(item => `
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+
+          <h3 class="font-bold">
+            ${escapeHTML(item[0])}
+          </h3>
+
+          <p class="text-xs text-slate-500 mt-1">
+            ${escapeHTML(item[1])}
+          </p>
+
+          <a
+            href="${escapeAttribute(item[2])}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block mt-4 text-indigo-400 text-xs"
+          >
+            Official Website →
+          </a>
+
+        </div>
+
+      `)
+      .join("");
+
+}
+
+
+/* ============================================================
+   INITIALIZATION
+============================================================ */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  buildEngineLists();
+
+  renderDirectory();
+
+  lucide.createIcons();
+
+});
+
+</script>
+
 </body>
-</html>
+  </html>
