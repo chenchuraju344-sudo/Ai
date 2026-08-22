@@ -1,39 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <!-- Essential Meta Tags & SEO Optimization -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OmniAI Studio - Enterprise 10-in-1 AI Productivity Suite & Live Directory</title>
-  <meta name="description" content="Explore top AI tools across video synthesis, image generation, voice cloning, and coding. Features live search, performance analytics, and a 10-in-1 creation suite.">
-  <meta name="keywords" content="AI tools directory, free AI credits, best AI video generator, Kling AI, Midjourney, ElevenLabs, Claude 3.5, Cursor AI, prompt enhancer">
-  <meta name="author" content="OmniAI Studio">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://yourdomain.com/">
-
-  <!-- Open Graph / Social -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yourdomain.com/">
-  <meta property="og:title" content="OmniAI Studio - 10-in-1 Suite & Curated AI Directory">
-  <meta property="og:description" content="Discover top verified AI tools with real-time performance analytics, free tier trackers, and multi-engine creator studios.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&h=630&q=80">
-
-  <!-- Schema.org JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "OmniAI Studio",
-    "operatingSystem": "All",
-    "applicationCategory": "ProductivityApplication",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "description": "Comprehensive AI intelligence platform providing prompt engineering, code debugging, and verified AI directory aggregator."
-  }
-  </script>
+  <title>OmniAI Studio - Multi-Suite AI Ecosystem & Live Directory</title>
+  <meta name="description" content="Explore top AI tools, Creator Studio, Developer Hub, and FindTrue AI Image/Video Forensic Verification.">
 
   <!-- Tailwind CSS & Google Fonts -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -60,7 +31,7 @@
 
   <style>
     .glassmorphism {
-      background: rgba(15, 23, 42, 0.75);
+      background: rgba(15, 23, 42, 0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
     }
@@ -83,9 +54,9 @@
 </head>
 <body class="bg-gray-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col selection:bg-indigo-500 selection:text-white custom-scrollbar">
 
-  <!-- Top Announcement Bar -->
+  <!-- Announcement Bar -->
   <aside class="bg-gradient-to-r from-indigo-950 via-purple-950 to-indigo-950 text-indigo-200 text-xs py-2 px-4 text-center border-b border-indigo-900/40">
-    <span>⚡ <strong>OmniAI Studio:</strong> Real-time Database Active with 25+ Industry AI Models & 10 Modular Engines.</span>
+    <span>⚡ <strong>OmniAI Studio:</strong> Modular Creator Suite, Coding Suite, and AI Forensic Verifier Active.</span>
   </aside>
 
   <!-- Global Header -->
@@ -100,20 +71,25 @@
 
       <!-- Navigation Links -->
       <nav class="hidden md:flex items-center space-x-1 text-sm font-medium text-slate-300">
-        <button onclick="navigateTo('page-home')" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition">Home</button>
-        <button onclick="navigateTo('page-directory')" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition flex items-center gap-1.5">
-          <i data-lucide="compass" class="w-4 h-4 text-indigo-400"></i> AI Directory
+        <button onclick="navigateTo('page-home')" class="px-3 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition">Home</button>
+        <button onclick="navigateTo('page-directory')" class="px-3 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition flex items-center gap-1.5">
+          <i data-lucide="compass" class="w-4 h-4 text-indigo-400"></i> Directory
         </button>
-        <button onclick="navigateTo('page-workspace')" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition">10-in-1 Suite</button>
-        <button onclick="navigateTo('page-pricing')" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition">Pricing</button>
-        <button onclick="navigateTo('page-contact')" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition">Contact</button>
+        <button onclick="navigateTo('page-creator')" class="px-3 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition flex items-center gap-1.5 text-purple-300">
+          <i data-lucide="palette" class="w-4 h-4 text-purple-400"></i> Creator Suite
+        </button>
+        <button onclick="navigateTo('page-coding')" class="px-3 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition flex items-center gap-1.5 text-emerald-300">
+          <i data-lucide="code" class="w-4 h-4 text-emerald-400"></i> Coding Suite
+        </button>
+        <button onclick="navigateTo('page-findtrue')" class="px-3 py-2 rounded-lg hover:text-white hover:bg-gray-800/60 transition flex items-center gap-1.5 text-cyan-300">
+          <i data-lucide="shield-check" class="w-4 h-4 text-cyan-400"></i> Find True
+        </button>
       </nav>
 
-      <!-- CTA -->
-      <div class="flex items-center space-x-3">
-        <button onclick="navigateTo('page-directory')" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-lg transition shadow-md shadow-indigo-600/30 flex items-center gap-1.5">
-          <span>Explore Directory</span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      <!-- Quick CTA -->
+      <div class="flex items-center space-x-2">
+        <button onclick="navigateTo('page-findtrue')" class="bg-cyan-600/20 border border-cyan-500/40 hover:bg-cyan-600 text-cyan-200 hover:text-white text-xs font-semibold px-3 py-2 rounded-lg transition flex items-center gap-1">
+          <i data-lucide="scan-search" class="w-3.5 h-3.5"></i> Verify AI
         </button>
       </div>
     </div>
@@ -126,292 +102,219 @@
     <section id="page-home" class="page-view max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
       <div class="text-center max-w-3xl mx-auto space-y-6">
         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-xs font-medium">
-          <i data-lucide="zap" class="w-3.5 h-3.5"></i> Comprehensive AI Ecosystem & Multi-Tool Hub
+          <i data-lucide="zap" class="w-3.5 h-3.5"></i> Modular AI Suite & Deep Forensics Engine
         </div>
         <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight text-white">
-          Discover, Analyze & Master <span class="gradient-text">Every AI Tool</span>
+          Create, Code & Verify <span class="gradient-text">With AI Precision</span>
         </h1>
         <p class="text-slate-400 text-base sm:text-lg">
-          Filter verified AI platforms by performance metrics, claim daily free credits, and build production assets with our built-in 10-in-1 automation studio.
+          Complete tool suite for content creators, full-stack developers, and instant forensic AI detection.
         </p>
-        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button onclick="navigateTo('page-directory')" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition shadow-lg shadow-indigo-600/40 flex items-center justify-center gap-2">
-            <i data-lucide="compass" class="w-4 h-4"></i> Open AI Directory (Live Search)
+        <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
+          <button onclick="navigateTo('page-creator')" class="px-6 py-3.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-semibold text-sm transition shadow-lg shadow-purple-600/30 flex items-center gap-2">
+            <i data-lucide="palette" class="w-4 h-4"></i> Creator Suite (8 Tools)
           </button>
-          <button onclick="navigateTo('page-workspace')" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gray-900 hover:bg-gray-800 text-slate-300 font-semibold text-sm border border-gray-800 transition flex items-center justify-center gap-2">
-            <i data-lucide="terminal" class="w-4 h-4"></i> Launch 10-in-1 Creator Suite
+          <button onclick="navigateTo('page-coding')" class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm transition shadow-lg shadow-emerald-600/30 flex items-center gap-2">
+            <i data-lucide="code-2" class="w-4 h-4"></i> Coding Suite (2 Tools)
           </button>
-        </div>
-      </div>
-
-      <!-- Live Category Badges Matrix -->
-      <div class="mt-16 border-t border-gray-800/80 pt-12">
-        <h3 class="text-center text-xs uppercase font-bold tracking-widest text-slate-500 mb-8">Ecosystem Categories Available</h3>
-        <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-          <span class="px-3.5 py-1.5 rounded-full bg-gray-900 border border-gray-800 text-xs text-slate-300 flex items-center gap-2"><i data-lucide="video" class="w-3.5 h-3.5 text-blue-400"></i> Video Generators</span>
-          <span class="px-3.5 py-1.5 rounded-full bg-gray-900 border border-gray-800 text-xs text-slate-300 flex items-center gap-2"><i data-lucide="image" class="w-3.5 h-3.5 text-purple-400"></i> Image & Art</span>
-          <span class="px-3.5 py-1.5 rounded-full bg-gray-900 border border-gray-800 text-xs text-slate-300 flex items-center gap-2"><i data-lucide="code" class="w-3.5 h-3.5 text-emerald-400"></i> Code & Debugging</span>
-          <span class="px-3.5 py-1.5 rounded-full bg-gray-900 border border-gray-800 text-xs text-slate-300 flex items-center gap-2"><i data-lucide="mic" class="w-3.5 h-3.5 text-yellow-400"></i> Voice & Audio</span>
-          <span class="px-3.5 py-1.5 rounded-full bg-gray-900 border border-gray-800 text-xs text-slate-300 flex items-center gap-2"><i data-lucide="pen-tool" class="w-3.5 h-3.5 text-pink-400"></i> Writing & LLMs</span>
-          <span class="px-3.5 py-1.5 rounded-full bg-gray-900 border border-gray-800 text-xs text-slate-300 flex items-center gap-2"><i data-lucide="box" class="w-3.5 h-3.5 text-indigo-400"></i> 3D & Avatar</span>
-          <span class="px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs text-amber-300 flex items-center gap-2"><i data-lucide="gift" class="w-3.5 h-3.5 text-amber-400"></i> Daily Free Credits</span>
+          <button onclick="navigateTo('page-findtrue')" class="px-6 py-3.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-semibold text-sm transition shadow-lg shadow-cyan-600/30 flex items-center gap-2">
+            <i data-lucide="shield-check" class="w-4 h-4"></i> Find True (AI Verifier)
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- ================= PAGE 2: COMPREHENSIVE AI DIRECTORY ================= -->
+    <!-- ================= PAGE 2: AI DIRECTORY ================= -->
     <section id="page-directory" class="page-view hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      
-      <!-- Top Directory Controls Header -->
       <div class="mb-8">
         <h2 class="text-3xl font-extrabold text-white tracking-tight">AI Ecosystem Directory</h2>
-        <p class="text-slate-400 text-xs sm:text-sm mt-1">Live database of verified models. Use the search bar or category filters to inspect detailed technical ratings.</p>
+        <p class="text-slate-400 text-xs sm:text-sm mt-1">Live database of verified models and tools.</p>
 
-        <!-- Live Search Bar -->
+        <!-- Search Bar -->
         <div class="mt-6 relative">
           <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-500">
             <i data-lucide="search" class="w-5 h-5"></i>
           </div>
-          <input type="text" id="directory-search" oninput="filterDirectory()" placeholder="Live search across models, features, or performance keywords (e.g., 'photorealistic', 'code', 'cloning', 'free')..." class="w-full pl-12 pr-4 py-3.5 bg-gray-900 border border-gray-800 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 shadow-inner transition">
+          <input type="text" id="directory-search" oninput="filterDirectory()" placeholder="Live search across models (e.g. Kling, Midjourney, Cursor)..." class="w-full pl-12 pr-4 py-3.5 bg-gray-900 border border-gray-800 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 shadow-inner">
         </div>
 
         <!-- Filter Pill Buttons -->
         <div class="mt-4 flex items-center gap-2 overflow-x-auto pb-2 custom-scrollbar">
           <button onclick="setCategoryFilter('all')" class="cat-filter-btn active px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-indigo-600 text-white transition">All Models (<span id="count-all">0</span>)</button>
-          <button onclick="setCategoryFilter('free')" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-gray-900 border border-gray-800 text-amber-300 hover:bg-gray-800 transition flex items-center gap-1.5"><i data-lucide="gift" class="w-3.5 h-3.5"></i> Daily Free Credits</button>
           <button onclick="setCategoryFilter('video')" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-gray-900 border border-gray-800 text-slate-300 hover:bg-gray-800 transition">Video Creation</button>
           <button onclick="setCategoryFilter('image')" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-gray-900 border border-gray-800 text-slate-300 hover:bg-gray-800 transition">Image & Art</button>
           <button onclick="setCategoryFilter('code')" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-gray-900 border border-gray-800 text-slate-300 hover:bg-gray-800 transition">Coding & Dev</button>
-          <button onclick="setCategoryFilter('audio')" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-gray-900 border border-gray-800 text-slate-300 hover:bg-gray-800 transition">Audio & Voice</button>
-          <button onclick="setCategoryFilter('writing')" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-gray-900 border border-gray-800 text-slate-300 hover:bg-gray-800 transition">Writing & LLMs</button>
-          <button onclick="setCategoryFilter('3d')" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-gray-900 border border-gray-800 text-slate-300 hover:bg-gray-800 transition">3D & Avatars</button>
         </div>
       </div>
 
-      <!-- Dynamic Cards Grid -->
-      <div id="directory-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Cards injected via JavaScript -->
-      </div>
-
-      <!-- No Results State -->
+      <div id="directory-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
       <div id="no-results" class="hidden text-center py-20 bg-gray-900/40 rounded-2xl border border-gray-800 mt-6">
         <i data-lucide="alert-circle" class="w-10 h-10 text-slate-500 mx-auto mb-3"></i>
         <h4 class="text-base font-bold text-white">No AI Models Found</h4>
-        <p class="text-xs text-slate-400 mt-1">Try adjusting your search terms or select another category filter.</p>
       </div>
     </section>
 
-    <!-- ================= PAGE 3: 10-IN-1 WORKSPACE STUDIO ================= -->
-    <section id="page-workspace" class="page-view hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <!-- ================= PAGE 3: CREATOR SUITE (1 to 8 Engines) ================= -->
+    <section id="page-creator" class="page-view hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="mb-6">
+        <h2 class="text-2xl font-extrabold text-white flex items-center gap-2">
+          <i data-lucide="palette" class="text-purple-400"></i> Creator Automation Studio
+        </h2>
+        <p class="text-xs text-slate-400">8 High-Performance Engines for Prompt Engineering, Viral Content, and Model Pipelines.</p>
+      </div>
+
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        
-        <!-- Sidebar Navigation for 10 Tools -->
         <div class="lg:col-span-4 space-y-1.5 bg-gray-900/60 p-4 rounded-2xl border border-gray-800 h-fit">
-          <h2 class="text-xs uppercase font-bold tracking-wider text-slate-500 px-3 mb-2">Creator OS Engine Selector</h2>
-          
-          <button onclick="selectEngine(1)" id="eng-1" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between bg-indigo-600 text-white transition">
-            <span class="flex items-center gap-2.5"><i data-lucide="sparkles" class="w-4 h-4"></i> 1. Prompt Enhancer</span>
-            <i data-lucide="chevron-right" class="w-4 h-4"></i>
-          </button>
-          <button onclick="selectEngine(2)" id="eng-2" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
-            <span class="flex items-center gap-2.5"><i data-lucide="compass" class="w-4 h-4"></i> 2. Pipeline Matcher</span>
-            <i data-lucide="chevron-right" class="w-4 h-4"></i>
-          </button>
-          <button onclick="selectEngine(3)" id="eng-3" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
-            <span class="flex items-center gap-2.5"><i data-lucide="repeat" class="w-4 h-4"></i> 3. Content Repurposer</span>
-            <i data-lucide="chevron-right" class="w-4 h-4"></i>
-          </button>
-          <button onclick="selectEngine(4)" id="eng-4" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
-            <span class="flex items-center gap-2.5"><i data-lucide="eye" class="w-4 h-4"></i> 4. Reverse Prompt Engine</span>
-            <i data-lucide="chevron-right" class="w-4 h-4"></i>
-          </button>
-          <button onclick="selectEngine(5)" id="eng-5" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
-            <span class="flex items-center gap-2.5"><i data-lucide="dollar-sign" class="w-4 h-4"></i> 5. Free Alternative Finder</span>
-            <i data-lucide="chevron-right" class="w-4 h-4"></i>
-          </button>
-          <button onclick="selectEngine(6)" id="eng-6" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
-            <span class="flex items-center gap-2.5"><i data-lucide="user-check" class="w-4 h-4"></i> 6. Character Continuity</span>
-            <i data-lucide="chevron-right" class="w-4 h-4"></i>
-          </button>
-          <button onclick="selectEngine(7)" id="eng-7" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
-            <span class="flex items-center gap-2.5"><i data-lucide="flame" class="w-4 h-4"></i> 7. Viral Hooks & Titles</span>
-            <i data-lucide="chevron-right" class="w-4 h-4"></i>
-          </button>
-          <button onclick="selectEngine(8)" id="eng-8" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
-            <span class="flex items-center gap-2.5"><i data-lucide="gift" class="w-4 h-4"></i> 8. Live Grants & Credits</span>
-            <i data-lucide="chevron-right" class="w-4 h-4"></i>
-          </button>
-          <button onclick="selectEngine(9)" id="eng-9" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
-            <span class="flex items-center gap-2.5"><i data-lucide="bug" class="w-4 h-4"></i> 9. Code Explainer & Fixer</span>
-            <i data-lucide="chevron-right" class="w-4 h-4"></i>
-          </button>
-          <button onclick="selectEngine(10)" id="eng-10" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
-            <span class="flex items-center gap-2.5"><i data-lucide="code-2" class="w-4 h-4"></i> 10. Text to Clean Code</span>
-            <i data-lucide="chevron-right" class="w-4 h-4"></i>
-          </button>
+          <h3 class="text-xs uppercase font-bold tracking-wider text-slate-500 px-3 mb-2">Creator Engines</h3>
+          <button onclick="selectEngine(1)" id="eng-1" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between bg-purple-600 text-white transition"><span class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4"></i> 1. Prompt Enhancer</span><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+          <button onclick="selectEngine(2)" id="eng-2" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition"><span class="flex items-center gap-2"><i data-lucide="compass" class="w-4 h-4"></i> 2. Pipeline Matcher</span><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+          <button onclick="selectEngine(3)" id="eng-3" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition"><span class="flex items-center gap-2"><i data-lucide="repeat" class="w-4 h-4"></i> 3. Content Repurposer</span><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+          <button onclick="selectEngine(4)" id="eng-4" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition"><span class="flex items-center gap-2"><i data-lucide="eye" class="w-4 h-4"></i> 4. Reverse Prompt Engine</span><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+          <button onclick="selectEngine(5)" id="eng-5" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition"><span class="flex items-center gap-2"><i data-lucide="dollar-sign" class="w-4 h-4"></i> 5. Free Alternative Finder</span><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+          <button onclick="selectEngine(6)" id="eng-6" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition"><span class="flex items-center gap-2"><i data-lucide="user-check" class="w-4 h-4"></i> 6. Character Continuity</span><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+          <button onclick="selectEngine(7)" id="eng-7" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition"><span class="flex items-center gap-2"><i data-lucide="flame" class="w-4 h-4"></i> 7. Viral Hooks & Titles</span><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+          <button onclick="selectEngine(8)" id="eng-8" class="engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition"><span class="flex items-center gap-2"><i data-lucide="gift" class="w-4 h-4"></i> 8. Live Grants & Credits</span><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
         </div>
 
-        <!-- Dynamic Studio Terminal -->
         <div class="lg:col-span-8 bg-gray-900/60 p-6 rounded-2xl border border-gray-800 flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between border-b border-gray-800 pb-4 mb-4">
               <div>
-                <h3 id="engine-title" class="text-xl font-bold text-white">Prompt Enhancer</h3>
+                <h3 id="engine-title" class="text-xl font-bold text-white">Master Prompt Enhancer</h3>
                 <p id="engine-subtitle" class="text-xs text-slate-400 mt-0.5">Transforms elementary concepts into production-grade multi-engine prompts.</p>
               </div>
-              <span class="px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 text-xs font-mono border border-indigo-500/20">Studio v2.4</span>
+              <span class="px-2.5 py-1 rounded bg-purple-500/10 text-purple-400 text-xs font-mono border border-purple-500/20">Creator Mode</span>
             </div>
 
-            <!-- Terminal Inputs -->
-            <label class="text-xs font-semibold text-slate-300 block mb-2">Input Context / Parameters:</label>
-            <textarea id="terminal-input" rows="4" placeholder="Enter your raw concept or syntax here..." class="w-full bg-gray-950 border border-gray-800 rounded-xl p-4 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-indigo-500 font-mono transition"></textarea>
+            <label class="text-xs font-semibold text-slate-300 block mb-2">Input Context / Creative Parameters:</label>
+            <textarea id="terminal-input" rows="4" placeholder="Enter your raw concept, theme, or topic..." class="w-full bg-gray-950 border border-gray-800 rounded-xl p-4 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-purple-500 font-mono transition"></textarea>
 
-            <div class="mt-4 flex gap-3">
-              <button onclick="executeEngineAction()" class="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-xl text-sm transition shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2">
+            <div class="mt-4">
+              <button onclick="executeEngineAction()" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-semibold py-3 rounded-xl text-sm transition shadow-lg shadow-purple-600/30 flex items-center justify-center gap-2">
                 <i data-lucide="play" class="w-4 h-4"></i>
-                <span id="execute-btn-label">Generate Production Output</span>
+                <span id="execute-btn-label">Synthesize Master Prompt</span>
               </button>
             </div>
           </div>
 
-          <!-- Terminal Output -->
           <div class="mt-8">
             <div class="flex justify-between items-center mb-2">
-              <span class="text-xs font-semibold text-slate-400 flex items-center gap-1.5">
-                <i data-lucide="terminal" class="w-3.5 h-3.5"></i> Output Stream:
-              </span>
-              <button onclick="copyTerminalOutput()" class="text-xs text-indigo-400 hover:text-indigo-300 transition flex items-center gap-1 font-medium">
-                <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy Result
+              <span class="text-xs font-semibold text-slate-400 flex items-center gap-1.5"><i data-lucide="terminal" class="w-3.5 h-3.5"></i> Detailed Output:</span>
+              <button onclick="copyOutput('terminal-output')" class="text-xs text-purple-400 hover:text-purple-300 transition flex items-center gap-1"><i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy Result</button>
+            </div>
+            <div id="terminal-output" class="w-full bg-gray-950 border border-gray-800 rounded-xl p-4 text-xs font-mono text-slate-200 whitespace-pre-wrap select-all min-h-[140px] overflow-x-auto leading-relaxed">System ready. Select a creator engine and trigger execution.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PAGE 4: CODING SUITE (Engines 9 & 10) ================= -->
+    <section id="page-coding" class="page-view hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="mb-6">
+        <h2 class="text-2xl font-extrabold text-white flex items-center gap-2">
+          <i data-lucide="code-2" class="text-emerald-400"></i> Developer & Coding Hub
+        </h2>
+        <p class="text-xs text-slate-400">Dedicated AI debugging, syntactical repairs, and natural-language-to-code generation.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-4 space-y-1.5 bg-gray-900/60 p-4 rounded-2xl border border-gray-800 h-fit">
+          <h3 class="text-xs uppercase font-bold tracking-wider text-slate-500 px-3 mb-2">Coding Modules</h3>
+          <button onclick="selectCodingEngine(9)" id="code-eng-9" class="code-engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between bg-emerald-600 text-white transition">
+            <span class="flex items-center gap-2"><i data-lucide="bug" class="w-4 h-4"></i> Code Explainer & Fixer</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+          <button onclick="selectCodingEngine(10)" id="code-eng-10" class="code-engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition">
+            <span class="flex items-center gap-2"><i data-lucide="file-code" class="w-4 h-4"></i> Text to Clean Code</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <div class="lg:col-span-8 bg-gray-900/60 p-6 rounded-2xl border border-gray-800 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-gray-800 pb-4 mb-4">
+              <div>
+                <h3 id="coding-engine-title" class="text-xl font-bold text-white">Code Explainer & Fixer</h3>
+                <p id="coding-engine-subtitle" class="text-xs text-slate-400 mt-0.5">Pinpoints logic faults, refactors syntax, and explains root bugs in detail.</p>
+              </div>
+              <span class="px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 text-xs font-mono border border-emerald-500/20">Developer Engine</span>
+            </div>
+
+            <label class="text-xs font-semibold text-slate-300 block mb-2">Code Snippet or Prompt Requirement:</label>
+            <textarea id="coding-terminal-input" rows="6" placeholder="Paste your broken code or explain the UI/program you want to build..." class="w-full bg-gray-950 border border-gray-800 rounded-xl p-4 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-emerald-500 font-mono transition"></textarea>
+
+            <div class="mt-4">
+              <button onclick="executeCodingAction()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-3 rounded-xl text-sm transition shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-2">
+                <i data-lucide="terminal" class="w-4 h-4"></i>
+                <span id="coding-execute-btn-label">Analyze & Fix Code (Detailed)</span>
               </button>
             </div>
-            <pre id="terminal-output" class="w-full bg-gray-950 border border-gray-800 rounded-xl p-4 text-xs font-mono text-emerald-400 whitespace-pre-wrap select-all min-h-[120px] overflow-x-auto">System ready. Select an engine and trigger execution.</pre>
+          </div>
+
+          <div class="mt-8">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-xs font-semibold text-slate-400 flex items-center gap-1.5"><i data-lucide="code" class="w-3.5 h-3.5"></i> Generated Solution & Breakdown:</span>
+              <button onclick="copyOutput('coding-terminal-output')" class="text-xs text-emerald-400 hover:text-emerald-300 transition flex items-center gap-1"><i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy Code</button>
+            </div>
+            <pre id="coding-terminal-output" class="w-full bg-gray-950 border border-gray-800 rounded-xl p-4 text-xs font-mono text-emerald-300 whitespace-pre-wrap select-all min-h-[160px] overflow-x-auto leading-relaxed">Coding terminal ready. Paste code or requirements above.</pre>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= PAGE 4: PRICING ================= -->
-    <section id="page-pricing" class="page-view hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div class="text-center max-w-xl mx-auto mb-12">
-        <h2 class="text-3xl font-bold text-white">Transparent SaaS Tiering</h2>
-        <p class="text-slate-400 text-xs sm:text-sm mt-2">Deploy tools for personal creation or client-ready commercial infrastructure.</p>
+    <!-- ================= PAGE 5: FIND TRUE (AI Forensic & Verification) ================= -->
+    <section id="page-findtrue" class="page-view hidden max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="text-center max-w-2xl mx-auto mb-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-medium mb-3">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Forensic Image & Video Verification
+        </div>
+        <h2 class="text-3xl font-extrabold text-white">Find True AI Engine</h2>
+        <p class="text-slate-400 text-xs sm:text-sm mt-1">Paste any media URL or search a visual topic to detect if it's Real or AI-generated, identify the creation models, prompts, and source timeline.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <div class="bg-gray-900/60 p-8 rounded-2xl border border-gray-800 flex flex-col justify-between">
-          <div>
-            <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest">Free Community Pass</span>
-            <div class="mt-4 flex items-baseline gap-1">
-              <span class="text-4xl font-extrabold text-white">$0</span>
-              <span class="text-slate-400 text-sm">/ month</span>
+      <!-- Verification Input Box -->
+      <div class="bg-gray-900/80 p-6 rounded-2xl border border-gray-800 shadow-xl">
+        <div class="flex flex-col sm:flex-row gap-3">
+          <div class="relative flex-grow">
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+              <i data-lucide="link-2" class="w-5 h-5"></i>
             </div>
-            <ul class="mt-6 space-y-3 text-xs text-slate-300">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Full Access to all 10 Core Engines</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Live Search in Curated AI Directory</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Daily Free Credits Monitor</li>
-            </ul>
+            <input type="text" id="findtrue-input" placeholder="Paste Image/Video URL or describe the viral media (e.g. 'Elon Musk in cyber armor')..." class="w-full pl-11 pr-4 py-3.5 bg-gray-950 border border-gray-800 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition">
           </div>
-          <button onclick="navigateTo('page-workspace')" class="mt-8 w-full py-3 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-xl text-xs transition">Get Started Free</button>
+          <button onclick="executeFindTrueAnalysis()" class="px-8 py-3.5 bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-sm rounded-xl transition shadow-lg shadow-cyan-600/30 flex items-center justify-center gap-2">
+            <i data-lucide="search" class="w-4 h-4"></i>
+            <span>Go Verify</span>
+          </button>
         </div>
 
-        <div class="bg-gradient-to-b from-indigo-950/40 to-gray-900/80 p-8 rounded-2xl border border-indigo-500/40 flex flex-col justify-between relative shadow-xl shadow-indigo-900/20">
-          <span class="absolute top-4 right-4 bg-indigo-600 text-white text-[10px] uppercase font-bold px-2.5 py-0.5 rounded-full">Pro Tier</span>
-          <div>
-            <span class="text-xs font-bold text-indigo-300 uppercase tracking-widest">Enterprise Pro</span>
-            <div class="mt-4 flex items-baseline gap-1">
-              <span class="text-4xl font-extrabold text-white">$19</span>
-              <span class="text-slate-400 text-sm">/ month</span>
-            </div>
-            <ul class="mt-6 space-y-3 text-xs text-slate-200">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i> High-Speed Automated API Cloud Endpoints</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i> Unlimited Reverse Prompt Extractions</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i> Priority 24/7 Enterprise Assistance</li>
-            </ul>
-          </div>
-          <button onclick="navigateTo('page-contact')" class="mt-8 w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-xs transition shadow-md shadow-indigo-600/30">Claim Pro License</button>
+        <!-- Pre-Set Fast Test Cases -->
+        <div class="mt-4 flex flex-wrap items-center gap-2 text-xs text-slate-400">
+          <span class="text-slate-500">Quick Test:</span>
+          <button onclick="setFindTrueSample('https://example.com/pope-puffer-jacket.jpg', 'Viral Pope Francis White Puffer Jacket Photo')" class="px-2.5 py-1 rounded bg-gray-800 hover:bg-gray-700 text-slate-300 transition">Pope Puffer Jacket</button>
+          <button onclick="setFindTrueSample('https://example.com/hyper-car-flying.mp4', 'Futuristic Flying Sports Car Video in Tokyo')" class="px-2.5 py-1 rounded bg-gray-800 hover:bg-gray-700 text-slate-300 transition">Flying Car Clip</button>
         </div>
       </div>
-    </section>
 
-    <!-- ================= PAGE 5: CONTACT ================= -->
-    <section id="page-contact" class="page-view hidden max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div class="bg-gray-900/60 p-8 rounded-2xl border border-gray-800">
-        <h2 class="text-2xl font-bold text-white mb-2">Corporate Inquiries & Tool Submissions</h2>
-        <p class="text-slate-400 text-xs mb-6">Submit new AI tools for indexing or request enterprise white-label licenses.</p>
-
-        <form onsubmit="handleContactSubmit(event)" class="space-y-4 text-xs">
-          <div>
-            <label class="block text-slate-300 mb-1">Email Address</label>
-            <input type="email" required placeholder="contact@organization.com" class="w-full bg-gray-950 border border-gray-800 rounded-lg p-3 text-white focus:outline-none focus:border-indigo-500">
-          </div>
-          <div>
-            <label class="block text-slate-300 mb-1">Submission / Inquiry Details</label>
-            <textarea rows="4" required placeholder="Describe your tool submission or deployment scope..." class="w-full bg-gray-950 border border-gray-800 rounded-lg p-3 text-white focus:outline-none focus:border-indigo-500"></textarea>
-          </div>
-          <button type="submit" class="w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-lg transition">Submit Message</button>
-        </form>
+      <!-- Verification Detailed Output Card -->
+      <div id="findtrue-result-container" class="mt-8 bg-gray-900/60 p-6 rounded-2xl border border-gray-800">
+        <div class="flex justify-between items-center border-b border-gray-800 pb-3 mb-4">
+          <span class="text-xs font-semibold text-slate-400 flex items-center gap-1.5">
+            <i data-lucide="activity" class="w-4 h-4 text-cyan-400"></i> Forensic Verification Report
+          </span>
+          <button onclick="copyOutput('findtrue-output-text')" class="text-xs text-cyan-400 hover:text-cyan-300 transition flex items-center gap-1">
+            <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy Report
+          </button>
+        </div>
+        <div id="findtrue-output-text" class="text-xs font-mono text-slate-200 whitespace-pre-wrap leading-relaxed min-h-[160px]">
+Ready for forensic scanning. Enter a link or media query above and press "Go Verify".
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ================= PERFORMANCE MODAL DRAWER ================= -->
-  <div id="tool-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
-    <div class="bg-gray-900 border border-gray-800 rounded-2xl max-w-2xl w-full p-6 relative shadow-2xl overflow-y-auto max-h-[90vh]">
-      <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition p-1 bg-gray-800 rounded-lg">
-        <i data-lucide="x" class="w-5 h-5"></i>
-      </button>
-
-      <!-- Modal Header -->
-      <div class="flex items-center gap-3 mb-4">
-        <div id="modal-icon-container" class="w-12 h-12 rounded-xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
-          <i data-lucide="cpu" class="w-6 h-6"></i>
-        </div>
-        <div>
-          <h3 id="modal-title" class="text-xl font-bold text-white">Tool Name</h3>
-          <span id="modal-category" class="text-xs text-indigo-400 font-mono">Category</span>
-        </div>
-      </div>
-
-      <!-- Description -->
-      <p id="modal-desc" class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">Description content</p>
-
-      <!-- Performance Metrics Breakdown -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6 bg-gray-950 p-4 rounded-xl border border-gray-800 text-center">
-        <div>
-          <div class="text-[10px] text-slate-500 uppercase font-bold">Speed / Latency</div>
-          <div id="modal-speed" class="text-sm font-bold text-emerald-400 mt-0.5">Ultra Fast</div>
-        </div>
-        <div>
-          <div class="text-[10px] text-slate-500 uppercase font-bold">Output Quality</div>
-          <div id="modal-quality" class="text-sm font-bold text-indigo-400 mt-0.5">9.8 / 10</div>
-        </div>
-        <div class="col-span-2 sm:col-span-1">
-          <div class="text-[10px] text-slate-500 uppercase font-bold">Daily Free Tier</div>
-          <div id="modal-free-tier" class="text-sm font-bold text-amber-400 mt-0.5">Available</div>
-        </div>
-      </div>
-
-      <!-- Capabilities List -->
-      <div class="mb-6">
-        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Key Technical Strengths:</h4>
-        <ul id="modal-strengths" class="space-y-1.5 text-xs text-slate-300">
-          <!-- Strengths injected via JS -->
-        </ul>
-      </div>
-
-      <!-- Modal Actions -->
-      <div class="flex gap-3">
-        <a id="modal-link" href="#" target="_blank" class="flex-1 text-center py-3 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5 shadow-lg shadow-indigo-600/30">
-          <span>Launch Official Platform</span>
-          <i data-lucide="external-link" class="w-4 h-4"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <!-- Global Footer -->
-  <footer class="border-t border-gray-900 bg-gray-950 text-slate-500 text-xs py-10">
+  <footer class="border-t border-gray-900 bg-gray-950 text-slate-500 text-xs py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
       <div class="flex items-center space-x-2">
         <div class="w-6 h-6 rounded bg-indigo-600 flex items-center justify-center text-white">
@@ -421,288 +324,24 @@
         <span>© 2026. All rights reserved.</span>
       </div>
       <div class="flex space-x-6">
-        <button onclick="navigateTo('page-home')" class="hover:text-slate-300 transition">Privacy Standards</button>
-        <button onclick="navigateTo('page-directory')" class="hover:text-slate-300 transition">Directory Index</button>
-        <button onclick="navigateTo('page-contact')" class="hover:text-slate-300 transition">Developer API</button>
+        <button onclick="navigateTo('page-home')" class="hover:text-slate-300 transition">Home</button>
+        <button onclick="navigateTo('page-creator')" class="hover:text-slate-300 transition">Creator</button>
+        <button onclick="navigateTo('page-coding')" class="hover:text-slate-300 transition">Coding</button>
+        <button onclick="navigateTo('page-findtrue')" class="hover:text-slate-300 transition">Find True</button>
       </div>
     </div>
   </footer>
 
   <!-- ================= MASTER JAVASCRIPT ================= -->
   <script>
-    // 1. MASTER AI DATABASE (25+ Comprehensive Verified Tools)
+    // 1. DIRECTORY DATA
     const aiDirectory = [
-      // Video
-      {
-        id: "kling",
-        name: "Kling AI",
-        category: "video",
-        badge: "Free Daily Credits",
-        freeDaily: true,
-        summary: "World-class physical simulation text-to-video with realistic camera pans.",
-        url: "https://klingai.com",
-        speed: "3-5 mins",
-        quality: "9.9 / 10",
-        freeDetails: "66 Free Daily Credits upon login",
-        strengths: ["Physics-accurate continuous motion", "Full 1080p rendering output", "High facial geometry consistency"]
-      },
-      {
-        id: "runway",
-        name: "Runway Gen-3 Alpha",
-        category: "video",
-        badge: "Freemium",
-        freeDaily: false,
-        summary: "Industry-standard cinematic motion generator with fine-grained camera control.",
-        url: "https://runwayml.com",
-        speed: "1-2 mins",
-        quality: "9.8 / 10",
-        freeDetails: "125 One-time trial credits",
-        strengths: ["Director camera motion brush", "High dynamic range rendering", "Multi-prompt keyframing"]
-      },
-      {
-        id: "luma",
-        name: "Luma Dream Machine",
-        category: "video",
-        badge: "Free Daily Credits",
-        freeDaily: true,
-        summary: "Ultra-fast realistic video synthesis engine directly rendering high framerates.",
-        url: "https://lumalabs.ai/dream-machine",
-        speed: "60-90 secs",
-        quality: "9.7 / 10",
-        freeDetails: "30 Free Generations / Month",
-        strengths: ["Lightning fast inference time", "Realistic camera tracking", "High prompt adherence"]
-      },
-      {
-        id: "pika",
-        name: "Pika 2.0",
-        category: "video",
-        badge: "Free Tier",
-        freeDaily: true,
-        summary: "Creative video effects platform with object modification and canvas expansions.",
-        url: "https://pika.art",
-        speed: "2 mins",
-        quality: "9.5 / 10",
-        freeDetails: "30 Daily Refill Credits",
-        strengths: ["Pikaffects physical modifications", "Sound effects auto-sync", "Aspect ratio expander"]
-      },
-
-      // Image & Art
-      {
-        id: "leonardo",
-        name: "Leonardo.ai",
-        category: "image",
-        badge: "150 Daily Credits",
-        freeDaily: true,
-        summary: "Production visual design suite with custom fine-tuned styles and canvas editing.",
-        url: "https://leonardo.ai",
-        speed: "15 secs",
-        quality: "9.8 / 10",
-        freeDetails: "150 Tokens reset every 24 hours",
-        strengths: ["Phoenix foundational image model", "Universal real-time upscaler", "Transparency PNG generation"]
-      },
-      {
-        id: "midjourney",
-        name: "Midjourney v6",
-        category: "image",
-        badge: "Paid Only",
-        freeDaily: false,
-        summary: "The gold standard for photorealistic renders, artistic lighting, and detailed textures.",
-        url: "https://midjourney.com",
-        speed: "30 secs",
-        quality: "9.9 / 10",
-        freeDetails: "Subscription required",
-        strengths: ["Superior photorealism and skin textures", "Exact typography in image", "Vast stylistic range"]
-      },
-      {
-        id: "seaart",
-        name: "SeaArt AI",
-        category: "image",
-        badge: "Free Daily Credits",
-        freeDaily: true,
-        summary: "Powerful web-based Stable Diffusion interface with built-in LoRA model library.",
-        url: "https://seaart.ai",
-        speed: "20 secs",
-        quality: "9.6 / 10",
-        freeDetails: "100+ Free coins refreshed daily",
-        strengths: ["Thousands of community LoRAs", "ControlNet pose locking", "One-click background remover"]
-      },
-      {
-        id: "ideogram",
-        name: "Ideogram 2.0",
-        category: "image",
-        badge: "Free Daily Credits",
-        freeDaily: true,
-        summary: "Specialized in perfect graphic typography, t-shirt vectors, and poster design.",
-        url: "https://ideogram.ai",
-        speed: "25 secs",
-        quality: "9.7 / 10",
-        freeDetails: "10 Free Slow Prompts / Day",
-        strengths: ["100% accurate text spelling", "Graphic vector illustrations", "Color palette locking"]
-      },
-
-      // Code & Dev
-      {
-        id: "cursor",
-        name: "Cursor AI",
-        category: "code",
-        badge: "Free Tier",
-        freeDaily: true,
-        summary: "AI-first code editor built on VS Code with full-codebase indexing and instant edits.",
-        url: "https://cursor.com",
-        speed: "Instant",
-        quality: "9.9 / 10",
-        freeDetails: "50 Free Pro requests + Free standard",
-        strengths: ["Multi-file composer editing", "Terminal auto-debugging", "Full codebase intelligence"]
-      },
-      {
-        id: "claude-code",
-        name: "Claude 3.5 Sonnet",
-        category: "code",
-        badge: "Free Daily Access",
-        freeDaily: true,
-        summary: "Top-ranking LLM for frontend coding, backend architecture, and complex logic.",
-        url: "https://claude.ai",
-        speed: "Ultra Fast",
-        quality: "10 / 10",
-        freeDetails: "Free daily message limits on web",
-        strengths: ["Unmatched coding syntax accuracy", "Interactive Artifacts execution", "Nuanced contextual memory"]
-      },
-      {
-        id: "v0",
-        name: "v0 by Vercel",
-        category: "code",
-        badge: "Free Daily Credits",
-        freeDaily: true,
-        summary: "Generative UI system converting natural text directly into clean Tailwind & React components.",
-        url: "https://v0.dev",
-        speed: "10 secs",
-        quality: "9.8 / 10",
-        freeDetails: "Monthly refreshed credits",
-        strengths: ["Production Tailwind CSS code", "Figma to React conversion", "Instant preview UI sandbox"]
-      },
-      {
-        id: "bolt",
-        name: "Bolt.new",
-        category: "code",
-        badge: "Free Tier",
-        freeDaily: true,
-        summary: "Fullstack in-browser app builder that installs packages and runs servers in WebContainers.",
-        url: "https://bolt.new",
-        speed: "Instant",
-        quality: "9.7 / 10",
-        freeDetails: "Daily token allowance",
-        strengths: ["Fullstack node execution in browser", "One-click Netlify deployment", "Direct Git export"]
-      },
-
-      // Audio & Voice
-      {
-        id: "elevenlabs",
-        name: "ElevenLabs",
-        category: "audio",
-        badge: "Freemium",
-        freeDaily: false,
-        summary: "Most natural emotional human voice synthesis and zero-shot voice cloning platform.",
-        url: "https://elevenlabs.io",
-        speed: "Sub-second",
-        quality: "10 / 10",
-        freeDetails: "10,000 characters free / month",
-        strengths: ["Hyper-realistic breathing & laughter", "32+ Language support", "AI sound effect generator"]
-      },
-      {
-        id: "suno",
-        name: "Suno AI v3.5",
-        category: "audio",
-        badge: "50 Daily Credits",
-        freeDaily: true,
-        summary: "Generates full-length radio-quality songs with vocals, instruments, and lyrics from text.",
-        url: "https://suno.com",
-        speed: "30 secs",
-        quality: "9.8 / 10",
-        freeDetails: "50 Daily Credits (5 Songs/day)",
-        strengths: ["Full song structure (Verse/Chorus)", "Diverse musical genres", "Clean stem separation"]
-      },
-      {
-        id: "udio",
-        name: "Udio Music",
-        category: "audio",
-        badge: "Free Daily Credits",
-        freeDaily: true,
-        summary: "High-fidelity audio music synthesis with complex harmonics and vocal modulation.",
-        url: "https://udio.com",
-        speed: "45 secs",
-        quality: "9.8 / 10",
-        freeDetails: "10 Daily Free Creations",
-        strengths: ["Studio vocal clarity", "Advanced track extension", "Genre-bending flexibility"]
-      },
-
-      // Writing & LLMs
-      {
-        id: "chatgpt",
-        name: "ChatGPT-4o",
-        category: "writing",
-        badge: "Free Access",
-        freeDaily: true,
-        summary: "Leading conversational AI with web browsing, vision inspection, and data analysis.",
-        url: "https://chatgpt.com",
-        speed: "Instant",
-        quality: "9.8 / 10",
-        freeDetails: "Free access with standard limits",
-        strengths: ["Multimodal vision processing", "Custom GPT ecosystem", "Fast mathematical computation"]
-      },
-      {
-        id: "gemini",
-        name: "Google AI Studio (Gemini 1.5)",
-        category: "writing",
-        badge: "Free Developer Tier",
-        freeDaily: true,
-        summary: "Massive 2-Million token context window for analyzing full books, codebase, and hour-long videos.",
-        url: "https://aistudio.google.com",
-        speed: "Ultra Fast",
-        quality: "9.9 / 10",
-        freeDetails: "Completely Free High Rate-Limits",
-        strengths: ["2,000,000 token context window", "Native video & audio ingestion", "Zero-cost developer access"]
-      },
-      {
-        id: "perplexity",
-        name: "Perplexity AI",
-        category: "writing",
-        badge: "Free Daily Queries",
-        freeDaily: true,
-        summary: "Live interactive conversational search engine citing accurate real-time web sources.",
-        url: "https://perplexity.ai",
-        speed: "Fast",
-        quality: "9.7 / 10",
-        freeDetails: "Unlimited standard + Free daily Pro",
-        strengths: ["Real-time academic citations", "Web scraping intelligence", "Clean formatted answers"]
-      },
-
-      // 3D & Avatar
-      {
-        id: "meshy",
-        name: "Meshy AI",
-        category: "3d",
-        badge: "Free Daily Credits",
-        freeDaily: true,
-        summary: "Text-to-3D and Image-to-3D asset generator exporting textured GLB, FBX, and OBJ files.",
-        url: "https://meshy.ai",
-        speed: "2 mins",
-        quality: "9.4 / 10",
-        freeDetails: "200 Free credits on signup + resets",
-        strengths: ["Game-ready quad mesh output", "PBR material maps", "Direct Blender integration"]
-      },
-      {
-        id: "heygen",
-        name: "HeyGen",
-        category: "3d",
-        badge: "Freemium",
-        freeDaily: false,
-        summary: "Photorealistic AI video avatars with perfect lip-syncing in 40+ global languages.",
-        url: "https://heygen.com",
-        speed: "3-5 mins",
-        quality: "9.9 / 10",
-        freeDetails: "1 Free credit for video generation",
-        strengths: ["Studio human avatars", "Automated video translation", "Custom face swap tech"]
-      }
+      { id: "kling", name: "Kling AI", category: "video", badge: "Free Daily Credits", summary: "World-class physical simulation text-to-video with realistic camera pans.", url: "https://klingai.com" },
+      { id: "runway", name: "Runway Gen-3", category: "video", badge: "Freemium", summary: "Industry-standard cinematic video generator with fine motion brushes.", url: "https://runwayml.com" },
+      { id: "midjourney", name: "Midjourney v6", category: "image", badge: "High Detail", summary: "Gold standard photorealistic visual rendering and lighting control.", url: "https://midjourney.com" },
+      { id: "leonardo", name: "Leonardo.ai", category: "image", badge: "150 Daily", summary: "Production visual design suite with custom fine-tuned canvas models.", url: "https://leonardo.ai" },
+      { id: "cursor", name: "Cursor AI", category: "code", badge: "Free Tier", summary: "AI-first code editor with full codebase indexing and multi-file composer.", url: "https://cursor.com" },
+      { id: "claude-code", name: "Claude 3.5 Sonnet", category: "code", badge: "Free Daily", summary: "Top-ranking LLM for architecture logic, fullstack code, and debugging.", url: "https://claude.ai" }
     ];
 
     let activeCategory = 'all';
@@ -733,54 +372,33 @@
 
       items.forEach(tool => {
         const card = document.createElement('div');
-        card.className = "bg-gray-900/60 p-6 rounded-2xl border border-gray-800 hover:border-indigo-500/40 transition flex flex-col justify-between group shadow-lg";
-        
+        card.className = "bg-gray-900/60 p-6 rounded-2xl border border-gray-800 flex flex-col justify-between shadow-lg";
         card.innerHTML = `
           <div>
-            <div class="flex justify-between items-start mb-3">
-              <div>
-                <h4 class="font-bold text-lg text-white group-hover:text-indigo-400 transition">${tool.name}</h4>
-                <span class="text-[10px] uppercase font-mono text-slate-500">${tool.category}</span>
-              </div>
-              <span class="text-[10px] ${tool.freeDaily ? 'bg-amber-500/10 text-amber-300 border-amber-500/20' : 'bg-indigo-500/10 text-indigo-300 border-indigo-500/20'} border px-2.5 py-0.5 rounded-full font-semibold">
-                ${tool.badge}
-              </span>
+            <div class="flex justify-between items-start mb-2">
+              <h4 class="font-bold text-lg text-white">${tool.name}</h4>
+              <span class="text-[10px] bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-2 py-0.5 rounded-full">${tool.badge}</span>
             </div>
-            <p class="text-slate-400 text-xs leading-relaxed line-clamp-2">${tool.summary}</p>
+            <p class="text-slate-400 text-xs leading-relaxed">${tool.summary}</p>
           </div>
-
-          <div class="mt-6 pt-4 border-t border-gray-800/80 flex items-center gap-2">
-            <button onclick="openModal('${tool.id}')" class="flex-1 py-2.5 bg-gray-800 hover:bg-gray-700 text-slate-200 text-xs font-semibold rounded-xl transition flex items-center justify-center gap-1.5 border border-gray-700/60">
-              <i data-lucide="bar-chart-2" class="w-3.5 h-3.5 text-indigo-400"></i> Inspect Performance
-            </button>
-            <a href="${tool.url}" target="_blank" class="p-2.5 bg-indigo-600/20 hover:bg-indigo-600 text-indigo-300 hover:text-white rounded-xl transition border border-indigo-500/30">
-              <i data-lucide="external-link" class="w-4 h-4"></i>
+          <div class="mt-6 pt-4 border-t border-gray-800/80">
+            <a href="${tool.url}" target="_blank" class="w-full py-2 bg-gray-800 hover:bg-gray-700 text-slate-200 text-xs font-semibold rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Open Tool</span> <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
             </a>
           </div>
         `;
         grid.appendChild(card);
       });
-
       lucide.createIcons();
     }
 
-    // 4. Live Search & Category Filtering Engine
     function filterDirectory() {
       const query = document.getElementById('directory-search').value.toLowerCase();
-      
       const filtered = aiDirectory.filter(item => {
-        const matchesCategory = (activeCategory === 'all') 
-          ? true 
-          : (activeCategory === 'free' ? item.freeDaily : item.category === activeCategory);
-
-        const matchesSearch = item.name.toLowerCase().includes(query) ||
-                              item.summary.toLowerCase().includes(query) ||
-                              item.category.toLowerCase().includes(query) ||
-                              item.strengths.some(s => s.toLowerCase().includes(query));
-
+        const matchesCategory = (activeCategory === 'all') || (item.category === activeCategory);
+        const matchesSearch = item.name.toLowerCase().includes(query) || item.summary.toLowerCase().includes(query);
         return matchesCategory && matchesSearch;
       });
-
       renderDirectoryCards(filtered);
     }
 
@@ -793,150 +411,155 @@
       filterDirectory();
     }
 
-    // 5. Performance Modal Controller
-    function openModal(toolId) {
-      const tool = aiDirectory.find(t => t.id === toolId);
-      if(!tool) return;
-
-      document.getElementById('modal-title').innerText = tool.name;
-      document.getElementById('modal-category').innerText = `Category: ${tool.category.toUpperCase()}`;
-      document.getElementById('modal-desc').innerText = tool.summary;
-      document.getElementById('modal-speed').innerText = tool.speed;
-      document.getElementById('modal-quality').innerText = tool.quality;
-      document.getElementById('modal-free-tier').innerText = tool.freeDetails;
-      document.getElementById('modal-link').href = tool.url;
-
-      const strengthsList = document.getElementById('modal-strengths');
-      strengthsList.innerHTML = '';
-      tool.strengths.forEach(str => {
-        const li = document.createElement('li');
-        li.className = "flex items-center gap-2";
-        li.innerHTML = `<i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i> <span>${str}</span>`;
-        strengthsList.appendChild(li);
-      });
-
-      document.getElementById('tool-modal').classList.remove('hidden');
-      lucide.createIcons();
-    }
-
-    function closeModal() {
-      document.getElementById('tool-modal').classList.add('hidden');
-    }
-
-    // 6. 10 Engine Master Configuration
-    let currentEngineId = 1;
-    const engines = {
-      1: { title: "Master Prompt Enhancer", sub: "Converts simple human descriptions into multi-engine structured prompt directives.", btn: "Synthesize Master Prompt" },
+    // 4. CREATOR SUITE ENGINES (1-8)
+    let currentCreatorEngine = 1;
+    const creatorEngines = {
+      1: { title: "Master Prompt Enhancer", sub: "Transforms elementary concepts into comprehensive multi-engine prompt matrices.", btn: "Synthesize Master Prompt" },
       2: { title: "Dynamic Pipeline Matcher", sub: "Generates optimal combinations of video, voice, and visual engines.", btn: "Match Pipeline" },
-      3: { title: "Viral Content Repurposer", sub: "Breaks long-form essays into high-converting retention shorts and viral hooks.", btn: "Extract Viral Vectors" },
-      4: { title: "Reverse Prompt Extraction", sub: "Deconstructs aesthetic elements and predicts generation parameters from scene descriptions.", btn: "Deconstruct Prompt" },
-      5: { title: "Free AI Alternatives Engine", sub: "Recommends zero-cost, open-source, or high-tier free alternatives to costly SaaS tools.", btn: "Find Cost-Free Tools" },
-      6: { title: "Character Continuity Suite", sub: "Generates seed-pinned identity prompts to maintain character consistency across video scenes.", btn: "Generate Consistent Seed" },
-      7: { title: "Viral Hooks & High-CTR Titles", sub: "Generates psychologically validated click-through headline hooks.", btn: "Generate CTR Anchors" },
-      8: { title: "Daily Free Credits Tracker", sub: "Aggregates active daily resets, grants, and free credits across AI platforms.", btn: "Fetch Live Grants" },
-      9: { title: "Code Explainer & Fault Rectifier", sub: "Pinpoints syntactical faults, memory leaks, and optimizes code efficiency.", btn: "Analyze & Fix Code" },
-      10: { title: "Text to Clean Code Synthesizer", sub: "Converts natural human language into production-grade HTML, Tailwind, and JS modules.", btn: "Compile Clean Code" }
+      3: { title: "Viral Content Repurposer", sub: "Breaks long-form essays into high-converting shorts scripts and hooks.", btn: "Extract Viral Vectors" },
+      4: { title: "Reverse Prompt Extraction", sub: "Deconstructs aesthetic elements and predicts generation parameters.", btn: "Deconstruct Prompt" },
+      5: { title: "Free AI Alternatives Engine", sub: "Recommends zero-cost or open-source alternatives to costly tools.", btn: "Find Cost-Free Tools" },
+      6: { title: "Character Continuity Suite", sub: "Generates seed-pinned identity prompts across multi-scene videos.", btn: "Generate Consistent Seed" },
+      7: { title: "Viral Hooks & High-CTR Titles", sub: "Generates psychology-backed headline hooks and video intros.", btn: "Generate CTR Anchors" },
+      8: { title: "Daily Free Credits Tracker", sub: "Aggregates active daily resets, grants, and free credits.", btn: "Fetch Live Grants" }
     };
 
     function selectEngine(id) {
-      currentEngineId = id;
+      currentCreatorEngine = id;
       document.querySelectorAll('.engine-tab').forEach(b => {
         b.className = "engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition";
       });
-
       const activeBtn = document.getElementById('eng-' + id);
       if(activeBtn) {
-        activeBtn.className = "engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between bg-indigo-600 text-white transition";
+        activeBtn.className = "engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between bg-purple-600 text-white transition";
       }
-
-      const conf = engines[id];
+      const conf = creatorEngines[id];
       document.getElementById('engine-title').innerText = conf.title;
       document.getElementById('engine-subtitle').innerText = conf.sub;
       document.getElementById('execute-btn-label').innerText = conf.btn;
-      document.getElementById('terminal-output').innerText = "Engine ready. Input parameters above.";
       lucide.createIcons();
     }
 
-    // 7. Live Serverless AI Execution Engine (Direct Clean Outputs)
     async function executeEngineAction() {
       const input = document.getElementById('terminal-input').value.trim();
       const output = document.getElementById('terminal-output');
 
-      if (!input && currentEngineId !== 8) {
-        output.innerText = "⚠️ Attention: Input field cannot be empty for this engine.";
+      if (!input && currentCreatorEngine !== 8) {
+        output.innerText = "⚠️ Input cannot be empty for this engine.";
         return;
       }
 
-      const systemPrompts = {
-        1: `Task: Create an 8k cinematic Midjourney master prompt for: "${input}". 
-Rules: Do NOT include any conversational filler, explanations, or introductory text. Output ONLY the ready-to-copy Midjourney prompt with parameters (--ar 16:9 --style raw --v 6.0).`,
-        
-        2: `Task: Give the exact modern AI tools workflow for: "${input}".
-Rules: Return ONLY bullet points of step-by-step tools to use. No introduction or conversational filler.`,
-        
-        3: `Task: Convert this into viral social media content: "${input}".
-Rules: Output strictly in this format without filler:
-🎯 3s HOOK: [Hook text]
-⚡ 15s CORE VALUE: [Value text]
-🔥 CTA: [Call to Action]
-🏷️ TAGS: [Hashtags]`,
-        
-        4: `Task: Reverse-engineer this scene into an exact image generation prompt: "${input}".
-Rules: Return ONLY the raw prompt. No extra chit-chat.`,
-        
-        5: `Task: List top 3 100% free alternatives for: "${input}".
-Rules: Output clean bullet points with Tool Name, Free Limits, and Benefit. No conversational intros.`,
-        
-        6: `Task: Create a character consistency prompt config for: "${input}".
-Rules: Return ONLY the seed-pinned prompt configuration.`,
-        
-        7: `Task: Generate 5 psychological viral hooks for: "${input}".
-Rules: Output numbered list (1-5) of hooks only.`,
-        
-        8: `Task: List today's top free AI deals and daily credit resets.
-Rules: Bullet points only.`,
-        
-        9: `Task: Fix, optimize, and explain this code:
-${input}
-Rules: Provide the corrected code first, followed by a brief 2-line explanation.`,
-        
-        10: `Task: Generate clean, responsive HTML with Tailwind CSS for: "${input}".
-Rules: Return ONLY raw HTML/Tailwind code without backticks or explanations.`
+      const prompts = {
+        1: `Generate a fully detailed, multi-engine production prompt breakdown for: "${input}". Include Midjourney v6 photorealistic parameters, Stable Diffusion negative prompts, lighting, camera lens specifications, and composition details.`,
+        2: `Provide a complete step-by-step production workflow pipeline for: "${input}". Specify which AI tool to use for Voiceover, Character Generation, Video Animation, Background Music, and Upscaling.`,
+        3: `Repurpose the following topic into a detailed viral short video script: "${input}". Include 3-second hook, visual shot list, narration script, background music cue, and pinned comment strategy.`,
+        4: `Deconstruct this scene description into a reverse-engineered prompt: "${input}". Detail lighting, camera angle, artist style references, aspect ratio, and render engine parameters.`,
+        5: `Provide a detailed breakdown of top 100% free or open-source alternatives for: "${input}". List daily limits, model capabilities, and export restrictions.`,
+        6: `Generate a character continuity master sheet for: "${input}". Include precise facial anchor keywords, clothing tokens, seed parameters, and multi-angle camera prompt variations.`,
+        7: `Generate 10 high-CTR psychological hooks and title concepts for: "${input}". Categorize them by curiosity gap, negative emotion, fear-of-missing-out, and authoritative tone.`,
+        8: `Provide a comprehensive list of all active free tier limits and daily credit resets for major 2026 AI models (Video, Image, Audio, Code).`
       };
 
-      const finalPrompt = systemPrompts[currentEngineId] || input;
+      await sendAIAssistantRequest(prompts[currentCreatorEngine] || input, output);
+    }
 
-      output.innerText = "⚡ Communicating with AI Server & generating live response...";
+    // 5. CODING SUITE ENGINES (9 & 10)
+    let currentCodingEngine = 9;
+    const codingEngines = {
+      9: { title: "Code Explainer & Fault Rectifier", sub: "Pinpoints syntax faults, logical bugs, and optimizes performance.", btn: "Analyze & Fix Code (Detailed)" },
+      10: { title: "Text to Clean Code Synthesizer", sub: "Converts natural requirements into clean, modular, production-ready code.", btn: "Compile Production Code" }
+    };
+
+    function selectCodingEngine(id) {
+      currentCodingEngine = id;
+      document.querySelectorAll('.code-engine-tab').forEach(b => {
+        b.className = "code-engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between text-slate-400 hover:bg-gray-800 hover:text-white transition";
+      });
+      const activeBtn = document.getElementById('code-eng-' + id);
+      if(activeBtn) {
+        activeBtn.className = "code-engine-tab w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between bg-emerald-600 text-white transition";
+      }
+      const conf = codingEngines[id];
+      document.getElementById('coding-engine-title').innerText = conf.title;
+      document.getElementById('coding-engine-subtitle').innerText = conf.sub;
+      document.getElementById('coding-execute-btn-label').innerText = conf.btn;
+      lucide.createIcons();
+    }
+
+    async function executeCodingAction() {
+      const input = document.getElementById('coding-terminal-input').value.trim();
+      const output = document.getElementById('coding-terminal-output');
+
+      if (!input) {
+        output.innerText = "⚠️ Please paste code or enter your programming request.";
+        return;
+      }
+
+      const prompt = currentCodingEngine === 9 
+        ? `Task: Carefully analyze, debug, and fix the following code snippet. 
+1. Provide the complete fixed code block.
+2. Provide a detailed section explaining the identified bugs, why they occurred, and how they were optimized.
+Code:\n${input}`
+        : `Task: Generate complete, fully functional, and well-structured clean code for the following specification: "${input}". Include clear comments, modern best practices, and usage instructions.`;
+
+      await sendAIAssistantRequest(prompt, output);
+    }
+
+    // 6. FIND TRUE (AI Media Verification & Forensics)
+    function setFindTrueSample(url, desc) {
+      document.getElementById('findtrue-input').value = `${desc} (URL: ${url})`;
+    }
+
+    async function executeFindTrueAnalysis() {
+      const input = document.getElementById('findtrue-input').value.trim();
+      const output = document.getElementById('findtrue-output-text');
+
+      if (!input) {
+        output.innerText = "⚠️ Please enter a media link or descriptive search query.";
+        return;
+      }
+
+      const forensicPrompt = `You are the FindTrue AI Forensic & Verification Intelligence Engine.
+Analyze the following media link/query: "${input}"
+Perform a deep forensic analysis and respond in a structured report format:
+
+1. 🔍 VERIFICATION STATUS: [State clearly: 100% REAL, AI-GENERATED (SYNTHETIC), or DEEPFAKE / HYBRID]
+2. 🤖 GENERATION TOOLS & ENGINES: [List likely tools used: e.g., Midjourney v6, Kling AI, Runway Gen-3, Stable Diffusion, ElevenLabs, FaceSwap, etc.]
+3. 📝 REVERSE-ENGINEERED PROMPT: [The exact detailed prompt and parameter configuration likely used to generate this media]
+4. 🕵️ FORENSIC ARTIFACTS DETECTED: [Point out physical flaws, finger/geometry inconsistencies, lighting anomalies, temporal glitches, or metadata markers]
+5. 📅 ORIGIN & TIMELINE: [Details about when this media first surfaced, who originally posted/uploaded it, and whether it was debunked by factual sources]
+6. 🎯 FINAL VERDICT: [Concise final takeaway for the user]`;
+
+      await sendAIAssistantRequest(forensicPrompt, output);
+    }
+
+    // 7. Universal AI API Client
+    async function sendAIAssistantRequest(promptText, outputElement) {
+      outputElement.innerText = "⚡ Communicating with AI Server & generating detailed analysis...";
 
       try {
         const response = await fetch('/api/generate', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ prompt: finalPrompt })
+          body: JSON.stringify({ prompt: promptText })
         });
 
         const data = await response.json();
-
         if (response.ok && (data.result || data.output)) {
-          output.innerText = data.result || data.output;
+          outputElement.innerText = data.result || data.output;
         } else {
-          output.innerText = "⚠️ Error: " + (data.error || "Failed to fetch AI response");
+          outputElement.innerText = "⚠️ Error: " + (data.error || "Failed to process AI response");
         }
       } catch (error) {
-        output.innerText = "⚠️ Network Connection Failed: " + error.message;
+        outputElement.innerText = "⚠️ Network / Server Connection Failed: " + error.message;
       }
     }
 
-    function copyTerminalOutput() {
-      const text = document.getElementById('terminal-output').innerText;
+    // 8. Copy Utility
+    function copyOutput(elementId) {
+      const text = document.getElementById(elementId).innerText;
       navigator.clipboard.writeText(text);
       alert("Output copied to clipboard!");
-    }
-
-    function handleContactSubmit(e) {
-      e.preventDefault();
-      alert("Message transmitted successfully.");
-      e.target.reset();
     }
 
     // Initialize on Load
